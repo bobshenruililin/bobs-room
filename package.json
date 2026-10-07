@@ -1,0 +1,13 @@
+{
+  "name": "bobs-room",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A little pixel room for Shen Ruililin's curious life.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check app.mjs && node --check objects.mjs && node --check discoveries.mjs && node --check drawer.mjs && node --check personal.mjs && node --check tour.mjs && node --check arcade.mjs && node --check engine.mjs && node --check stories.mjs && node --test tests/*.test.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

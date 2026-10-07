@@ -1,0 +1,53 @@
+/* One scene per state: the cushion, furniture and paper share one pixel scale. */
+.sofa-dialog{width:min(1120px,calc(90svh * 1.5),calc(100vw - 24px));padding:0}
+.sofa-scene{position:relative;aspect-ratio:1.5;container-type:inline-size;isolation:isolate;color:#594c32}
+.sofa-picture,.sofa-picture img{display:block;width:100%;height:100%;image-rendering:pixelated}
+.sofa-paper{position:absolute;left:58%;top:17%;width:32%;height:62%;overflow:auto;padding:1%;scrollbar-width:thin;scrollbar-color:#a98c57 transparent}
+.sofa-paper .eyebrow{font:clamp(7px,.82cqw,10px)/1.7 var(--pixel);color:#806538;margin:0 0 1.4cqw;padding:0}
+.sofa-paper h3{font:600 clamp(24px,3cqw,34px)/1.08 var(--sans);margin:0 0 1.8cqw}
+.sofa-paper p{font:clamp(15px,1.7cqw,19px)/1.45 var(--sans);margin:0 0 1.5cqw}
+.sofa-paper .sofa-intro{font-size:clamp(17px,2.1cqw,24px);color:#85613d}
+.sofa-paper .sofa-scholars,.sofa-paper .sofa-hint{font-size:clamp(13px,1.4cqw,16px);line-height:1.4}
+.sofa-paper .sofa-hint{margin-top:1.5cqw;color:#8a734d}
+.sofa-paper a,.sofa-paper button{font:clamp(15px,1.7cqw,19px)/1.5 var(--sans);display:block;color:#466135;text-decoration:underline;text-underline-offset:4px;padding:0;margin:1.4cqw 0}
+.sofa-cushion-target,.sofa-remote-target{position:absolute;left:18%;top:35%;width:22%;height:30%;padding:0;min-height:44px;color:#f9dfad}
+.sofa-cushion-target span,.sofa-remote-target span{position:absolute;left:50%;bottom:-15%;transform:translateX(-50%);width:max-content;max-width:145%;font:clamp(7px,.85cqw,10px)/1.5 var(--pixel);text-shadow:2px 2px #1f372b;text-align:center}
+.sofa-remote-target{left:23%;top:53%;width:9%;height:13%;z-index:2}
+.sofa-remote-target span{max-width:250%;bottom:-28%}
+.cushion-lifted .sofa-cushion-target{left:3%;top:34%;width:16%;height:16%}
+.sofa-cushion-target:hover,.sofa-remote-target:hover{outline:2px dashed #efcf82;outline-offset:-5px}
+.brand-emblem{width:56px;height:42px;object-fit:contain;image-rendering:pixelated;flex:0 0 auto}
+.duoji-conversation{left:53.5%;top:17%;width:31%;height:53%;display:flex;flex-direction:column;gap:10px;overflow:visible;padding:0;scrollbar-width:thin}
+.dog-speech{padding:0;height:auto;min-height:0;overflow:auto;flex:1}
+.dog-speech h3{font-size:27px;margin:8px 0 12px}
+.dog-speech p{font-size:16px;line-height:1.4;margin:0}
+.dog-questions{flex:0 0 auto;margin:0;gap:5px;display:flex;flex-wrap:wrap}
+.dog-questions button{font:14px/1.3 var(--sans);padding:7px 10px;min-height:36px}
+.dog-footnote{position:absolute;top:calc(100% + 10px);margin:0;font-size:11px;color:#8a7048;text-shadow:none;text-align:left}
+@media(max-width:760px){
+ .sofa-dialog{width:min(calc(100vw - 20px),calc(92svh / 1.5));max-height:94svh}
+ .sofa-scene{aspect-ratio:2/3}
+ .sofa-paper{left:16%;top:49%;width:68%;height:40%;padding:0}
+ .sofa-paper .eyebrow{font-size:7px;margin:0 0 7px}
+ .sofa-paper h3{font-size:clamp(19px,5.5cqw,23px);margin:0 0 8px}
+ .sofa-paper p{font-size:clamp(15px,4.1cqw,17px);line-height:1.25;margin:0 0 7px}
+ .sofa-paper .sofa-intro{font-size:19px}
+ .sofa-paper .sofa-scholars,.sofa-paper .sofa-hint{font-size:13px}
+ .sofa-paper a,.sofa-paper button{font-size:15px;line-height:1.2;margin:6px 0;min-height:28px}
+ .sofa-paper .sofa-hint{display:none}
+ .sofa-cushion-target{left:29%;top:15%;width:31%;height:21%}
+ .sofa-cushion-target span,.sofa-remote-target span{font-size:6px;bottom:-6%}
+ .sofa-remote-target{left:35%;top:24%;width:20%;height:12%}
+ .sofa-remote-target span{max-width:160%;bottom:-22%}
+ .cushion-lifted .sofa-cushion-target{left:4%;top:15%;width:23%;height:15%}
+ .brand-emblem{width:42px;height:32px}
+ .duoji-dialog{width:min(calc(100vw - 20px),calc(92svh / 1.5));max-height:94svh}
+ .duoji-layout{aspect-ratio:2/3;padding:0;background:url('./assets/art/duoji-phone.webp') center/100% 100% no-repeat}
+ .duoji-portrait{display:none}
+ .duoji-conversation{position:absolute;left:17%;top:51%;width:66%;height:36%;padding:0;background:none;overflow:visible;gap:6px}
+ .dog-speech>span{display:none}
+ .dog-speech h3{font-size:19px;line-height:1.1;margin:4px 0 6px}
+ .dog-speech p{font-size:15px;line-height:1.22}
+ .dog-questions button{font-size:13px;padding:6px 8px;min-height:34px}
+ .dog-footnote{font-size:10px}
+}

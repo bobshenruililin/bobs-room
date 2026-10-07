@@ -1,0 +1,71 @@
+{
+  "description": "Exact prompts retained from this revision. Discarded or replaced assets may be included for design provenance. Earlier briefs are reconstructed in art-direction.md.",
+  "prompts": [
+    {
+      "asset": "tv-set",
+      "tool": "built-in imagegen",
+      "prompt": "Finished art for an original cozy pixel adventure. Match the supplied COARSE pixel sofa style. Landscape 1536x1024, drawn on a strict 128x85 logical pixel grid, nearest-neighbour upscaled: each visible pixel block about12x12 output pixels. Only24colours. NO small details, NO grain, NO dithering, NO microtexture, NO smooth shading. Broad flatcolourclusters, chunky stepped edges, readable geometric props. Forestgreen, russetwood, brassgold, warm lanterns, dreamydusk. NO words, letters, labels or fake handwriting anywhere. A magical little CRT television discovered by finding a remote in the sofa. Straight-on front view, entire TV almost fills image, on a green wooden cabinet among stacks of books and trailing fern. Very large television picture opening, completely blank flat dark navy, bounded x14% to72% and y20% to72% of canvas. This empty opening must have straight edges and will hold live content. Thick rounded-step brass and darkgreen CRT bezel, NOT a modern flatscreen. Two large tactile square/brass channel/power knobs vertically at x85%,y38% and x85%,y60%. Tiny red standby lamp. Small blank nameplate below screen, some warm light and cozyroom peekingaroundouteredge. Keep screen empty. Create a physical charming game prop, not a UI mockup."
+    },
+    {
+      "asset": "globe-scene",
+      "tool": "built-in imagegen",
+      "prompt": "Finished art for an original cozy pixel adventure. Match the supplied COARSE pixel sofa style. Landscape 1536x1024, drawn on a strict 128x85 logical pixel grid, nearest-neighbour upscaled: each visible pixel block about12x12 output pixels. Only24colours. NO small details, NO grain, NO dithering, NO microtexture, NO smooth shading. Broad flatcolourclusters, chunky stepped edges, readable geometric props. Forestgreen, russetwood, brassgold, warm lanterns, dreamydusk. NO words, letters, labels or fake handwriting anywhere. An enlarged discovery of the old brass globe from the apartment. LEFT HALF: a large bold simplified vintage globe on a brass stand, centred x29%,y49%, spherical map bluegreenwater and goldflatcontinentblocks. Globe large and touchable, radius~22%canvaswidth. A little compass, rolledweather chart andbookpilearoundbase. RIGHT HALF: a huge front-facing clipped cream research note ongreenwoodboard, blank unpatterned writing area exactly x56%to91% and y12%to88%, no markings. Keep paperstraight, light, completelyemptyforreadableHTMLwords. Blue twilight window behindglobe, lanterns andferns atedges. The globe andpaperdominate; no characters."
+    },
+    {
+      "asset": "trunk-scene",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: stylized-concept. Finished image asset for a cozy 2D pixel adventure. Match the supplied COARSE pixel art style. Strict 128x85 logical pixel grid nearest-neighbour upscaled to 1536x1024: big chunky visible square blocks about 12x12 output pixels. Only 24 colours. No grain, microtexture, dithering, fine lines, smooth shading, small details. Broad flat colour clusters, stepped edges. Forest green, russet wood, brass gold, warm lanterns, dreamy dusk. No text, letters, symbols resembling handwriting, or labels. Create a close-up discovery scene: an open dark green travel trunk on the left half, folded map, a simple field notebook, compass, rolled blanket and brass latch. Right side has a huge blank cream paper page clipped to a board, paper interior x56–91%, y12–88%, completely clear for readable HTML text. Warm nighttime room with distant blue window at left. Strong original pixel game art, no people."
+    },
+    {
+      "asset": "note-paper-coarse",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: style-transfer. Edit target image 1: the blank note paper on the desk. Style reference image 2: coarse pixel globe scene. REDRAW the target completely on an 85x128 logical pixel grid enlarged nearest-neighbor to1024x1536. VERY COARSE giant square pixel blocks, limited 24-colour palette, flat colour regions. Preserve blank cream paper occupying x12–88%, y13–86%, with clear blank writing area. Keep simple broad green desk border, chunky lantern upper left, cup upper right, brass compass bottom left, single green leaf bottom right. Remove all fine grain, texture, dithering, tiny flecks, gradients. No text or letters. Every edge visibly staircase pixels. Cream paper nearly flat with just 3 shade colours."
+    },
+    {
+      "asset": "cushion-coarse",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: style-transfer. Completely redraw this fern cushion as a VERY COARSE retro pixel game sprite on a strict 48x48 logical pixel grid, nearest-neighbor enlarged. Big square pixel blocks, simple flat colour clusters, max16colours, no grain or tiny details. Preserve shape/cream pillow, green fern motif and green tassels. Simplify fern to a bold 7-leaf branch. Minimal 3-tone cloth shading. Transparent background, square canvas, cushion fills90%frame. Do not add any background, border or text."
+    },
+    {
+      "asset": "shiba-closeup",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: style-transfer. Completely redraw the supplied mini black Shiba Inu as a VERY COARSE retro pixel game sprite on a strict64x64logicalpixelgrid, nearest-neighbor enlarged. Big square pixels, 20colours max, boldflatclusters, no texture, finefur, thinlines or grain. Preserve sittingpose, cheekyhappyface, black/tan/creammarkings, curledtail, greencollar and little goldtag. Originalcutecharacter. Bighead smallbody. Transparentbackground squarecanvas, dogfills85%height. No text, no scenery."
+    },
+    {
+      "asset": "bob-emblem",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: logo-brand. Tiny personal website emblem for Bob, an original warm cozy 2D pixel adventure. Transparent background. Readable exact uppercase text 'BOB' in chunky block pixel letters cream and golden brass, on a tiny dark forest-green rectangular wooden game-name badge with minimal russet edge. Three letters large filling the badge. Straight frontal orthographic, no perspective or rotation. Draw on a strict48x32logicalpixelgrid then enlarge nearest-neighbour, no antialiasing, gradients, texture or fine detail. Wide3:2composition with tiny transparent margins, no other words, symbols, decorative objects or faces. The BOB letters must remain readable at56px wide. Original identity mark, friendly and memorable."
+    },
+    {
+      "asset": "sofa-closed",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Edit target is the supplied cozy COARSE pixel sofa discovery image. Preserve every pixel of the composition, blank paper, sofa, table, window, lighting and framing except the remote on the sofa. Cover that remote with one small cream cushion with a SIMPLE dark green 5-leaf motif. Cushion is low-resolution pixelartmatchingexactpixelblocksize ofsofa, drawn onabout24x24logicalpixels; NOTfinertexturedsprite. Cushion centeredaroundx29%,y53%, occupyingx18–40%,y35–65%. Existingremotex25–30%,y55%mustbehidden. No furtherimagesoverlays, no new words. The final must feel likeonecoherentpixelillustration. Keep1536x1024, transparentfalse."
+    },
+    {
+      "asset": "sofa-phone-open",
+      "tool": "built-in imagegen",
+      "prompt": "Usecase:stylized-concept. Create a PORTRAIT1024x1536versionofthe suppliedcozypixelsofadiscoveryimage forphone. ONEcoherentillustrationnotcollage. Strict85x128logicalpixelgridupscalednearestneighbor, big12pxpixelblocks,24colours, nofinegraintexturesditheringgradients. Sameforestgreenrussetbrasscream. Top40%ofcanvas:smallrussetsofa,windowdusk,ferns,leftteatable. A smallgreenmissingremotevisiblybetweenleftsofacushions aroundx44%,y29%. NOloosecreampillowcoveringremote. Bottom56%: a LARGEclippedcreamblankpaperonforestgreenboardinforeground, blankpaperinteriorx12–88%,y47–92%; noobstructionsormotifsinwritingarea. Board rests onfloorleaningtowardviewer, visuallyconnectedtoroom,noseams. Noletters,text,fakehandwriting."
+    },
+    {
+      "asset": "sofa-phone-closed",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: precise-object-edit. Supplied portrait image is edit target. Preserve all composition, pixel scale, room, clipboard blank paper, lighting, framing exactly. Only add one SMALL cream pillow with darkgreen simple 5-leafmotif sittingonsofa, coveringthegreenremote completely atx40%,y33%. Pillow occupiesx31–53%,y23–36%canvas. Matchsamecoarsepixelsasillustration, nobig standalonepillow. No text. Keep1024x1536portrait andpixelart. All other details unchanged."
+    },
+    {
+      "asset": "tv-hobbies",
+      "tool": "built-in imagegen",
+      "prompt": "Use case: illustration-story. Game sprite atlas, SIX completely separate square pixel art scenes in a precise 3column by2row grid. Canvas1536x1024, eachcell512x512, no gaps, no borders, no titles, no letters,text,watermarks. Draw everycell on64x64logicalgrid nearest-neighborupscaled, chunkyflatcolours,simplifiedshapes,24palette forestgreen/brass/cream/russet/duskblue. Originalcozypixeladventureobjectscloseup. EXACTTILEORDER: top-left a brasslightningsparkoverasmallworkbenchsymbolizingagency; top-middle a LEGO-style greenbrickbuiltvintagetypewriterwithblankcream paper; top-rightDoraemon'spinkAnywhereDoor standingopenintoastar-litblueworld. Bottom-left a retrored'whatif' telephoneboothwithcurlyphoneagainstmagicalblueclouds; bottom-middle elegantfinediningdishsmallsculptedcourseonwhiteplate darkgreencloth; bottom-righta Gundam-style whiteblue redtoymecharobotmodelonworkbench. EachobjectcentredfillingitsownSQUAREcell, objectcompletelyinsidethatcell, no overlappingbetweencells. Nopeople. These arefictionalillustrationstelevisionchannels."
+    },
+    {
+      "asset": "tv-detours",
+      "tool": "built-in imagegen",
+      "prompt": "Usecase:illustration-story. Game spriteatlas,SIXseparatesquarepixelartscenes inPRECISE3column2rowgrid. Canvas1536x1024, six512x512cells, nogaps,borders,text,letters,logos. Coarsepixelart64x64logicalgridpercell enlargedhardnearest-neighbour; 24coloursforestgreen/brasscreamrussetblue. Warmcozyoriginalgame art. Top-left: simple medicalclub tablewithstethoscope andredcrossfirstaidbox. Top-middle: quietsciencelecturehall witha goldenlaurelwreath andlecturepodium, nopeople. Top-right: woodenchesstablewithachessknight,dice,andblanknotebook forrationality. Bottom-left: physicslaboratorytable withpendulum,prism,rainbow. Bottom-middle: toyselfdrivingracecar onsmallcircuittrack. Bottom-right: ascholar'sgoldtrophynexttobooksunderwarmdesklamp. Every scene fitsitsownsquareperfectlyandobjectcentral,notouchesacrosscellborders. Theseareimaginedvignettesnotliteralphotographs."
+    },
+    {
+      "asset": "duoji-phone",
+      "tool": "built-in imagegen",
+      "prompt": "Usecase:illustration-story. Create ONEcontinuousportrait1024x1536pixel scene forphone, combiningthecozypetnookfromimage1 andDuoji'slikenessfromimage2. ALLartdrawnatSAMEchunkyscale, strict85x128logicalgrid enlarged nearest-neighbor, nofinefurtexture, nofinegrain,dithering,gradient. Top43%: cosymini blackShibaInuDuoji (black,tan,cream,green collar), happyconfidentsittingonrounddarkgreenbed, books/lanterns,simplelittleplushdogtoynearhim; noinjury. Bottom52%:largeblankcreamnoteboardclippedinsidewoodenframewithinroom,blankwritinginteriorx12–88%,y49–93%. Keepboardpapercompletelyempty,nopawprintinsidewritingarea. Onecoherentdreamyroom notcollage,nohorizontaljoin.24warmforestgreen/russet/brass/creamcoloursandduskbluewindows.Noletters,textorlabels."
+    }
+  ]
+}
+

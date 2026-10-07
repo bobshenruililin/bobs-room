@@ -1,0 +1,877 @@
+/* Discovery scenes share the room's generated surfaces and pixel typography.
+   The numbered coordinates are percentages of the complete 3:2 artwork. */
+.photowall-dialog,
+.fern-dialog,
+.globe-dialog,
+.trunk-dialog,
+.utility-dialog.tv-dialog {
+  width: min(1080px, calc(88svh * 1.5), calc(100vw - 32px));
+  max-height: 90svh;
+  padding: 0;
+  border-radius: 0;
+  background: #18382d;
+  scrollbar-width: thin;
+  scrollbar-color: #b49a63 #233e31;
+}
+.photowall-dialog #story-content,
+.fern-dialog #story-content,
+.globe-dialog #story-content,
+.trunk-dialog #story-content {
+  padding: 0;
+}
+.album-stage,
+.fern-scene,
+.folio-scene,
+.tv-scene {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.5;
+  container-type: inline-size;
+  image-rendering: pixelated;
+  isolation: isolate;
+}
+.album-space button:focus-visible,
+.fern-scene button:focus-visible,
+.folio-scene button:focus-visible,
+.tv-scene button:focus-visible,
+.found-remote:focus-visible {
+  outline: 3px solid #ffe6a5;
+  outline-offset: 3px;
+}
+
+/* Each photograph sits inside its existing illustrated Polaroid. */
+.album-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  user-select: none;
+}
+.album-label {
+  position: absolute;
+  left: 43.9%;
+  top: 13.8%;
+  width: 12.1%;
+  height: 4.5%;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #644b2e;
+  font: clamp(6px, .78cqw, 9px)/1.4 var(--pixel);
+}
+.album-photo {
+  position: absolute;
+  left: var(--photo-x);
+  top: var(--photo-y);
+  width: 15%;
+  height: 18.6%;
+  padding: 0;
+  color: #665235;
+}
+.album-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  image-rendering: auto;
+}
+.album-photo span {
+  position: absolute;
+  top: calc(100% + .65cqw);
+  left: -4%;
+  width: 108%;
+  font: clamp(10px, 1.35cqw, 15px)/1.15 var(--sans);
+  text-align: center;
+}
+.album-photo:hover img,
+.album-single-photo:hover img {
+  filter: brightness(1.08);
+}
+.album-photo:hover,
+.album-single-photo:hover {
+  color: #774c29;
+}
+.album-mobile { display: none; }
+
+/* The fern's postcard and lantern remain part of the painted room. */
+.fern-scene {
+  --fern-card-x: 9%;
+  --fern-card-y: 26%;
+  --fern-card-width: 41%;
+  --fern-card-height: 43%;
+  --fern-lantern-x: 64%;
+  --fern-lantern-y: 30%;
+  --fern-lantern-width: 18%;
+  --fern-lantern-height: 54%;
+  background: url('./assets/art/fern-nook.webp') center/100% 100% no-repeat;
+}
+.fern-postcard {
+  position: absolute;
+  left: var(--fern-card-x);
+  top: var(--fern-card-y);
+  width: var(--fern-card-width);
+  height: var(--fern-card-height);
+  padding: 3.5% 3.1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #5b5134;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a48d5e transparent;
+}
+.fern-postcard h3 {
+  font: 600 clamp(24px, 3.5cqw, 38px)/1.08 var(--sans);
+  letter-spacing: 0;
+  margin: 0 0 1.8cqw;
+}
+.fern-postcard p {
+  font: clamp(16px, 2cqw, 22px)/1.5 var(--sans);
+  margin: 0;
+}
+.fern-lantern {
+  position: absolute;
+  left: var(--fern-lantern-x);
+  top: var(--fern-lantern-y);
+  width: var(--fern-lantern-width);
+  height: var(--fern-lantern-height);
+  padding: 0;
+  color: #ffe1a1;
+}
+.fern-lantern span {
+  position: absolute;
+  left: 50%;
+  bottom: -8%;
+  width: max-content;
+  max-width: 135%;
+  transform: translateX(-50%);
+  font: clamp(7px, .9cqw, 10px)/1.8 var(--pixel);
+  text-align: center;
+  text-shadow: 2px 2px #142c23, -1px -1px #142c23;
+}
+.fern-lantern:hover,
+.fern-lantern:focus-visible { color: #fff4cb; }
+.fern-fireflies {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.fern-firefly {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: auto;
+  color: #ffe48e;
+  font: clamp(24px, 3.5cqw, 38px)/1 var(--pixel);
+  text-shadow: 3px 3px #655322, 0 0 16px #ffdc6599;
+}
+.fern-firefly:hover { color: #fff8d1; }
+.fern-status {
+  position: absolute;
+  left: 10%;
+  bottom: 7%;
+  width: 47%;
+  font: clamp(12px, 1.6cqw, 17px)/1.3 var(--sans);
+  color: #f5dfab;
+  text-shadow: 2px 2px #19382a;
+}
+.fern-photo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  color: #665334;
+  text-align: left;
+}
+.fern-photo img {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+  object-fit: cover;
+  image-rendering: auto;
+}
+.fern-photo span { font: clamp(12px, 1.6cqw, 17px)/1.2 var(--sans); }
+
+/* The globe and field trunk have a short, two-page note on real paper. */
+.folio-scene {
+  --folio-paper-x: 56%;
+  --folio-paper-y: 15%;
+  --folio-paper-width: 34%;
+  --folio-paper-height: 65%;
+  --folio-first-x: 8%;
+  --folio-first-y: 17%;
+  --folio-first-width: 37%;
+  --folio-first-height: 43%;
+  --folio-second-x: 9%;
+  --folio-second-y: 68%;
+  --folio-second-width: 36%;
+  --folio-second-height: 17%;
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.globe-scene {
+  --folio-first-x: 13%;
+  --folio-first-y: 23%;
+  --folio-first-width: 34%;
+  --folio-first-height: 46%;
+  --folio-second-x: 9%;
+  --folio-second-y: 82%;
+  --folio-second-width: 34%;
+  --folio-second-height: 14%;
+  background-image: url('./assets/art/globe-scene.webp');
+}
+.trunk-scene {
+  --folio-first-x: 25.1%;
+  --folio-first-y: 51.8%;
+  --folio-first-width: 14.4%;
+  --folio-first-height: 18.9%;
+  --folio-second-x: 6.8%;
+  --folio-second-y: 50.7%;
+  --folio-second-width: 17.8%;
+  --folio-second-height: 22%;
+  background-image: url('./assets/art/trunk-scene.webp');
+}
+.folio-paper {
+  position: absolute;
+  left: var(--folio-paper-x);
+  top: var(--folio-paper-y);
+  width: var(--folio-paper-width);
+  height: var(--folio-paper-height);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2.7% 2.2%;
+  color: #5c5136;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #ad986b transparent;
+}
+.folio-paper .eyebrow {
+  padding: 0;
+  margin: 0;
+  color: #80673e;
+  font: clamp(7px, .9cqw, 10px)/1.65 var(--pixel);
+}
+.folio-paper h3 {
+  font: 600 clamp(23px, 3.05cqw, 34px)/1.12 var(--sans);
+  letter-spacing: 0;
+  margin: 1.6cqw 0 1.7cqw;
+}
+.folio-paper > p:not(.eyebrow) {
+  font: clamp(16px, 1.9cqw, 21px)/1.45 var(--sans);
+  margin: 0 0 1.6cqw;
+}
+.folio-page {
+  margin-top: auto;
+  margin-left: 5.5cqw;
+  padding-top: 1.6cqw;
+  font: clamp(7px, .8cqw, 9px)/1.7 var(--pixel);
+  color: #88734a;
+}
+.folio-paper a {
+  margin-top: 1cqw;
+  margin-left: 5.5cqw;
+  font: clamp(14px, 1.6cqw, 18px)/1.5 var(--sans);
+  color: #4e6539;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.folio-objects {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.folio-objects button {
+  position: absolute;
+  pointer-events: auto;
+  padding: 0;
+  color: #624c2d;
+}
+.folio-first {
+  left: var(--folio-first-x);
+  top: var(--folio-first-y);
+  width: var(--folio-first-width);
+  height: var(--folio-first-height);
+}
+.folio-second {
+  left: var(--folio-second-x);
+  top: var(--folio-second-y);
+  width: var(--folio-second-width);
+  height: var(--folio-second-height);
+}
+.folio-objects button span {
+  position: absolute;
+  bottom: -6%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 100%;
+  padding: 12px 22px;
+  font: clamp(7px, .9cqw, 10px)/1.6 var(--pixel);
+  text-align: center;
+  background: url('./assets/art/note-paper.webp') center/125% 140% no-repeat;
+}
+.folio-objects button[aria-pressed=true] span { color: #284b32; }
+.folio-objects button:hover span { color: #975329; }
+.trunk-scene .folio-objects button { min-width: 44px; min-height: 44px; }
+.trunk-scene .folio-objects button span { max-width: 210%; }
+.trunk-scene .folio-first span { bottom: -48%; }
+.trunk-scene .folio-second span { bottom: 102%; }
+.trunk-scene .folio-page,
+.trunk-scene .folio-paper a { margin-left: 0; }
+
+/* TV screen measurements can be tuned without disturbing the controls. */
+.utility-dialog.tv-dialog {
+  container-type: inline-size;
+  width: min(1360px, calc(92svh * 1.5), calc(100vw - 16px));
+  max-height: 94svh;
+}
+.tv-scene {
+  --tv-screen-x: 21.354;
+  --tv-screen-y: 18.652;
+  --tv-screen-width: 52.734;
+  --tv-screen-height: 52.539;
+  --tv-dial-x: 82;
+  --tv-dial-width: 8.5;
+  --tv-dial-height: 14;
+  --tv-next-y: 33.1;
+  --tv-power-y: 54.3;
+  --tv-screen-shape: polygon(12% 0, 90% 0, 90% 1%, 94% 1%, 94% 2.5%, 97% 2.5%, 97% 5%, 99% 5%, 99% 11%, 100% 11%, 100% 82%, 99% 82%, 99% 89%, 97% 89%, 97% 94%, 94% 94%, 94% 97%, 89% 97%, 89% 99%, 84% 99%, 84% 100%, 17% 100%, 17% 99%, 10% 99%, 10% 97%, 5% 97%, 5% 94%, 3% 94%, 3% 90%, 1% 90%, 1% 83%, 0 83%, 0 12%, 1% 12%, 1% 8%, 2% 8%, 2% 5%, 3% 5%, 3% 3.5%, 5% 3.5%, 5% 2%, 7% 2%, 7% 1%, 12% 1%);
+  background: url('./assets/art/tv-set.webp') center/100% 100% no-repeat;
+}
+.tv-screen {
+  position: absolute;
+  left: calc(var(--tv-screen-x) * 1%);
+  top: calc(var(--tv-screen-y) * 1%);
+  width: calc(var(--tv-screen-width) * 1%);
+  height: calc(var(--tv-screen-height) * 1%);
+  overflow: hidden;
+  clip-path: var(--tv-screen-shape);
+  border-radius: 0;
+  background: #142c27;
+}
+.tv-picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: 300% 200%;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+}
+.tv-channel-label {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  max-width: 90%;
+  color: #fff3c1;
+  font: clamp(8px, 1.05cqw, 12px)/1.5 var(--pixel);
+  text-shadow: 2px 2px #123329, -1px -1px #123329;
+}
+.tv-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3% 5% 4%;
+  max-height: 47%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d9be7e #18382d;
+  background: #102d26dc;
+  color: #f3e7bb;
+}
+.tv-dialog .tv-caption p {
+  margin: 0 0 6px;
+  font: clamp(13px, 1.7cqw, 19px)/1.3 var(--sans);
+  color: inherit;
+}
+.tv-caption #tv-visit {
+  display: inline-block;
+  max-width: 100%;
+  padding: 0;
+  color: #ffdc93;
+  font: clamp(13px, 1.65cqw, 18px)/1.4 var(--sans);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.tv-off {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 10%;
+  background: url('./assets/art/tv-set.webp') 45.179% 39.3%/189.63% 190.335% no-repeat;
+  color: #e2c993;
+  font: clamp(8px, 1.1cqw, 12px)/1.8 var(--pixel);
+  text-align: center;
+  text-shadow: 2px 2px #183427;
+}
+.tv-dial {
+  position: absolute;
+  left: calc(var(--tv-dial-x) * 1%);
+  width: max(44px, calc(var(--tv-dial-width) * 1%));
+  height: max(44px, calc(var(--tv-dial-height) * 1%));
+  transform: translate(-50%, -50%);
+  padding: 0;
+  color: #f9df9e;
+}
+.tv-next { top: calc(var(--tv-next-y) * 1%); }
+.tv-power { top: calc(var(--tv-power-y) * 1%); }
+.tv-dial span {
+  position: absolute;
+  left: -20%;
+  top: calc(100% + 5px);
+  width: 140%;
+  font: clamp(7px, .9cqw, 10px)/1.5 var(--pixel);
+  text-shadow: 2px 2px #273629;
+  white-space: nowrap;
+}
+.tv-dial:hover { color: #fff5c5; }
+.tv-guide {
+  position: absolute;
+  left: 25%;
+  top: 84%;
+  width: 54%;
+  display: flex;
+  align-items: center;
+  gap: 8px 14px;
+  flex-wrap: wrap;
+  color: #f1d7a0;
+  font: clamp(7px, .75cqw, 8px)/1.6 var(--pixel);
+  text-shadow: 2px 2px #243628;
+}
+.tv-guide > span { white-space: nowrap; }
+.tv-guide button {
+  margin-left: auto;
+  padding: 5px 0;
+  color: #f4dda9;
+  font: clamp(13px, 1.6cqw, 17px)/1.5 var(--sans);
+  text-shadow: inherit;
+}
+
+/* The generated remote at 28% / 57% of the sofa is a separate hit target. */
+.found-remote {
+  position: absolute;
+  left: 46%;
+  top: 51.5%;
+  width: 18%;
+  height: 12%;
+  padding: 0;
+  z-index: 2;
+}
+.found-remote:hover { outline: 2px dashed #ffda85; outline-offset: -3px; }
+.sofa-stage .cushion-note {
+  left: 8%;
+  top: 66%;
+  width: 84%;
+  max-height: 32%;
+  padding: 5% 9%;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #a18c60 transparent;
+  background-position: center;
+  background-size: 125% 140%;
+}
+.sofa-stage .cushion-note > span { font: 7px/1.6 var(--pixel); }
+.sofa-stage .cushion-note p {
+  margin: 7px 0 8px;
+  font: 25px/1.05 var(--sans);
+}
+.sofa-stage .cushion-note button {
+  display: block;
+  padding: 3px 0;
+  text-align: left;
+  font: 15px/1.2 var(--sans);
+}
+
+@media (max-width: 760px) {
+  .photowall-dialog,
+  .fern-dialog,
+  .globe-dialog,
+  .trunk-dialog,
+  .utility-dialog.tv-dialog {
+    width: calc(100vw - 24px);
+    max-height: 90svh;
+  }
+
+  .album-stage { display: none; }
+  .album-space {
+    padding: 45px 10px 11px;
+    background: url('./assets/art/photo-album.webp') 90% 3%/320% auto no-repeat;
+  }
+  .album-mobile { display: block; }
+  .album-mobile-frame {
+    position: relative;
+    width: min(100%, 440px, calc(86svh - 124px));
+    aspect-ratio: 1;
+    margin: 0 auto;
+    container-type: inline-size;
+    image-rendering: pixelated;
+    /* First Polaroid: x296, y203, 280 × 280 inside the 1536 × 1024 art. */
+    background: url('./assets/art/photo-album.webp') 23.567% 27.285%/548.571% 365.714% no-repeat;
+  }
+  .album-single-photo {
+    position: absolute;
+    left: 6.4%;
+    top: 10.4%;
+    width: 82.9%;
+    height: 67.1%;
+    padding: 0;
+  }
+  .album-single-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+  }
+  .album-single-caption {
+    position: absolute;
+    left: 6.4%;
+    top: 79.5%;
+    width: 82.9%;
+    height: 15%;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    color: #604d32;
+    font: clamp(15px, 5cqw, 21px)/1.2 var(--sans);
+    text-align: center;
+  }
+  .album-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    padding-top: 8px;
+    color: #ffe3a8;
+    text-shadow: 2px 2px #253b2c;
+    font: 10px/1.5 var(--pixel);
+  }
+  .album-navigation button {
+    width: 48px;
+    height: 44px;
+    padding: 0;
+    color: inherit;
+    text-shadow: inherit;
+    font: 30px/1 var(--sans);
+  }
+
+  .fern-scene,
+  .folio-scene {
+    aspect-ratio: auto;
+    padding-top: 66.6667%;
+    background-position: center top;
+    background-size: 100% auto;
+  }
+  .fern-postcard {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    min-height: 256px;
+    padding: 42px 43px 72px;
+    overflow: visible;
+    background: url('./assets/art/note-paper.webp') center/118% 120% no-repeat;
+  }
+  .fern-postcard h3 { font-size: 29px; margin: 0 0 15px; }
+  .fern-postcard p { font-size: 18px; line-height: 1.45; }
+  .fern-lantern {
+    left: var(--fern-lantern-x);
+    top: 20cqw;
+    width: var(--fern-lantern-width);
+    height: 36cqw;
+  }
+  .fern-lantern span { bottom: -12%; font-size: 7px; }
+  .fern-fireflies { height: 66.6667cqw; bottom: auto; }
+  .fern-firefly { width: 46px; height: 46px; font-size: 26px; }
+  .fern-status {
+    left: 43px;
+    bottom: 30px;
+    width: calc(100% - 86px);
+    color: #827047;
+    font-size: 14px;
+    text-shadow: none;
+  }
+  .fern-photo { height: 230px; gap: 12px; }
+  .fern-photo span { font-size: 15px; }
+
+  .folio-paper {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    min-height: 340px;
+    padding: 43px 44px 49px;
+    overflow: visible;
+    background: url('./assets/art/note-paper.webp') center/118% 120% no-repeat;
+  }
+  .folio-paper .eyebrow { font-size: 8px; line-height: 1.6; }
+  .folio-paper h3 { font-size: 30px; margin: 16px 0; }
+  .folio-paper > p:not(.eyebrow) { font-size: 18px; line-height: 1.4; margin-bottom: 17px; }
+  .folio-page { margin-left: 0; padding-top: 10px; font-size: 8px; }
+  .folio-paper a { margin-top: 9px; margin-left: 0; font-size: 17px; }
+  .folio-objects { height: 66.6667cqw; bottom: auto; }
+  .folio-objects button span { padding: 10px 17px; font-size: 7px; }
+
+  .utility-dialog.tv-dialog { width: calc(100vw - 8px); max-height: 94svh; }
+  .tv-scene { aspect-ratio: 1.5; padding: 0; }
+  .tv-channel-label {
+    left: 8%;
+    top: 6%;
+    max-width: 84%;
+    font: 10px/1.1 var(--sans);
+  }
+  .tv-caption {
+    padding: 5px 8% 7px;
+    max-height: 61%;
+    color: #f3e7bb;
+    background: #102d26e8;
+  }
+  .tv-dialog .tv-caption p { font-size: 13px; line-height: 1.15; margin-bottom: 5px; }
+  .tv-caption #tv-visit { font-size: 13px; line-height: 1.2; color: #ffdc93; }
+  .tv-off {
+    padding: 5%;
+    font-size: 8px;
+  }
+  .tv-dial span { top: calc(100% + 2px); font-size: 6px; }
+  .tv-guide {
+    top: 84%;
+    left: 26%;
+    width: 55%;
+    gap: 2px 7px;
+    font-size: 6px;
+    line-height: 1.5;
+  }
+  .tv-guide button { font-size: 12px; padding: 0; }
+
+  .sofa-stage .cushion-note {
+    left: 7%;
+    top: 65%;
+    width: 86%;
+    max-height: 34%;
+    padding: 17px 31px;
+  }
+  .sofa-stage .cushion-note p { margin: 4px 0 5px; font-size: 24px; }
+  .sofa-stage .cushion-note > span { font-size: 6px; }
+  .sofa-stage .cushion-note button { padding: 3px 0; font-size: 14px; }
+}
+
+@media (max-width: 380px) {
+  .folio-paper { padding: 39px 36px 43px; }
+  .folio-paper h3 { font-size: 27px; }
+  .folio-paper > p:not(.eyebrow) { font-size: 17px; }
+  .fern-postcard { padding-right: 36px; padding-left: 36px; }
+  .fern-status { left: 36px; width: calc(100% - 72px); }
+  .sofa-stage .cushion-note { padding-right: 25px; padding-left: 25px; }
+}
+
+/* Phone scenes are complete portrait illustrations: the paper is in the room. */
+@media (max-width: 760px) {
+  .fern-dialog,
+  .globe-dialog,
+  .trunk-dialog {
+    width: min(calc(100vw - 16px), calc(90svh * .666667));
+    max-height: 92svh;
+  }
+  .fern-scene,
+  .folio-scene {
+    aspect-ratio: 2 / 3;
+    height: auto;
+    padding: 0;
+    background-position: center;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+  .fern-scene {
+    --fern-card-x: 16%;
+    --fern-card-y: 49%;
+    --fern-card-width: 68%;
+    --fern-card-height: 29%;
+    --fern-lantern-x: 55%;
+    --fern-lantern-y: 10.5%;
+    --fern-lantern-width: 26%;
+    --fern-lantern-height: 31.5%;
+    background-image: url('./assets/art/fern-phone.webp');
+  }
+  .fern-postcard {
+    position: absolute;
+    left: var(--fern-card-x);
+    top: var(--fern-card-y);
+    width: var(--fern-card-width);
+    height: var(--fern-card-height);
+    min-height: 0;
+    padding: 0;
+    background: none;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  .fern-postcard h3 {
+    font-size: clamp(25px, 6.6cqw, 34px);
+    line-height: 1.08;
+    margin: 0 0 12px;
+  }
+  .fern-postcard p { font-size: clamp(15px, 4.5cqw, 19px); line-height: 1.35; }
+  .fern-photo { height: 100%; min-height: 0; gap: 8px; }
+  .fern-photo span { font-size: 15px; line-height: 1.15; }
+  .fern-lantern {
+    left: var(--fern-lantern-x);
+    top: var(--fern-lantern-y);
+    width: var(--fern-lantern-width);
+    height: var(--fern-lantern-height);
+  }
+  .fern-lantern span { bottom: 2%; font-size: 7px; }
+  .fern-fireflies { inset: 0; height: 100%; }
+  .fern-firefly[data-firefly="0"] { left: 8% !important; top: 5.5% !important; }
+  .fern-firefly[data-firefly="1"] { left: 54% !important; top: 10% !important; }
+  .fern-firefly[data-firefly="2"] { left: 89% !important; top: 24% !important; }
+  .fern-status {
+    left: 17%;
+    bottom: 14.8%;
+    width: 66%;
+    max-height: 7%;
+    font-size: 15px;
+    line-height: 1.12;
+    overflow: auto;
+    color: #77623b;
+    text-shadow: none;
+  }
+  .globe-scene {
+    --folio-paper-x: 17%;
+    --folio-paper-y: 48.5%;
+    --folio-paper-width: 69%;
+    --folio-paper-height: 39%;
+    --folio-first-x: 34%;
+    --folio-first-y: 6%;
+    --folio-first-width: 41%;
+    --folio-first-height: 27%;
+    --folio-second-x: 6%;
+    --folio-second-y: 32%;
+    --folio-second-width: 36%;
+    --folio-second-height: 9%;
+    background-image: url('./assets/art/globe-phone.webp');
+  }
+  .trunk-scene {
+    --folio-paper-x: 20.5%;
+    --folio-paper-y: 45%;
+    --folio-paper-width: 59%;
+    --folio-paper-height: 43%;
+    --folio-first-x: 51%;
+    --folio-first-y: 22%;
+    --folio-first-width: 18%;
+    --folio-first-height: 11.6%;
+    --folio-second-x: 21%;
+    --folio-second-y: 22%;
+    --folio-second-width: 26%;
+    --folio-second-height: 12%;
+    background-image: url('./assets/art/trunk-phone.webp');
+  }
+  .folio-paper {
+    position: absolute;
+    left: var(--folio-paper-x);
+    top: var(--folio-paper-y);
+    width: var(--folio-paper-width);
+    height: var(--folio-paper-height);
+    min-height: 0;
+    display: block;
+    padding: 0 3px 4px 0;
+    background: none;
+    overflow: auto;
+    overscroll-behavior: contain;
+  }
+  .folio-paper .eyebrow { font-size: 7px; line-height: 1.3; }
+  .folio-paper h3 {
+    font-size: 19px;
+    line-height: 1.08;
+    margin: 7px 0 8px;
+  }
+  .folio-paper > p:not(.eyebrow) {
+    font-size: 15px;
+    line-height: 1.25;
+    margin: 0 0 8px;
+  }
+  .folio-page {
+    display: block;
+    margin: 8px 0 0;
+    padding: 0;
+    font-size: 7px;
+    line-height: 1.4;
+  }
+  .folio-paper a {
+    display: inline-block;
+    margin: 7px 0 0;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+  .folio-objects { inset: 0; height: 100%; }
+  .folio-objects button span { padding: 7px 12px; font-size: 7px; }
+  .trunk-scene .folio-objects button span { max-width: 180%; }
+  .trunk-scene .folio-first span { bottom: -22%; }
+  .trunk-scene .folio-second span { bottom: 100%; }
+}
+
+/* A tall complete TV gives phone broadcasts room for image and subtitles. */
+@media (max-width: 760px) {
+  .utility-dialog.tv-dialog {
+    width: min(calc(100vw - 8px), calc(92svh * .666667));
+    max-height: 94svh;
+  }
+  .tv-scene {
+    --tv-screen-x: 19.238;
+    --tv-screen-y: 15.56;
+    --tv-screen-width: 55.469;
+    --tv-screen-height: 53.06;
+    --tv-dial-x: 83.9;
+    --tv-dial-width: 12;
+    --tv-dial-height: 9.3;
+    --tv-next-y: 31.6;
+    --tv-power-y: 49.5;
+    aspect-ratio: 2 / 3;
+    background-image: url('./assets/art/tv-phone.webp');
+    background-size: 100% 100%;
+    background-position: center;
+  }
+  .tv-picture { height: 50%; }
+  .tv-channel-label {
+    top: 4%;
+    left: 8%;
+    max-width: 84%;
+    font: 12px/1.15 var(--sans);
+  }
+  .tv-caption {
+    max-height: 60%;
+    padding: 8px 7% 13px;
+    background: #10253fe8;
+  }
+  .tv-dialog .tv-caption p {
+    font-size: 15px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+  }
+  .tv-caption #tv-visit { font-size: 15px; line-height: 1.2; }
+  .tv-off {
+    background-image: url('./assets/art/tv-phone.webp');
+    background-size: 180.282% 188.466%;
+    background-position: 43.2% 33.15%;
+    font-size: 10px;
+  }
+  .tv-dial span { top: calc(100% + 3px); font-size: 7px; }
+  .tv-guide {
+    left: 30%;
+    top: 81.5%;
+    width: 49%;
+    font-size: 6px;
+    line-height: 1.6;
+  }
+  .tv-guide button { min-height: 44px; font-size: 14px; }
+}

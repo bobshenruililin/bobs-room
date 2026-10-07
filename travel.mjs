@@ -5,8 +5,12 @@ export const TRAVELS=[
   ['RU','Russia'],['FI','Finland'],['SE','Sweden'],['NO','Norway'],
   ['DE','Germany'],['FR','France'],['CH','Switzerland'],['ES','Spain'],
   ['GB','UK'],['TR','Turkey'],
+  ['US','US'],['CA','Canada'],['AU','Australia'],['KR','South Korea'],
+  ['ID','Indonesia'],['KE','Kenya'],['EG','Egypt'],['ZA','South Africa'],
+  ['NA','Namibia'],['AR','Argentina'],['PE','Peru'],
 ];
 export const COLOURED_PLACES=new Set(TRAVELS.map(([code])=>code).filter(code=>!['SG','HK'].includes(code)));
+export const MAP_DESCRIPTION=`Pixel world map highlighting ${TRAVELS.filter(([code])=>COLOURED_PLACES.has(code)).map(([,name])=>name).join(', ')}. Singapore and Hong Kong are listed but unmarked at this scale.`;
 let mapPromise;
 export const loadMap=()=>mapPromise??=fetch(new URL('./assets/maps/world-pixels.json',import.meta.url)).then(r=>{if(!r.ok)throw new Error('The atlas could not be opened.');return r.json();}).catch(error=>{mapPromise=null;throw error;});
 export function drawTravelMap(canvas,data){
@@ -24,7 +28,7 @@ export function drawTravelMap(canvas,data){
   }
 }
 export function mountTravel(root){
-  root.innerHTML=`<div class="travel-space"><p class="eyebrow">A LITTLE ATLAS · STILL GROWING</p><h2 id="utility-heading">Places I’ve been.</h2><p class="travel-intro">I’m fascinated by maps. Here’s a little colour from my travels.</p><figure class="travel-chart"><canvas id="travel-map" role="img" aria-label="Pixel world map highlighting Malaysia, Thailand, Cambodia, China, Taiwan, Japan, Russia, Finland, Sweden, Norway, Germany, France, Switzerland, Spain, the UK, and Turkey."></canvas><figcaption><span><i></i> A place I’ve been</span><span><i></i> More world to discover</span></figcaption></figure><p class="travel-status" role="status">Unfolding the atlas…</p><p class="travel-places">${TRAVELS.map(([,name])=>name).join(' · ')}</p><p class="travel-footnote">Singapore and Hong Kong are in my travel list, left unmarked at this scale.</p><a class="travel-source" href="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/" target="_blank" rel="noopener">Map geography · Natural Earth ↗</a></div>`;
+  root.innerHTML=`<div class="travel-space"><p class="eyebrow">A LITTLE ATLAS · STILL GROWING</p><h2 id="utility-heading">Places I’ve been.</h2><p class="travel-intro">I’m fascinated by maps. Here’s a little colour from my travels.</p><figure class="travel-chart"><canvas id="travel-map" role="img" aria-label="${MAP_DESCRIPTION}"></canvas><figcaption><span><i></i> A place I’ve been</span><span><i></i> More world to discover</span></figcaption></figure><p class="travel-status" role="status">Unfolding the atlas…</p><p class="travel-places">${TRAVELS.map(([,name])=>name).join(' · ')}</p><p class="travel-footnote">Singapore and Hong Kong are in my travel list, left unmarked at this scale.</p><a class="travel-source" href="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/" target="_blank" rel="noopener">Map geography · Natural Earth ↗</a></div>`;
   let disposed=false;
   loadMap().then(data=>{if(disposed)return;drawTravelMap(root.querySelector('#travel-map'),data);root.querySelector('.travel-status').hidden=true;}).catch(()=>{if(!disposed)root.querySelector('.travel-status').textContent='The atlas is taking a little longer. Close and open it again to retry.';});
   return()=>{disposed=true;};

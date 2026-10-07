@@ -1,5 +1,6 @@
 /* Preserve the approved paper; bring its entire note inward by ten percent. */
 .contact-dialog .contact-note{transform:scale(.9);transform-origin:50% 35%}
+.workshop-dialog #utility-content{transform:scale(.9);transform-origin:50% 50%}
 :is(.utility-dialog,.object-dialog).travel-dialog{width:min(1060px,max(540px,calc((92svh - 300px)*2)),calc(100vw - 24px));padding:30px 38px 26px;background:#e2cd99 url('./assets/art/note-paper.webp') center/155% 200% no-repeat;max-height:92svh;color:#354c3f}
 .travel-space{text-align:center}
 .travel-dialog #story-content{padding:0}

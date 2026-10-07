@@ -45,9 +45,9 @@ The art inventory includes complete desktop/phone compositions for the sofa, dra
 
 ## Publishing
 
-The intended public repository is `bobshenruililin/bobs-room`; the expected GitHub Pages address is [bobshenruililin.github.io/bobs-room/](https://bobshenruililin.github.io/bobs-room/). Deployment has not yet been verified. These are the intended destination and URL, not a claim that the site is live.
+The public repository is [bobshenruililin/bobs-room](https://github.com/bobshenruililin/bobs-room). Visit the live room at [bobshenruililin.github.io/bobs-room/](https://bobshenruililin.github.io/bobs-room/). GitHub Pages deployment and the published room were verified on 7 October 2026.
 
-The repository root is the static site and includes `.nojekyll`. After reviewing, committing, and pushing this folder to the intended repository, configure GitHub Pages to deploy from the `main` branch and `/ (root)`. No package publishing, compilation step, or custom domain is required. The `private` field in `package.json` prevents accidental npm publication; it does not set the GitHub repository’s visibility.
+The repository root is the static site and includes `.nojekyll`. GitHub Pages deploys from the `main` branch and `/ (root)`; pushing changes to `main` publishes an update. No package publishing, compilation step, or custom domain is required. The `private` field in `package.json` prevents accidental npm publication; it does not set the GitHub repository’s visibility.
 
 Preserve relative asset/module links so the site works under `/bobs-room/`; if the destination changes, update the canonical and social-sharing URLs in `index.html`. Verify the published page, its CV, fonts, images, and module requests after deployment.
 

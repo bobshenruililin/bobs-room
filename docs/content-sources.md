@@ -25,7 +25,7 @@ The content revision of 7 October 2026 uses the published biography, the one-pag
 | Lantern fern | A short discovery and a view of the existing sea photograph | Fictional interaction; public photograph |
 | Duoji | His identity/name, overconfidence around bigger dogs and the ear-bite incident, and his treatment of dog plushies | Direct instruction |
 | Go floor board | Bob’s enjoyment of Go; a local two-player practice board | Direct instruction; fictional game presentation |
-| Atlas beside the globe | Bob’s fascination with maps and his twenty-nine-place travel list | Direct instruction; Natural Earth geography |
+| Atlas beside the globe | Bob’s fascination with maps and his thirty-two-place travel list | Direct instruction; Natural Earth geography |
 | TV: personal interests | Agency, the LEGO Typewriter, Doraemon and the Anywhere Door, a curated gadget note, fine dining, and Gundam | Direct personal reply; official TV Asahi descriptions for the curated gadget note |
 
 For the TV’s six public-CV channels, the verified subjects are:
@@ -55,7 +55,7 @@ The following facts and creative preferences were supplied directly by Bob for t
 - Fine dining and Gundam are among his brief bursts of enthusiasm, described in his reply as “three-minute heat.” No restaurant preferences, specific Gundam models, or collection are inferred.
 - He has lived for years in Shanghai, Singapore, and Hong Kong, and calls all three home.
 - He loves Go and requested a floor-board discovery; this does not establish a rank, competition history, or playing strength. He requested a falling-block game for the arcade; the implementation is titled Moonlight Blocks.
-- He is fascinated by maps and supplied these visited places: Singapore, Malaysia, Thailand, Cambodia, China, Hong Kong, Taiwan, Japan, Russia, Finland, Sweden, Norway, Germany, France, Switzerland, Spain, UK, and Turkey. He later added brief visits to the US, Canada, Australia, South Korea, Indonesia, Kenya, Egypt, South Africa, Namibia, Argentina, and Peru, bringing the list to twenty-nine places. This does not establish travel dates, routes, precise duration, or residence.
+- He is fascinated by maps and supplied these visited places: Singapore, Malaysia, Thailand, Cambodia, China, Hong Kong, Taiwan, Japan, Russia, Finland, Sweden, Norway, Germany, France, Switzerland, Spain, UK, and Turkey. He later added brief visits to the US, Canada, Australia, South Korea, Indonesia, Kenya, Egypt, South Africa, Namibia, Argentina, and Peru, followed by childhood visits to Vietnam, Austria, and Italy, bringing the list to thirty-two places. This does not establish travel dates, routes, precise duration, or residence.
 - **Crossing Lives** may be named as an ongoing pixel-world experiment. No further private project material is approved for this site.
 
 The apartment, animal visitors, ambient dialogue, hidden discoveries, and arcade are fictional presentation elements. They should not be read as evidence of a real apartment, event, or research finding. Generated city scenes are illustrations, not documentary photographs.

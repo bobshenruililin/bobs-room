@@ -10,9 +10,9 @@ test('the geographic raster has complete rows and valid country indexes',()=>{
  for(const row of grid){assert.equal(row.length,data.width);assert.ok(row.every(id=>id>=0&&id<data.countries.length));}
 });
 test('travel colouring matches Bob’s list and does not enlarge Singapore or Hong Kong',()=>{
- assert.equal(TRAVELS.length,29);assert.equal(new Set(TRAVELS.map(p=>p[0])).size,29);
+ assert.equal(TRAVELS.length,32);assert.equal(new Set(TRAVELS.map(p=>p[0])).size,32);
  for(const [code] of TRAVELS)assert.ok(data.countries.some(p=>p.code===code),code);
- assert.equal(COLOURED_PLACES.size,27);assert.ok(!COLOURED_PLACES.has('SG'));assert.ok(!COLOURED_PLACES.has('HK'));
+ assert.equal(COLOURED_PLACES.size,30);assert.ok(!COLOURED_PLACES.has('SG'));assert.ok(!COLOURED_PLACES.has('HK'));
  assert.match(MAP_DESCRIPTION,/South Korea/);assert.match(MAP_DESCRIPTION,/Namibia/);
  assert.match(MAP_DESCRIPTION,/Singapore and Hong Kong are listed but unmarked/);
 });

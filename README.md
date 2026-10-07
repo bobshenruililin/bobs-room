@@ -49,7 +49,7 @@ The art inventory includes complete desktop/phone compositions for the sofa, dra
 
 ## Updating the travel map
 
-Edit `TRAVELS` in `travel.mjs` to update the list. The current list has twenty-nine places, with twenty-seven coloured on the map; Singapore and Hong Kong remain listed without special markers or enlargement at this scale. Other listed places are coloured gold.
+Edit `TRAVELS` in `travel.mjs` to update the list. The current list has thirty-two places, with thirty coloured on the map; Singapore and Hong Kong remain listed without special markers or enlargement at this scale. Other listed places are coloured gold.
 
 The map is a fixed **480 × 240** geographic grid derived from Natural Earth country polygons, not generated artwork. Changing the travel list does not require rebuilding the geography. To regenerate the underlying grid, download the GeoJSON linked in `assets/maps/provenance.json`, then run:
 

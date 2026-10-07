@@ -8,6 +8,7 @@ export const TRAVELS=[
   ['US','US'],['CA','Canada'],['AU','Australia'],['KR','South Korea'],
   ['ID','Indonesia'],['KE','Kenya'],['EG','Egypt'],['ZA','South Africa'],
   ['NA','Namibia'],['AR','Argentina'],['PE','Peru'],
+  ['VN','Vietnam'],['AT','Austria'],['IT','Italy'],
 ];
 export const COLOURED_PLACES=new Set(TRAVELS.map(([code])=>code).filter(code=>!['SG','HK'].includes(code)));
 export const MAP_DESCRIPTION=`Pixel world map highlighting ${TRAVELS.filter(([code])=>COLOURED_PLACES.has(code)).map(([,name])=>name).join(', ')}. Singapore and Hong Kong are listed but unmarked at this scale.`;

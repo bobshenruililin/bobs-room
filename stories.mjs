@@ -7,6 +7,7 @@ export const PHOTOS = [
   { src: 'tower', caption: 'Looking up · Suomenlinna', alt: 'Shen sitting in the grass below a tall church tower' },
   { src: 'doorway', caption: 'Through the doorway · Suomenlinna', alt: 'Shen framed by a stone gateway opening onto the water' },
   { src: 'sailboat', caption: 'Between the branches · Suomenlinna', alt: 'A white sailboat seen through branches above the sea' },
+
 ];
 
 // Biographical facts come from Bob's published page, its public CV,
@@ -143,6 +144,22 @@ export const STORIES = [
     ],
     tags: ['Duoji', 'LEGO', 'Doraemon', 'Let’s build'],
     links: [{ label: 'Let’s build something', href: `mailto:${EMAIL}?subject=Let%27s%20build%20something` }],
+  },
+  {
+    id:'travel',number:'11',title:'The folded atlas',name:'Places I’ve been',icon:'globe',
+    marker:{x:431,y:562},approach:{x:510,y:590},
+    eyebrow:'THE LITTLE ATLAS · STILL GROWING',heading:'Places I’ve been.',
+    intro:'I’m fascinated by maps and globes.',
+    paragraphs:['A pixel atlas remembers the places I’ve visited. There is still so much world to discover.'],
+    tags:['Travel','Maps','Curiosity'],
+  },
+  {
+    id:'go',number:'12',title:'The Go board',name:'A quiet game of Go',icon:'game',
+    marker:{x:1042,y:745},approach:{x:1038,y:679},
+    eyebrow:'A QUIET GAME · ONE STONE AT A TIME',heading:'A little game of Go.',
+    intro:'Go is one of my favourite games.',
+    paragraphs:['A small nine-by-nine practice board. Leave a stone, take a breath, and explore a position together.'],
+    tags:['Go','Practice','Two players'],
   },
 ];
 

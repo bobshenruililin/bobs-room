@@ -1,0 +1,26 @@
+{
+  "mode": "built-in image_gen",
+  "asset": "room-v4.png",
+  "reference": "room-v3.png",
+  "visualNotes": {
+    "canvas": [
+      1536,
+      1024
+    ],
+    "atlasCenter": [
+      431,
+      562
+    ],
+    "goBoardCenter": [
+      1042,
+      745
+    ],
+    "changes": [
+      "Removed compass and circular atlas decoration",
+      "Simplified atlas land to broad pixel silhouettes",
+      "Simplified Go grid and enlarged its blocky stones"
+    ],
+    "positions": "Unchanged from room-v3"
+  },
+  "prompt": "Use case: precise-object-edit. Edit target: the provided room-v3.png, 1536x1024 pixel illustration. Preserve the ENTIRE room exactly as shown: all existing furniture, floor, lanterns, plants, rug, city, windows, colors, camera, layout and sizes. Modify ONLY the two small recently added floor props, keeping their exact centers, sizes, ground perspective and restrained contact shadows. FIRST PROP: the folded atlas lying near the left globe, centered (431,562), bounded x369–495,y535–590. DELETE the large circular compass decoration on this atlas completely. Delete ALL circles, compass roses, discs, compass objects, labels and tiny linework from this atlas. It should be a simple low-resolution folded paper map: 2–3 broad aged tan paper panels with only chunky muted blue-green land silhouettes, square stair-step edges and a clear broad paper fold. No accurate tiny geography necessary. NO TEXT, NO CIRCLES, NO COMPASS ANYWHERE ON THIS ATLAS. SECOND PROP: the Go board centered (1042,745), encompassing board and small bowls x971–1101,y706–785. Keep its same physical orientation and tabletop perspective, but REDRAW ONLY THIS BOARD AND ITS BOWLS at much COARSER pixel granularity: a simple 9-by-9 grid with fewer, larger black and ivory stones, all formed from obvious approximately 3x3 image-pixel square clusters. The grid must use chunky stepped pixel lines, no hairlines, no smooth curves, no detailed wood texture. Simple blocky shallow wood edge and low-resolution bowls. Both props currently look like high-resolution miniatures against a pixel room; make them match the coarse pixel blocks of the nearby books, trunk, plant pots and floor. Use a tiny palette of flat color clusters with hard square stair steps, absolutely no antialiasing or fine shading on the two props. Make the two props visually simpler and more pixely, while their placement and the rest of the whole illustration stay unchanged. Do not alter the existing lantern at (1090,790), fern or camera table. Do not add anything else. Preserve 1536x1024."
+}

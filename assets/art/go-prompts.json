@@ -1,0 +1,13 @@
+{
+  "mode": "Built-in imagegen",
+  "assets": [
+    {
+      "asset": "go-floor.png",
+      "prompt": "Use case: stylized-concept. Asset type: transparent sprite for Bob's dreamy pixel-room. Image 1 is STYLE REFERENCE ONLY. Generate one freestanding small Japanese Go board (goban), nine by nine thin grid lines on golden wood with a few black and ivory stones, two wooden stone bowls tucked at its right edge. Camera: elevated three-quarter frontal view exactly like a board resting on the floor of the reference room. Whole board visible. Coarse pixel art, about 64 logical pixels across the board, hard square stepped edges, restrained amber wood, dark pine-green and warm cream palette, lantern glow from upper left. This object will be shown around 100 pixels wide, so use simple chunky readable forms, absolutely no fine dithering or painterly detail. Tight bounding box, modest soft pixel shadow immediately below board only. No floor, no background, no paper, no people, no letters or text. Genuinely transparent background."
+    },
+    {
+      "asset": "go-table.png",
+      "prompt": "Use case: stylized-concept. Asset type: one COMPLETE unstitched portrait Go game tabletop background for a cozy pixel-room webpage. Reference image is mood, lantern lighting and palette only. Composition MUST be flat orthographic overhead, no perspective, portrait 2:3. Entire image is warm walnut tabletop. At the top, a blank wide cream paper label x10–90%, y3–17%. In the middle a perfectly SQUARE golden honeywood board with face spanning x10–90%, y23–76.33%; this face is completely blank, smooth broad pixel wood bands, no grid, no stones, no text (the browser adds a precisely aligned 9x9 interactive grid). A small round wooden bowl of black stones left of the board, a small ivory-stone bowl right, mostly outside the square at its upper corners. Below the board, one large blank cream paper note spanning x8–92%, y80–98%, empty for controls and words. Thin board border with chunky wooden step edges, tiny warm lantern glow upper left, restrained teal green foliage only far corners. Coarse 16-bit pixel art at about 150 logical pixels wide, big hard square pixels, very simple low-detail surfaces, no gradients or antialiasing. This is one seamless still life; all paper and board surfaces belong naturally to the same tabletop. No characters, no words, no numbers, no drawn game grid. Keep the square playable face and two paper surfaces absolutely unobstructed."
+    }
+  ]
+}

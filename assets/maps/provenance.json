@@ -1,0 +1,9 @@
+{
+  "source": "Natural Earth 1:50m Admin 0 – Countries",
+  "license": "Public domain",
+  "url": "https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/",
+  "download": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson",
+  "sha256": "3e458fc036ad0a66411f2c1e6cac49c5d7bfb81cb1123bc513b22511a2b7fdeb",
+  "method": "480 × 240 plate carrée grid; each 0.75° cell receives the polygon containing its geographic centre. Rings use even-odd fill. No generative image processing.",
+  "smallPlaces": "Singapore and Hong Kong are not specially marked or enlarged, as requested. Their names remain in the travel list."
+}

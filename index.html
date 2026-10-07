@@ -11,16 +11,19 @@
   <meta property="og:description" content="A walkable pixel world for Shen Ruililin. Come in, wander a little, and follow your curiosity.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bobshenruililin.github.io/bobs-room/">
-  <meta property="og:image" content="https://bobshenruililin.github.io/bobs-room/assets/art/room-v2.png">
+  <meta property="og:image" content="https://bobshenruililin.github.io/bobs-room/assets/art/room-v4.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./assets/art/bob-emblem.png" type="image/png">
-  <link rel="preload" href="./assets/art/room-v2.webp" as="image" type="image/webp">
+  <link rel="preload" href="./assets/art/room-v4.webp" as="image" type="image/webp">
   <link rel="preload" href="./assets/fonts/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./discoveries.css">
   <link rel="stylesheet" href="./sofa.css">
   <link rel="stylesheet" href="./drawer.css">
   <link rel="stylesheet" href="./tour.css">
+  <link rel="stylesheet" href="./arcade.css">
+  <link rel="stylesheet" href="./go.css">
+  <link rel="stylesheet" href="./personal.css">
 </head>
 <body class="immersive">
   <noscript><style>body.immersive{overflow:auto}body.immersive .site-header{position:static;background:#172b2b;width:100%;padding:18px}body.immersive .game-frame{display:none}body.immersive main.shell{width:calc(100% - 32px)}body.immersive .introduction,body.immersive .room-index,body.immersive .site-footer{display:block}body.immersive .index-list button,#index-toggle,#about-room,#return-room{display:none}body.immersive .introduction{padding-top:25px}</style></noscript>
@@ -59,11 +62,10 @@
       <div class="frame-top"><span><i class="status-dot"></i> SOMEWHERE AFTER SUNSET</span><span class="frame-note">HONG KONG & A LITTLE IMAGINATION</span><button id="help-button" aria-label="How to explore the room">? <span>How to play</span></button></div>
       <div class="world-viewport" id="world-viewport">
         <div class="room-map" id="room-map">
-          <img class="room-art" id="room-art" src="./assets/art/room-v2.webp" width="1536" height="1024" alt="An intimate lantern-lit pixel apartment overlooking a magical harbour: piles of books, a research desk, travel trunk, three arched windows, a photo wall, sofa, arcade, and a green rug. Each object opens a story from Bob’s life." fetchpriority="high" draggable="false">
+          <img class="room-art" id="room-art" src="./assets/art/room-v4.webp" width="1536" height="1024" alt="An intimate lantern-lit pixel apartment overlooking a magical harbour: piles of books, a research desk, travel trunk, three arched windows, a photo wall, sofa, arcade, a folded travel atlas, a Go board, and a green rug. Each object opens a story from Bob’s life." fetchpriority="high" draggable="false">
           <canvas id="world" tabindex="0" aria-label="Walk through the room with arrow keys or W A S D. Press E near a glowing object to read its story. You can also use the room index." aria-describedby="game-instructions"></canvas>
           <div class="hotspots" id="hotspots" aria-label="Objects in the room"></div>
           <button class="builder-invitation" id="builder-invitation"><span class="floor-star">✦</span><strong>LET’S BUILD SOMETHING</strong><small>I’m always up for it. Bring an idea. ↗</small></button>
-          <button class="rug-secret" id="rug-secret" aria-label="Look under the rug"><span>↗</span><small>Something underneath?</small></button>
           <div class="visitor-bubble" id="visitor-bubble" aria-hidden="true">Oh, hello! Make yourself at home.</div>
           <div class="destination" id="destination" aria-hidden="true"></div>
         </div>
@@ -82,7 +84,7 @@
       <div class="game-toolbar">
         <div class="visitor-picker" role="group" aria-label="Choose your visitor"><span class="toolbar-label">YOUR VISITOR</span><button class="visitor-choice selected" data-visitor="fox" aria-pressed="true" title="Explore as a fox"><span class="avatar-thumb fox" aria-hidden="true"></span><span>Fox</span></button><button class="visitor-choice" data-visitor="rabbit" aria-pressed="false" title="Explore as a rabbit"><span class="avatar-thumb rabbit" aria-hidden="true"></span><span>Rabbit</span></button></div>
         <p class="instructions" id="game-instructions"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> walk</span><span><kbd>E</kbd> explore · click to wander</span></p>
-        <button class="memory-count" id="memory-button" aria-label="Open memory journal"><svg><use href="#i-book"/></svg><span><b id="memory-count">0</b><span class="memory-total"> / 10</span><small>little discoveries</small></span></button>
+        <button class="memory-count" id="memory-button" aria-label="Open memory journal"><svg><use href="#i-book"/></svg><span><b id="memory-count">0</b><span class="memory-total"> / 12</span><small>little discoveries</small></span></button>
       </div>
       <div class="touch-controls" id="touch-controls" aria-label="Touch walking controls"><div class="dpad"><button data-direction="up" aria-label="Walk up">↑</button><button data-direction="left" aria-label="Walk left">←</button><span aria-hidden="true">✦</span><button data-direction="right" aria-label="Walk right">→</button><button data-direction="down" aria-label="Walk down">↓</button></div><div><p id="touch-status">Tap an object to explore.</p><button class="touch-explore" id="touch-explore">Explore <span>↗</span></button></div></div>
       <p class="sr-only" id="walk-status" aria-live="polite"></p>
@@ -105,6 +107,8 @@
         <article><span>08 / THE ARCADE</span><h2>The workshop</h2><p>Quantum circuits, MEDocGPT, and a new pixel experiment called Crossing Lives.</p><button data-story="workshop">Visit the workshop ↗</button></article>
         <article><span>09 / THE LANTERN FERN</span><h2>A little wonder</h2><p>A pause along the way. There’s no clock to beat and no right route through the room.</p><button data-story="wonder">Take a small pause ↗</button></article>
         <article><span>10 / DUOJI’S NOOK</span><h2>Small dog, much power</h2><p>Duoji, my mini black Shiba Inu. The name is inspired by Boji from <em>Ranking of Kings</em> — a small body can hold a lot of power.</p><button data-story="duoji">Meet Duoji ↗</button></article>
+        <article><span>11 / THE FOLDED ATLAS</span><h2>Places I’ve been</h2><p>I’m fascinated by maps and globes. A pixel atlas remembers the places I’ve visited.</p><button data-story="travel">Unfold the atlas ↗</button></article>
+        <article><span>12 / THE GO BOARD</span><h2>A quiet game of Go</h2><p>One of my favourite games. Share a small practice board and take it one stone at a time.</p><button data-story="go">Play a little Go ↗</button></article>
       </div>
       <noscript><p>The walking game needs JavaScript. All the summaries above, <a href="./assets/Shen-Ruililin-CV.pdf">my CV</a>, and <a href="mailto:bobshenruililin@gmail.com">my email</a> are available here.</p></noscript>
     </details>

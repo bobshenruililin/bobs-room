@@ -46,19 +46,22 @@ test('damaged, duplicated, or obsolete discoveries cannot break the journal', ()
   assert.deepEqual(safeMemories(['hello','hello','missing',{},'photos'],ids),['hello','photos']);
 });
 
-test('all photographs, fonts, generated assets and CV are served locally', () => {
+test('all photographs, fonts, generated assets, map data and CV are served locally', () => {
   const art = [
-    'room-v2','book','rug','shiba','shiba-closeup','shanghai','singapore','hong-kong',
+    'room-v2','room-v3','room-v4','book','rug','shiba','shiba-closeup','shanghai','singapore','hong-kong',
     'sofa-nook','sofa-closed','sofa-phone-open','sofa-phone-closed',
     'drawer-scene-open','drawer-scene-closed','drawer-phone-open','drawer-phone-closed',
     'duoji-nook','duoji-phone','fern-nook','fern-phone','globe-scene','globe-phone',
     'trunk-scene','trunk-phone','note-paper','arcade-cabinet','photo-album',
     'tv-set','tv-phone','tv-hobbies','tv-detours','bob-emblem',
+    'arcade-blocks','go-floor','go-table',
   ];
   const fonts = ['dm-sans.ttf','fraunces.ttf','fraunces-italic.ttf','silkscreen.ttf','pixelify-sans.ttf'];
   const fontNotices = ['DM-Sans-OFL.txt','Fraunces-OFL.txt','Silkscreen-OFL.txt','Pixelify-Sans-OFL.txt'];
   const paths = [
     'assets/Shen-Ruililin-CV.pdf','assets/art/visitors.png','assets/art/frames.json',
+    'assets/maps/world-pixels.json','assets/maps/provenance.json',
+    'assets/art/arcade-blocks-prompt.json','assets/art/go-prompts.json','assets/art/room-v3-prompt.json','assets/art/room-v4-prompt.json',
     ...art.flatMap(name => ['png','webp'].map(extension => `assets/art/${name}.${extension}`)),
     ...[...fonts,...fontNotices].map(name => `assets/fonts/${name}`),
     ...PHOTOS.map(photo => `assets/photos/${photo.src}.webp`),

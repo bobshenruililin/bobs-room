@@ -7,14 +7,15 @@ export const TOUR_STOPS = [
   { id:'heat', story:'heat', title:'Three parts of one question.', copy:'A research project has more than one part. These folders separate the question, the data, and the purpose. Let’s give each its own moment.', minimumDuration:32000, actions:[[2000,'click','#drawer-handle'],[12000,'click','[data-folder="data"]'],[22000,'click','[data-folder="purpose"]']] },
   { id:'poetry', story:'poetry', title:'A moment with the book.', copy:'The shelf holds two pieces from my writing life. I’ll turn the pages slowly, leaving the titles and their stories to speak for themselves.', minimumDuration:30000, actions:[[10000,'book',2],[20000,'book',4]], mobileActions:[[6000,'book',1],[12000,'book',2],[18000,'book',3],[24000,'book',4],[30000,'book',5]] },
   { id:'weather', story:'weather', title:'A different way to read the sky.', copy:'This globe opens two weather notes. Stay with the first for a moment, then turn toward the second. Each describes a different piece of work.', minimumDuration:26000, actions:[[12000,'click','[data-folio="1"]']] },
+  { id:'travel', story:'travel', title:'A little colour from my travels.', copy:'Maps fascinate me. The gold areas mark places I’ve visited, drawn from real geographic boundaries. There is still so much world to discover.' },
   { id:'fieldwork', story:'fieldwork', title:'Open the field notebook.', copy:'The trunk keeps the field notes together. We’ll open the notebook first, then unfold the map. Give the people and place on these pages a moment.', minimumDuration:26000, actions:[[12000,'click','[data-folio="1"]']] },
   { id:'dialogue', story:'dialogue', title:'The view from home.', copy:'One window, three familiar views. Let’s spend a little time at each before moving on. The postcard on the sill waits for the next stop.', minimumDuration:24000, immediate:['click','[data-city="shanghai"]'], actions:[[8000,'click','[data-city="singapore"]'],[16000,'click','[data-city="hong-kong"]']] },
   { id:'postcard', story:'dialogue', walk:false, title:'A postcard from further north.', copy:'A smaller note, from a little further away. This postcard holds one particular encounter. I’ll leave it open long enough for you to read.', immediate:['click','#nordic-postcard'] },
   { id:'photos', story:'photos', title:'Stay with a frame.', copy:'Six photographs, each with its own view. We’ll turn through the album slowly. If one catches your attention, open it and stay a little longer.', minimumDuration:26000, actions:[[4000,'album',1],[8000,'album',2],[12000,'album',3],[16000,'album',4],[20000,'album',5]] },
-  { id:'workshop', story:'workshop', title:'Your turn, if you like.', copy:'A quick demonstration before you take the controls. Watch for the lanterns and the rain. Touch the game whenever you like; the tour will wait.', minimumDuration:20000, actions:[[2000,'click','#arcade-start'],[4000,'click','[data-arcade-dir="-1"]'],[5000,'click','[data-arcade-dir="-1"]'],[6000,'click','[data-arcade-dir="1"]'],[7000,'click','[data-arcade-dir="1"]'],[8000,'click','[data-arcade-dir="1"]'],[9000,'click','[data-arcade-dir="1"]'],[10000,'click','[data-arcade-dir="-1"]'],[11500,'click','[data-arcade-dir="-1"]'],[14000,'pause-game']] },
+  { id:'workshop', story:'workshop', title:'Your turn, if you like.', copy:'A quick demonstration before you take the controls. Turn the blocks and complete a row. Touch the game whenever you like; the tour will wait.', minimumDuration:20000, actions:[[2000,'click','#arcade-start'],[4000,'click','[data-arcade-dir="-1"]'],[5000,'click','[data-arcade-dir="-1"]'],[6000,'click','[data-arcade-action="rotate"]'],[7000,'click','[data-arcade-dir="1"]'],[8000,'click','[data-arcade-dir="1"]'],[9000,'click','[data-arcade-dir="1"]'],[10000,'click','[data-arcade-action="drop"]'],[11500,'click','[data-arcade-dir="-1"]'],[14000,'pause-game']] },
   { id:'workshop-notes', story:'workshop', walk:false, title:'On the workbench.', copy:'A few project notes live behind the cabinet. Each describes something different I’ve tried making. We’ll leave the paper open before returning to the room.', immediate:['click','#workshop-notes'] },
   { id:'duoji', story:'duoji', title:'Duoji has the floor.', copy:'Duoji knows the more personal stories. Let’s hear about that name, a little confidence, and the softer company around the room. I’ll let him speak.', minimumDuration:24000, actions:[[6000,'click','[data-dog="confidence"]'],[14000,'click','[data-dog="plushies"]']] },
-  { id:'rug', kind:'rug', title:'Something under the rug.', copy:'One corner left to lift. There are bricks underneath, ready for a small experiment. We’ll add a few colours; you can change the shape yourself.', actions:[[2500,'click','#lift-rug'],[5500,'click','[data-brick="rust"]'],[7500,'click','[data-brick="gold"]'],[9500,'click','[data-brick="sky"]'],[11500,'click','[data-brick="gold"]']] },
+  { id:'go', story:'go', title:'A quieter kind of game.', copy:'I love Go. This little nine-by-nine board is a place to leave a stone and take a breath. Share it with a friend, or try a position.', actions:[[3000,'click','[data-point="20"]'],[6500,'click','[data-point="60"]']] },
   { id:'wonder', story:'wonder', title:'One last quiet corner.', copy:'Open the lantern and follow three small lights. There’s a quiet moment waiting at the end. We can leave it open for a little while.', minimumDuration:22000, actions:[[2000,'click','#fern-lantern'],[5000,'click','[data-firefly="0"]'],[8000,'click','[data-firefly="1"]'],[11000,'click','[data-firefly="2"]']] },
   { id:'home', kind:'room', title:'Make yourself at home.', copy:'There’s room for your next idea. Stay a little longer, revisit whatever caught your attention, or begin a new conversation at the floor note.' },
 ];
@@ -147,7 +148,7 @@ export function mountTour(api) {
     paused=false; restartOnResume=false; pausedArcade=false; elapsed=0; actionIndex=0;
     plannedActions=(matchMedia('(max-width: 600px)').matches && stop.mobileActions ? stop.mobileActions : stop.actions || []).map(action=>[...action]);
     duration=Math.max(stop.minimumDuration || 0,readingDuration(stop.copy,plannedActions.at(-1)?.[0] || 0));
-    phase=stop.story && stop.walk !== false || stop.kind === 'rug' ? 'walking' : 'showing';
+    phase=stop.story && stop.walk !== false ? 'walking' : 'showing';
     q('#tour-title').textContent=stop.title; q('#tour-copy').textContent=stop.copy;
     q('#tour-count').textContent=`${String(index+1).padStart(2,'0')} / ${String(TOUR_STOPS.length).padStart(2,'0')}`;
     controls();
@@ -164,7 +165,6 @@ export function mountTour(api) {
       if (stop.walk === false) { api.openStory(stop.story); arrived(); }
       else api.goToStory(stop.story,arrived);
     } else if (stop.kind === 'tv') { api.openTV(); arrived(); }
-    else if (stop.kind === 'rug') api.walkToRug(()=>{ if(active && turn === serial && !paused) { api.openRug(); arrived(); } });
     else arrived();
   }
   function pause(message='Paused. Take your time.', manual=false, keepGame=false) {
@@ -196,7 +196,7 @@ export function mountTour(api) {
   function manual(event) {
     if (!active || !event.isTrusted || hud.contains(event.target) || event.target.closest('#tour-start, #guided-tour')) return;
     if (event.type === 'keydown' && !['Tab','Enter',' ','Escape','ArrowUp','ArrowDown','ArrowLeft','ArrowRight','w','a','s','d','e','W','A','S','D','E'].includes(event.key)) return;
-    const gameControl = event.target.closest('#arcade-canvas, [data-arcade-dir], #arcade-start, #arcade-pause');
+    const gameControl = event.target.closest('#arcade-canvas, [data-arcade-dir], [data-arcade-action], #arcade-start, #arcade-pause, #arcade-restart');
     pause('Paused while you explore. Resume reopens this stop.',true,Boolean(gameControl));
   }
   api.startButton.addEventListener('click',start,options);

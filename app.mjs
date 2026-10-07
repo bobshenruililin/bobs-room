@@ -1,6 +1,6 @@
 import { WORLD, isWalkable, move, findPath, safeMemories } from './engine.mjs';
 import { STORIES, PHOTOS, EMAIL, byId } from './stories.mjs';
-import { mountObject, mountRug, contactContent } from './objects.mjs';
+import { mountObject, contactContent } from './objects.mjs';
 import { mountTV } from './discoveries.mjs';
 import { mountTour } from './tour.mjs';
 
@@ -59,6 +59,7 @@ function enterRoom(focus = true) {
 
 function updateMemories() {
   $('#memory-count').textContent = found.size;
+  $('.memory-total').textContent = ` / ${STORIES.length}`;
   $('#memory-button').setAttribute('aria-label', `Memory journal, ${found.size} of ${STORIES.length} little discoveries`);
   $$('.hotspot').forEach(b => {
     const story = byId(b.dataset.story);
@@ -130,7 +131,7 @@ function openStory(id) {
     ${s.note ? `<p class="story-note">${esc(s.note)}</p>` : ''}
     ${s.links ? `<div class="story-links">${s.links.map(l => `<a href="${esc(l.href)}"${l.href.startsWith('mailto:') ? '' : ' target="_blank" rel="noopener"'}>${esc(l.label)} ↗</a>`).join('')}</div>` : ''}`;
   cleanObject = mountObject($('#story-content'), s, {
-    openStory, openUtility, openTV,
+    openStory, openUtility, openTV, openTravel,
     isActive: () => storyDialog.open && !utilityDialog.open && !photoDialog.open,
     setMode: mode => { storyDialog.className = `story-dialog object-dialog ${mode}-dialog`; },
     still: () => still, atlas: () => atlas, frames: () => frames, visitor: () => visitor,
@@ -154,7 +155,7 @@ function openUtility(content, mode = '') {
 }
 
 function openContact() { enterRoom(false); openUtility(contactContent(), 'contact-dialog'); }
-function openRug() { enterRoom(false); openUtility('', 'rug-dialog'); cleanUtility = mountRug($('#utility-content')); }
+function openTravel() { enterRoom(false); openStory('travel'); }
 function openTV(initialChannel=0) { openUtility('', 'tv-dialog'); cleanUtility = mountTV($('#utility-content'), {initialChannel:Number.isInteger(initialChannel)?initialChannel:0, openStory, isActive: () => utilityDialog.open && !photoDialog.open}); }
 
 function openHelp() {
@@ -230,7 +231,6 @@ $('#index-toggle').addEventListener('click', () => indexView ? returnToRoom() : 
 $('.skip-link').addEventListener('click', openIndex);
 $('#return-room').addEventListener('click', returnToRoom);
 $('#builder-invitation').addEventListener('click', openContact);
-$('#rug-secret').addEventListener('click', openRug);
 document.addEventListener('click', async event => {
   if (!event.target.closest('#copy-email')) return;
   try { await navigator.clipboard.writeText(EMAIL); event.target.closest('#copy-email').textContent='Copied ✓'; }
@@ -473,7 +473,7 @@ const art = $('#room-art');
 function artFailed() { $('#loading-note').hidden = true; $('#art-error').hidden = false; }
 art.addEventListener('error', artFailed);
 art.addEventListener('load', () => { $('#loading-note').hidden = true; $('#art-error').hidden = true; });
-$('#retry-art').addEventListener('click', () => { $('#art-error').hidden = true; $('#loading-note').hidden = false; art.src = `./assets/art/room-v2.webp?retry=${Date.now()}`; loadVisitors().catch(() => toast('The visitors couldn’t load. You can still explore the stories.')); });
+$('#retry-art').addEventListener('click', () => { $('#art-error').hidden = true; $('#loading-note').hidden = false; art.src = `./assets/art/room-v4.webp?retry=${Date.now()}`; loadVisitors().catch(() => toast('The visitors couldn’t load. You can still explore the stories.')); });
 if (art.complete) art.naturalWidth ? $('#loading-note').hidden = true : artFailed();
 loadVisitors().catch(() => toast('The visitors couldn’t load. You can still explore the glowing objects and room index.'));
 
@@ -485,8 +485,7 @@ tour = mountTour({
     enterRoom(false); stopWalking();
   },
   closeDialogs: () => { for (const dialog of [photoDialog, utilityDialog, storyDialog]) if (dialog.open) dialog.close(); },
-  stopWalking, openStory, goToStory, openRug, openTV,
-  walkToRug: arrived => setDestination({ x:1008, y:696 }, arrived),
+  stopWalking, openStory, goToStory, openTV,
 });
 
 selectVisitor(visitor, false); setStill(still); updateMemories(); resize();

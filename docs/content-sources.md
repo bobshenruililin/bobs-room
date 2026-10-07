@@ -10,7 +10,7 @@ The six photographs in `assets/photos/` and `assets/Shen-Ruililin-CV.pdf` were c
 
 ## Distinct subjects for each object
 
-The content revision of 7 October 2026 uses the published biography, the one-page [public CV](../assets/Shen-Ruililin-CV.pdf), and Bob’s direct personal replies to give each object a distinct subject. The sofa introduces Bob’s student life; it does not repeat the full list of research, writing, and hobbies. The twelve TV channels in `personal.mjs` combine six personal-interest channels with six public-CV subjects previously absent from the room.
+The content revision of 7 October 2026 uses the published biography, the one-page [public CV](../assets/Shen-Ruililin-CV.pdf), and Bob’s direct personal replies to give each object a distinct subject. The room has twelve discoverable checkpoints, including the atlas and Go board now painted into the main illustration. This is a presentation change and adds no biographical claims. The sofa introduces Bob’s student life; it does not repeat the full list of research, writing, and hobbies. The twelve TV channels in `personal.mjs` combine six personal-interest channels with six public-CV subjects previously absent from the room.
 
 | Place | Content responsibility | Source |
 | --- | --- | --- |
@@ -24,7 +24,8 @@ The content revision of 7 October 2026 uses the published biography, the one-pag
 | Arcade notes | Qiskit/SpinQ work, July 2023–March 2024; MEDocGPT Youth Fellowship, July–September 2023; only the approved public description of Crossing Lives | Published biography; CV: Research Experience; direct instruction for Crossing Lives |
 | Lantern fern | A short discovery and a view of the existing sea photograph | Fictional interaction; public photograph |
 | Duoji | His identity/name, overconfidence around bigger dogs and the ear-bite incident, and his treatment of dog plushies | Direct instruction |
-| Rug | A small brick-building interaction and invitation to build | Fictional interaction; direct invitation from Bob |
+| Go floor board | Bob’s enjoyment of Go; a local two-player practice board | Direct instruction; fictional game presentation |
+| Atlas beside the globe | Bob’s fascination with maps and his eighteen-place travel list | Direct instruction; Natural Earth geography |
 | TV: personal interests | Agency, the LEGO Typewriter, Doraemon and the Anywhere Door, a curated gadget note, fine dining, and Gundam | Direct personal reply; official TV Asahi descriptions for the curated gadget note |
 
 For the TV’s six public-CV channels, the verified subjects are:
@@ -53,6 +54,8 @@ The following facts and creative preferences were supplied directly by Bob for t
 - He says he has watched every episode of Doraemon and learned a lot from it. He likes the Anywhere Door and asked for more niche gadget discoveries.
 - Fine dining and Gundam are among his brief bursts of enthusiasm, described in his reply as “three-minute heat.” No restaurant preferences, specific Gundam models, or collection are inferred.
 - He has lived for years in Shanghai, Singapore, and Hong Kong, and calls all three home.
+- He loves Go and requested a floor-board discovery; this does not establish a rank, competition history, or playing strength. He requested a falling-block game for the arcade; the implementation is titled Moonlight Blocks.
+- He is fascinated by maps and supplied these visited places: Singapore, Malaysia, Thailand, Cambodia, China, Hong Kong, Taiwan, Japan, Russia, Finland, Sweden, Norway, Germany, France, Switzerland, Spain, UK, and Turkey. The list establishes visits, not dates, routes, duration, or residence.
 - **Crossing Lives** may be named as an ongoing pixel-world experiment. No further private project material is approved for this site.
 
 The apartment, animal visitors, ambient dialogue, hidden discoveries, and arcade are fictional presentation elements. They should not be read as evidence of a real apartment, event, or research finding. Generated city scenes are illustrations, not documentary photographs.
@@ -66,7 +69,17 @@ The TV’s gadget-detour channel is an editorial selection in response to Bob’
 
 The gadget channel links to the first official description. The six public-CV channels link to the CV. The other five personal-interest channels have no source button because their facts come directly from Bob’s reply.
 
+## Travel map data
+
+The geographic source is [Natural Earth 1:50m Admin 0 – Countries](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/), downloaded as [GeoJSON from Natural Earth’s vector repository](https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_admin_0_countries.geojson). Its [terms of use](https://www.naturalearthdata.com/about/terms-of-use/), consulted 7 October 2026, place the raster and vector map data in the public domain and allow modification and redistribution. This geographic data keeps that status independently of the project’s code/artwork license boundaries.
+
+The folded atlas in `room-v4` is a generated decorative book; the accurate geographic display appears only after opening it. The source is rasterized deterministically into 480 × 240 geographic cells by `scripts/build-map.mjs`; it is not an AI-generated map. [The local provenance record](../assets/maps/provenance.json) retains the source/download URLs, source SHA-256 digest, cell method, and display choice for small places. The build uses country identifiers as data keys; Bob’s written list remains the source for which places he has visited. Singapore and Hong Kong appear in that list without special markers or enlargement at this coarse scale. Future list changes should update `TRAVELS` in `travel.mjs`; new source geography should be rebuilt with its updated provenance.
+
+The Go board is a local practice interaction with alternating colours, captures, suicide prevention, and simple ko. It does not simulate Bob, claim his playing strength, supply an AI opponent, or adjudicate territory. Two passes finish practice, leaving players to agree the territory themselves. Moonlight Blocks is an original falling-block game implementation and generated cabinet presentation.
+
 ## Artwork and fonts
+
+The active `room-v4` integrates the folded atlas and Go board into the same illustrated floor instead of displaying separate overlay props. Its edited scene and original prompt are retained alongside the previous room.
 
 The room, visitors, and object illustrations in `assets/art/` were created using OpenAI image generation for this project. See [art direction and provenance](art-direction.md) for the asset map and representative reproduction notes. Semantic HTML supplies the readable content and interactive controls. Generation provenance does not establish a blanket copyright or reuse license; the code license below does not grant rights to the artwork.
 
@@ -83,7 +96,7 @@ Preserve the relevant notices when redistributing the font files. A bundled font
 
 ## Scope of reuse and future edits
 
-The repository’s MIT grant covers original software code. It does **not** automatically license personal photographs, the CV, biographical/editorial text, artwork, or third-party names and marks. Those materials remain subject to their applicable rights and permissions. This record does not claim that Bob owns every excluded asset or that generated images have a particular legal status.
+The repository’s MIT grant covers original software code. Natural Earth geographic data remains public domain under its own source terms. It does **not** automatically license personal photographs, the CV, biographical/editorial text, artwork, or third-party names and marks. Those materials remain subject to their applicable rights and permissions. This record does not claim that Bob owns every excluded asset or that generated images have a particular legal status.
 
 For a new biography claim, use a public source or a direct instruction from Bob and update this record. For a replacement photo, illustration, or document, keep its provenance and applicable permission alongside the asset. Avoid importing unpublished project files, participant information, private datasets, or research findings into this public site.
 

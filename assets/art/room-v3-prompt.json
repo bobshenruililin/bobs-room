@@ -1,0 +1,32 @@
+{
+  "mode": "built-in image_gen",
+  "asset": "room-v3.png",
+  "reference": "room-v2.png",
+  "visualNotes": {
+    "canvas": [
+      1536,
+      1024
+    ],
+    "atlasCenter": [
+      431,
+      562
+    ],
+    "atlasBounds": [
+      369,
+      535,
+      495,
+      590
+    ],
+    "goBoardCenter": [
+      1042,
+      745
+    ],
+    "goBoardAndBowlsBounds": [
+      971,
+      706,
+      1101,
+      785
+    ]
+  },
+  "prompt": "Use case: precise-object-edit. Edit target: the provided room-v2.png, a 1536x1024 finished pixel room. Keep this exact whole illustration: same 1536x1024 composition, camera, pixel size/granularity, colors, lighting, every piece of furniture, windows, books, plants, globe, chest, rug, lanterns, entry and surrounding city. This is a very restrained edit of TWO small floor props only. Do not redraw, shift, enlarge or replace any existing object. Add a small aged folded travel atlas lying flat on the clear wood floor near the globe and chair, centered approximately (415,565), bounded around x350..480 and y535..595. It is a partly folded parchment atlas booklet with a small compass/cartographic impression, warm aged tan, no readable writing, no accurate map necessary. The atlas must obey the existing floor perspective with visible shallow paper folds and a soft contact shadow from the room's warm lantern light; NOT an upright rectangle, not a glowing screen, not a pasted top-down icon. Keep the adjacent plant at (400,630) visible. Add a small low wooden Go board, including a few black and ivory stones and two tiny bowls, on the floor just beyond the lower-right curve of the green rug, approximately centered at (1025,742), bounded roughly x950..1100,y700..785. A compact floor board viewed at exactly the same elevated front-facing camera as the room, with foreshortened square grid, shallow wooden thickness, and its edges aligned with the floor perspective. The board should sit naturally in the space in front of the arcade/camera table, not float or look like an icon. Keep the existing front-right lantern at (1090,790), the camera/table starting at (1130,700), and the fern entirely unchanged and unobscured; if needed make this small board slightly narrower to fit. Preserve the entire empty center of the green oval rug. Match surrounding materials and the existing fine room-scale pixel grid perfectly; no halos or artificial heavy shadows. No avatars, animals, labels, text or additional objects. Add ONLY these two props to the exact existing room."
+}

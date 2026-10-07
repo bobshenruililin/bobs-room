@@ -4,6 +4,8 @@ export { DUOJI_LINES } from './personal.mjs';
 import { mountArcade } from './arcade.mjs';
 import { mountDrawer } from './drawer.mjs';
 import { mountAlbum, mountFern, mountFolio } from './discoveries.mjs';
+import { mountGo } from './go.mjs';
+import { mountTravel } from './travel.mjs';
 
 const esc = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const contact = `mailto:${EMAIL}?subject=Let%27s%20build%20something`;
@@ -114,11 +116,16 @@ function mountDuoji(root,api){
 }
 
 export function mountObject(root,story,api){
-  const modes={poetry:'book',heat:'drawer',weather:'globe',fieldwork:'trunk',dialogue:'home',hello:'sofa',duoji:'duoji',workshop:'arcade',photos:'photowall',wonder:'fern'};
+  const modes={poetry:'book',heat:'drawer',weather:'globe',fieldwork:'trunk',dialogue:'home',hello:'sofa',duoji:'duoji',workshop:'arcade',photos:'photowall',wonder:'fern',travel:'travel',go:'go'};
   api.setMode(modes[story.id]);
+  if(story.id==='travel'||story.id==='go'){
+    const cleanup=story.id==='travel'?mountTravel(root):mountGo(root,api);
+    root.querySelector('#utility-heading').id='story-heading';
+    return cleanup;
+  }
   if(story.id==='poetry')return mountBook(root,api);
   if(story.id==='heat')return mountDrawer(root,story,api);
-  if(['weather','fieldwork'].includes(story.id))return mountFolio(root,story);
+  if(['weather','fieldwork'].includes(story.id))return mountFolio(root,story,api);
   if(story.id==='dialogue')return mountWindow(root,api);
   if(story.id==='hello')return mountSofa(root,api);
   if(story.id==='duoji')return mountDuoji(root,api);
@@ -130,22 +137,4 @@ export function mountObject(root,story,api){
 
 export function contactContent(){
   return `<div class="contact-note"><p class="eyebrow">A CALL TO FELLOW BUILDERS</p><h2 id="utility-heading">Let’s build something.</h2><p class="contact-intro">An idea, an experiment, a strange little world.<br>I’m always up for it.</p><p>Health, climate, code, pixel worlds, or something in between. Bring your curiosity. Let’s see what we can make.</p><a class="builder-link" href="${contact}">Bring me an idea ↗</a><div class="contact-address"><a href="mailto:${EMAIL}">${EMAIL}</a><button id="copy-email" aria-label="Copy Bob’s email address">Copy</button></div><div class="contact-social"><a href="https://www.linkedin.com/in/shenruililin" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/bobshenruililin" target="_blank" rel="noopener">GitHub ↗</a><a href="${CV}" target="_blank" rel="noopener">My CV ↗</a></div></div>`;
-}
-
-export function mountRug(root){
-  root.innerHTML=`<div class="rug-space"><div class="object-caption"><p class="eyebrow">SOMETHING UNDER THE RUG</p><h2 id="utility-heading">Every room needs a little secret.</h2><span>Lift the corner. Leave a brick for the next idea.</span></div><div class="rug-stage"><div class="brick-stash" id="brick-stash" hidden><p>A LITTLE STASH OF POSSIBILITIES</p><div class="brick-tower" id="brick-tower" role="img" aria-label="A colourful toy tower with no bricks yet"><span class="tower-hint">A little idea starts here.</span></div><div class="brick-actions"><button data-brick="rust" aria-label="Add a red brick">+ <span class="brick rust"></span></button><button data-brick="gold" aria-label="Add a yellow brick">+ <span class="brick gold"></span></button><button data-brick="sky" aria-label="Add a blue brick">+ <span class="brick sky"></span></button><button id="brick-undo" disabled>Undo</button></div><span id="brick-status" class="brick-status" role="status">Try building something small.</span></div><button class="lift-rug" id="lift-rug" aria-expanded="false" aria-label="Lift the rug corner"><img src="./assets/art/rug.webp" alt="An oval green rug with gold trim and a curled corner, in chunky pixels."><span id="rug-action">LIFT THE CORNER ↗</span></button></div><a class="builder-link" href="${contact}">Bring your bigger idea to Bob ↗</a></div>`;
-  const controller=new AbortController(),options={signal:controller.signal};let lifted=false,bricks=[];
-  root.querySelector('#lift-rug').addEventListener('click',()=>{
-    lifted=!lifted;root.querySelector('.rug-stage').classList.toggle('rug-lifted',lifted);root.querySelector('#brick-stash').hidden=!lifted;
-    root.querySelector('#lift-rug').setAttribute('aria-expanded',String(lifted));root.querySelector('#lift-rug').setAttribute('aria-label',lifted?'Lay the rug back down':'Lift the rug corner');root.querySelector('#rug-action').textContent=lifted?'LAY IT BACK DOWN ↓':'LIFT THE CORNER ↗';root.dataset.rug=lifted?'lifted':'resting';
-  },options);
-  function render(){
-    root.querySelector('#brick-tower').innerHTML=bricks.length?bricks.map((color,i)=>`<span class="toy-brick ${color}" style="--brick-x:${i%3*25+13}%;--brick-y:${Math.floor(i/3)*28}px"></span>`).join(''):'<span class="tower-hint">A little idea starts here.</span>';
-    root.querySelector('#brick-tower').setAttribute('aria-label',`A colourful toy tower with ${bricks.length} bricks`);
-    root.querySelector('#brick-status').textContent=bricks.length===18?'A tiny tower. A bigger idea? Tell Bob.':`${bricks.length} little brick${bricks.length===1?'':'s'}. What shall we build?`;
-    root.querySelector('#brick-undo').disabled=!bricks.length;root.querySelectorAll('[data-brick]').forEach(b=>b.disabled=bricks.length>=18);root.dataset.bricks=String(bricks.length);
-  }
-  root.querySelectorAll('[data-brick]').forEach(b=>b.addEventListener('click',()=>{if(bricks.length<18){bricks.push(b.dataset.brick);render();}},options));
-  root.querySelector('#brick-undo').addEventListener('click',()=>{bricks.pop();render();},options);
-  return ()=>controller.abort();
 }

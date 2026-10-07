@@ -1,0 +1,26 @@
+/* Preserve the approved paper; bring its entire note inward by ten percent. */
+.contact-dialog .contact-note{transform:scale(.9);transform-origin:50% 35%}
+:is(.utility-dialog,.object-dialog).travel-dialog{width:min(1060px,max(540px,calc((92svh - 300px)*2)),calc(100vw - 24px));padding:30px 38px 26px;background:#e2cd99 url('./assets/art/note-paper.webp') center/155% 200% no-repeat;max-height:92svh;color:#354c3f}
+.travel-space{text-align:center}
+.travel-dialog #story-content{padding:0}
+.travel-dialog .eyebrow{font-size:8px;margin:0 0 10px}
+.travel-dialog h2{font-size:35px;margin:0 0 9px}
+.travel-dialog .travel-intro{font-size:17px;line-height:1.35;margin:0 0 17px}
+.travel-chart{margin:0;position:relative}
+#travel-map{display:block;width:100%;aspect-ratio:2/1;background:#173e48;image-rendering:pixelated;border:4px solid #a28149;box-shadow:3px 4px #93754040}
+.travel-chart figcaption{display:flex;justify-content:space-between;gap:12px;text-align:left;margin-top:11px;font-size:14px;color:#4c6144}
+.travel-chart figcaption i{display:inline-block;width:12px;height:12px;margin-right:6px;background:#edc978;border:1px solid #9b743e}
+.travel-chart figcaption span:last-child i{background:#739078;border-color:#456b51}
+.travel-dialog .travel-places{font-size:16px;line-height:1.5;margin:17px auto 10px;max-width:790px}
+.travel-dialog .travel-footnote,.travel-dialog .travel-source{font-size:12px;line-height:1.3;margin:9px 0;color:#78643c}
+.travel-source{text-decoration:underline;text-underline-offset:3px}
+.folio-travel{position:absolute;left:9%;top:69%;z-index:3;padding:8px 12px;background:#e7d5a0;color:#445138;border:2px solid #967a47;font:16px var(--sans);box-shadow:2px 2px #23392b}
+@media(max-width:760px){
+ .contact-dialog .eyebrow{transform:translateY(16px)}
+ :is(.utility-dialog,.object-dialog).travel-dialog{padding:48px 22px 36px;width:calc(100vw - 16px)}
+ .travel-dialog h2{font-size:29px}.travel-dialog .travel-intro{font-size:15px;line-height:1.3}
+ .travel-dialog .travel-places{font-size:15px;line-height:1.5;margin-top:18px}
+ .travel-chart figcaption{font-size:12px;gap:8px}
+ .travel-dialog .travel-footnote,.travel-dialog .travel-source{font-size:12px}
+ .folio-travel{left:52%;top:33%;font-size:12px;padding:7px 9px;max-width:40%}
+}

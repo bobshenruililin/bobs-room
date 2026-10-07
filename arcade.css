@@ -1,0 +1,44 @@
+/* One continuous cabinet illustration, with the live game inside its portrait CRT. */
+.object-dialog.arcade-dialog{width:min(520px,calc(92svh * 2 / 3),calc(100vw - 20px));max-height:94svh;border:2px solid #8b7743;background:#123b33;padding:0;overflow:auto}
+.moonlight-arcade{position:relative;padding:0;background:#123b33}
+.moonlight-arcade .arcade-machine{position:relative;width:100%;max-width:none;aspect-ratio:2/3;border:0;margin:0;padding:0;overflow:clip;background:#123b33}
+.moonlight-arcade .cabinet-illustration{position:absolute;left:-12.5%;top:-7%;width:125%;height:auto;max-width:none;display:block;image-rendering:pixelated;pointer-events:none}
+.moonlight-arcade .arcade-marquee{position:absolute;left:20%;top:.6%;width:60%;height:10%;padding:0;display:flex;align-items:center;justify-content:center;background:none;border:0;box-shadow:none;text-align:center;font:clamp(16px,2.2vw,23px)/1.25 var(--pixel);letter-spacing:-.04em;color:#67502f;text-shadow:1px 2px #e4c875}
+.moonlight-arcade .arcade-screen{position:absolute;left:18.26%;top:16.68%;width:63.35%;height:59.57%;border:0;background:#122a35;box-shadow:none;overflow:hidden;aspect-ratio:auto}
+.moonlight-arcade #arcade-canvas{display:block;width:100%;height:100%;image-rendering:pixelated;touch-action:none;outline-offset:-3px}
+.moonlight-arcade #arcade-canvas:focus-visible{outline:2px solid #edcd81}
+.moonlight-arcade .arcade-overlay{padding:12px;gap:12px;background:#112832f2;color:#efdbaa}
+.moonlight-arcade .arcade-overlay[hidden]{display:none}
+.moonlight-arcade .arcade-moon{display:block;color:#edd28b;font:40px/1 var(--sans);margin:0}
+.moonlight-arcade .arcade-overlay h3{font:25px/1.1 var(--sans);color:#f1dfb4;margin:0}
+.moonlight-arcade .arcade-overlay p{font:16px/1.35 var(--sans);color:#c8c6a5;max-width:240px;margin:0}
+.moonlight-arcade .arcade-overlay button{min-height:44px;min-width:108px;padding:9px 17px;font:18px var(--sans);color:#18392f;background:#d8b765;border:2px solid #a98342;box-shadow:0 3px #66502d}
+.moonlight-arcade .arcade-start-help{font:14px/1.4 var(--sans);color:#adc0b6;margin-top:3px}
+.moonlight-arcade .arcade-controls{position:absolute;left:19.2%;top:80.2%;width:61.6%;height:11.4%;margin:0;padding:0;display:flex;justify-content:space-between;gap:0}
+.moonlight-arcade .arcade-controls>button,.moonlight-arcade .arcade-controls>button:last-child{position:relative;left:auto;top:auto;width:20%;height:100%;min-height:44px;min-width:0;border:0;border-radius:0;background:none;box-shadow:none;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0;color:#fff0bc;font:30px/1 var(--sans);text-shadow:2px 2px #173630;touch-action:none}
+.moonlight-arcade .arcade-controls button small{font:11px/1 var(--sans);color:#f2d59b;margin:0;text-shadow:1px 2px #1a332c}
+.moonlight-arcade .arcade-controls>button:hover,.moonlight-arcade .arcade-controls>button:focus-visible{outline:2px solid #f6d58d;outline-offset:-2px;background:#ffdd9020;color:#fff2bb}
+.moonlight-arcade .arcade-controls>button:active{transform:translateY(2px)}
+.moonlight-arcade .arcade-scoreboard{display:none}
+.moonlight-arcade .arcade-footer{position:absolute;left:12%;bottom:.5%;width:76%;height:7.4%;min-height:44px;margin:0;padding:0;display:flex;justify-content:space-evenly;align-items:center;flex-wrap:nowrap;gap:6px;background:none;text-shadow:1px 2px #14352b}
+.moonlight-arcade .arcade-footer button,.moonlight-arcade #workshop-notes{width:auto;min-height:44px;display:block;flex:none;margin:0;padding:5px 4px;background:transparent;border:0;color:#f0d596;font:15px/1.1 var(--sans);text-align:center;text-decoration:underline;text-underline-offset:4px}
+.moonlight-arcade .arcade-footer button:disabled{opacity:.45;cursor:default}
+.moonlight-arcade .arcade-footer button:focus-visible{outline:2px solid #efd493;outline-offset:0}
+.moonlight-arcade #arcade-announcement{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+body.touring .object-dialog.arcade-dialog{width:min(450px,calc((100svh - var(--tour-hud-height,220px) - 50px)*2/3),calc(100vw - 20px));min-width:min(290px,calc(100vw - 20px));margin-top:8px}
+@media(max-width:760px){
+  .object-dialog.arcade-dialog{width:min(500px,calc(92svh * 5 / 9),calc(100vw - 16px))}
+  .moonlight-arcade .arcade-machine{aspect-ratio:5/9}
+  .moonlight-arcade .cabinet-illustration{left:-25%;width:150%}
+  .moonlight-arcade .arcade-screen{left:11.91%;width:76.03%}
+  .moonlight-arcade .arcade-marquee{left:14%;width:72%;font-size:17px}
+  .moonlight-arcade .arcade-controls{left:13%;width:74%}
+  .moonlight-arcade .arcade-footer{left:5%;width:90%}
+  .moonlight-arcade .arcade-overlay h3{font-size:23px}
+  .moonlight-arcade .arcade-overlay p{font-size:15px}
+  .moonlight-arcade .arcade-overlay{padding:10px;gap:11px}
+  .moonlight-arcade .arcade-footer button,.moonlight-arcade #workshop-notes{font-size:14px}
+  body.touring .object-dialog.arcade-dialog{width:min(430px,calc((100svh - var(--tour-hud-height,220px) - 50px)*5/9),calc(100vw - 16px))}
+}
+@media(max-height:560px){.object-dialog.arcade-dialog{width:min(390px,calc(100vw - 24px));max-height:94svh}.moonlight-arcade .arcade-marquee{font-size:18px}}
+@media(prefers-reduced-motion:reduce){.moonlight-arcade .arcade-controls>button:active{transform:none}}

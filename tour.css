@@ -48,3 +48,8 @@ body.touring .arcade-dialog{width:min(680px,calc((100svh - var(--tour-hud-height
 @media(max-width:760px){
 body.touring .sofa-dialog,body.touring .drawer-dialog,body.touring .duoji-dialog,body.touring .fern-dialog,body.touring .globe-dialog,body.touring .trunk-dialog,body.touring .utility-dialog.tv-dialog{width:min(calc(100vw - 20px),calc((100svh - var(--tour-hud-height,220px) - 28px)/1.5))}
 }
+
+body.touring :is(.utility-dialog,.object-dialog).go-dialog{width:min(calc(100vw - 20px),calc((100svh - var(--tour-hud-height,220px) - 28px)/1.5));padding:0}
+body.touring :is(.utility-dialog,.object-dialog).travel-dialog{width:min(920px,max(300px,calc((100svh - var(--tour-hud-height,220px) - 280px)*2)),calc(100vw - 24px));padding:24px 28px 20px;overflow:auto}
+body.touring .travel-dialog .travel-intro,body.touring .travel-dialog .travel-places{display:none}
+body.touring .travel-dialog h2{font-size:28px}

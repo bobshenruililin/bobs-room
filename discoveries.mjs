@@ -35,7 +35,7 @@ export function mountFern(root){
   return ()=>controller.abort();
 }
 
-export function mountFolio(root,story){
+export function mountFolio(root,story,api){
   const weather=story.id==='weather';
   const pages=weather?[
     {label:'HKO · POLYU · 2024',title:'The sky, through a model’s eyes.',text:'At the Hong Kong Observatory and PolyU MicroLARGE Lab, I tested how DeepMind’s GraphCast could fit into Hong Kong weather forecasting.'},
@@ -46,6 +46,10 @@ export function mountFolio(root,story){
   ];
   root.innerHTML=`<div class="folio-scene ${weather?'globe-scene':'trunk-scene'}"><h2 id="story-heading" class="sr-only">${esc(story.heading)}</h2><article class="folio-paper" id="folio-paper" aria-live="polite"></article><div class="folio-objects" role="group" aria-label="${weather?'Explore the globe':'Explore the trunk'}"><button data-folio="0" class="folio-first" aria-label="${weather?'Turn the globe toward the sky model':'Open the field notebook'}"><span>${weather?'THE SKY MODEL ↗':'THE NOTEBOOK ↗'}</span></button><button data-folio="1" class="folio-second" aria-label="${weather?'Follow an atmospheric river':'Unfold the water-scarcity field map'}"><span>${weather?'A RIVER IN THE SKY ↗':'THE FIELD MAP ↗'}</span></button></div></div>`;
   const controller=new AbortController(),options={signal:controller.signal};
+  if(weather){
+    const atlasButton=document.createElement('button');atlasButton.className='folio-travel';atlasButton.id='folio-travel';atlasButton.textContent='My travel atlas ↗';
+    root.querySelector('.folio-scene').append(atlasButton);atlasButton.addEventListener('click',()=>api.openTravel(),options);
+  }
   function show(index){const p=pages[index];root.querySelector('#folio-paper').innerHTML=`<p class="eyebrow">${esc(p.label)}</p><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><span class="folio-page">${index+1} / 2 · ${weather?'A WEATHER NOTE':'A FIELD NOTE'}</span><a href="${CV}" target="_blank" rel="noopener">More from my CV ↗</a>`;root.querySelectorAll('[data-folio]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.folio)===index)));root.dataset.folio=String(index+1);}
   root.querySelectorAll('[data-folio]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.folio)),options));
   show(0);return ()=>controller.abort();

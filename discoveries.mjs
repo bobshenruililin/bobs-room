@@ -1,4 +1,4 @@
-import { PHOTOS, CV } from './stories.mjs';
+import { PHOTOS } from './stories.mjs';
 import { TV_CHANNELS } from './personal.mjs';
 export { TV_CHANNELS } from './personal.mjs';
 const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -50,7 +50,7 @@ export function mountFolio(root,story,api){
     const atlasButton=document.createElement('button');atlasButton.className='folio-travel';atlasButton.id='folio-travel';atlasButton.textContent='My travel atlas ↗';
     root.querySelector('.folio-scene').append(atlasButton);atlasButton.addEventListener('click',()=>api.openTravel(),options);
   }
-  function show(index){const p=pages[index];root.querySelector('#folio-paper').innerHTML=`<p class="eyebrow">${esc(p.label)}</p><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><span class="folio-page">${index+1} / 2 · ${weather?'A WEATHER NOTE':'A FIELD NOTE'}</span><a href="${CV}" target="_blank" rel="noopener">More from my CV ↗</a>`;root.querySelectorAll('[data-folio]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.folio)===index)));root.dataset.folio=String(index+1);}
+  function show(index){const p=pages[index];root.querySelector('#folio-paper').innerHTML=`<p class="eyebrow">${esc(p.label)}</p><h3>${esc(p.title)}</h3><p>${esc(p.text)}</p><span class="folio-page">${index+1} / 2 · ${weather?'A WEATHER NOTE':'A FIELD NOTE'}</span>`;root.querySelectorAll('[data-folio]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.folio)===index)));root.dataset.folio=String(index+1);}
   root.querySelectorAll('[data-folio]').forEach(b=>b.addEventListener('click',()=>show(Number(b.dataset.folio)),options));
   show(0);return ()=>controller.abort();
 }

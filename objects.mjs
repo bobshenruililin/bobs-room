@@ -1,4 +1,4 @@
-import { byId, EMAIL, CV } from './stories.mjs';
+import { byId, EMAIL } from './stories.mjs';
 import { DUOJI_LINES } from './personal.mjs';
 export { DUOJI_LINES } from './personal.mjs';
 import { mountArcade } from './arcade.mjs';
@@ -98,7 +98,7 @@ function mountSofa(root,api){
     root.querySelector('#lift-cushion span').textContent=lifted?'PUT THE CUSHION BACK ↓':'BETWEEN THE CUSHIONS? ↗';
     root.querySelector('#found-remote').hidden=!lifted;
     root.querySelector('.sofa-scene').classList.toggle('cushion-lifted',lifted);
-    root.querySelector('#sofa-paper').innerHTML=lifted?`<div id="cushion-note"><p class="eyebrow">A LITTLE DISCOVERY</p><h3>The missing remote!</h3><p>The sofa has been keeping it safe.</p><p>Twelve channels. Little detours from Bob’s life. Turn the brass knob and see where it takes you.</p><button id="remote-note">Switch on the little TV ↗</button><button id="sofa-intro">Back to our cup of tea ↶</button></div>`:`<p class="eyebrow">SHEN RUILILIN · YOU CAN CALL ME BOB</p><h3>${titles[page]}</h3><p>${esc(byId('hello').paragraphs[page])}</p><button id="sofa-next">${page+1} / 3 · Another little note →</button><a href="${CV}" target="_blank" rel="noopener">My CV ↗</a><p class="sofa-hint">Something’s hiding between the cushions.</p>`;
+    root.querySelector('#sofa-paper').innerHTML=lifted?`<div id="cushion-note"><p class="eyebrow">A LITTLE DISCOVERY</p><h3>The missing remote!</h3><p>The sofa has been keeping it safe.</p><p>Twelve channels. Little detours from Bob’s life. Turn the brass knob and see where it takes you.</p><button id="remote-note">Switch on the little TV ↗</button><button id="sofa-intro">Back to our cup of tea ↶</button></div>`:`<p class="eyebrow">SHEN RUILILIN · YOU CAN CALL ME BOB</p><h3>${titles[page]}</h3><p>${esc(byId('hello').paragraphs[page])}</p><button id="sofa-next">${page+1} / 3 · Another little note →</button><p class="sofa-hint">Something’s hiding between the cushions.</p>`;
     root.dataset.cushion=lifted?'lifted':'resting';
   }
   root.querySelector('#lift-cushion').addEventListener('click',()=>{lifted=!lifted;render();},options);
@@ -136,5 +136,5 @@ export function mountObject(root,story,api){
 }
 
 export function contactContent(){
-  return `<div class="contact-note"><p class="eyebrow">A CALL TO FELLOW BUILDERS</p><h2 id="utility-heading">Let’s build something.</h2><p class="contact-intro">An idea, an experiment, a strange little world.<br>I’m always up for it.</p><p>Health, climate, code, pixel worlds, or something in between. Bring your curiosity. Let’s see what we can make.</p><a class="builder-link" href="${contact}">Bring me an idea ↗</a><div class="contact-address"><a href="mailto:${EMAIL}">${EMAIL}</a><button id="copy-email" aria-label="Copy Bob’s email address">Copy</button></div><div class="contact-social"><a href="https://www.linkedin.com/in/shenruililin" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/bobshenruililin" target="_blank" rel="noopener">GitHub ↗</a><a href="${CV}" target="_blank" rel="noopener">My CV ↗</a></div></div>`;
+  return `<div class="contact-note"><p class="eyebrow">A CALL TO FELLOW BUILDERS</p><h2 id="utility-heading">Let’s build something.</h2><p class="contact-intro">An idea, an experiment, a strange little world.<br>I’m always up for it.</p><p>Health, climate, code, pixel worlds, or something in between. Bring your curiosity. Let’s see what we can make.</p><a class="builder-link" href="${contact}">Bring me an idea ↗</a><div class="contact-address"><a href="mailto:${EMAIL}">${EMAIL}</a><button id="copy-email" aria-label="Copy Bob’s email address">Copy</button></div><div class="contact-social"><a href="https://www.linkedin.com/in/shenruililin" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/bobshenruililin" target="_blank" rel="noopener">GitHub ↗</a></div></div>`;
 }

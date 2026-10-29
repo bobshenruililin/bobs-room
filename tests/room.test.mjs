@@ -46,7 +46,7 @@ test('damaged, duplicated, or obsolete discoveries cannot break the journal', ()
   assert.deepEqual(safeMemories(['hello','hello','missing',{},'photos'],ids),['hello','photos']);
 });
 
-test('all photographs, fonts, generated assets, map data and CV are served locally', () => {
+test('all photographs, fonts, generated assets, map data are served locally', () => {
   const art = [
     'room-v2','room-v3','room-v4','book','rug','shiba','shiba-closeup','shanghai','singapore','hong-kong',
     'sofa-nook','sofa-closed','sofa-phone-open','sofa-phone-closed',
@@ -59,7 +59,7 @@ test('all photographs, fonts, generated assets, map data and CV are served local
   const fonts = ['dm-sans.ttf','fraunces.ttf','fraunces-italic.ttf','silkscreen.ttf','pixelify-sans.ttf'];
   const fontNotices = ['DM-Sans-OFL.txt','Fraunces-OFL.txt','Silkscreen-OFL.txt','Pixelify-Sans-OFL.txt'];
   const paths = [
-    'assets/Shen-Ruililin-CV.pdf','assets/art/visitors.png','assets/art/frames.json',
+    'assets/art/visitors.png','assets/art/frames.json',
     'assets/maps/world-pixels.json','assets/maps/provenance.json',
     'assets/art/arcade-blocks-prompt.json','assets/art/go-prompts.json','assets/art/room-v3-prompt.json','assets/art/room-v4-prompt.json',
     ...art.flatMap(name => ['png','webp'].map(extension => `assets/art/${name}.${extension}`)),
@@ -82,5 +82,13 @@ test('each story has a unique index, an in-room marker, and a valid next story',
     assert.ok(s.paragraphs.length && s.heading && s.intro);
     assert.ok(s.marker.x > 0 && s.marker.x < WORLD.width && s.marker.y > 0 && s.marker.y < WORLD.height);
     if (s.image) assert.ok(PHOTOS.some(p=>p.src===s.image));
+  }
+});
+
+test('withdrawn CV is neither deployed nor linked by any room entry point', () => {
+  assert.equal(existsSync(new URL('../assets/Shen-Ruililin-CV.pdf', import.meta.url)), false);
+  for (const file of ['index.html', 'stories.mjs', 'objects.mjs', 'discoveries.mjs', 'personal.mjs']) {
+    const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8');
+    assert.doesNotMatch(source, /Shen-Ruililin-CV\.pdf|href: CV|link: CV|\$\{CV\}/, file);
   }
 });

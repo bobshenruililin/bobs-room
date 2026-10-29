@@ -2,7 +2,7 @@
 
 A walkable pixel room for Shen Ruililin: real stories about health, climate, computation, poetry, photography, and the places he calls home. Explore as a fox or rabbit, meet Duoji, open objects, and follow small discoveries at your own pace.
 
-The room uses static HTML, CSS, native Canvas, and JavaScript modules. It has no runtime package dependencies, accounts, or analytics. Fonts, illustrations and photographs are served locally. The former CV download was withdrawn at Bob’s request on 29 October 2026; its previous version remains recoverable in Git history. A browser-local journal remembers the twelve room checkpoints and the selected visitor.
+The room uses static HTML, CSS, native Canvas, and JavaScript modules. It has no runtime package dependencies, accounts, or analytics. Fonts, illustrations, photographs, and the CV are served locally. A browser-local journal remembers the twelve room checkpoints and the selected visitor.
 
 ## Run locally
 
@@ -21,7 +21,7 @@ Open [localhost:4175](http://127.0.0.1:4175). Run `npm run check` for the config
 - Play **Moonlight Blocks** in the arcade: move, rotate, and drop pieces to complete rows. The floor Go board offers a quiet local two-player 9×9 practice game.
 - Unfold the small atlas beside the globe to see Bob’s travel list coloured on a pixel world map. The atlas and Go board are part of the room illustration, with the same glowing markers, walking approaches, and journal entries as the other objects.
 - Choose **Wander with me** for a guided visual walk through seventeen stops and twelve room checkpoints. Pause, move between stops, or take over an object to explore at your own pace.
-- Use **Read about Bob** for the room index and **Escape** to close an open dialog. The index and email remain available without JavaScript.
+- Use **Read about Bob** for the room index and **Escape** to close an open dialog. The index, CV link, and email remain available without JavaScript.
 - **Stillness** reduces ambient movement; the system’s reduced-motion preference is respected initially. Sound starts off and can be enabled explicitly.
 
 ## Project map
@@ -40,7 +40,7 @@ Open [localhost:4175](http://127.0.0.1:4175). Run `npm run check` for the config
 | `travel.mjs` / `scripts/build-map.mjs` | Editable travel list, Canvas map rendering, and deterministic geographic raster generation |
 | `tour.mjs` | Guided stops, object actions, reading time, pause/resume, and visitor takeover |
 | `style.css` / `discoveries.css` / `drawer.css` / `sofa.css` / `tour.css` / `personal.css` | Room, object, tour, travel atlas, and contact-note presentation |
-| `assets/` | Local art, fonts and their licenses, photographs |
+| `assets/` | Local art, fonts and their licenses, photographs, and CV |
 | `tests/` | Room geometry, story consistency, asset presence, falling-block rules, Go rules, and map data checks |
 
 Read [design and maintenance notes](docs/frontend-design.md) and [art direction and provenance](docs/art-direction.md) before replacing artwork, and [content sources](docs/content-sources.md) before changing biographical copy. A room-art change also requires reviewing story markers, walking approaches, collisions, and interactive hit areas.
@@ -65,7 +65,7 @@ The public repository is [bobshenruililin/bobs-room](https://github.com/bobshenr
 
 The repository root is the static site and includes `.nojekyll`. GitHub Pages deploys from the `main` branch and `/ (root)`; pushing changes to `main` publishes an update. No package publishing, compilation step, or custom domain is required. The `private` field in `package.json` prevents accidental npm publication; it does not set the GitHub repository’s visibility.
 
-Preserve relative asset/module links so the site works under `/bobs-room/`; if the destination changes, update the canonical and social-sharing URLs in `index.html`. Verify the published page, fonts, images, and module requests after deployment.
+Preserve relative asset/module links so the site works under `/bobs-room/`; if the destination changes, update the canonical and social-sharing URLs in `index.html`. Verify the published page, its CV, fonts, images, and module requests after deployment.
 
 ## Checks and rights
 

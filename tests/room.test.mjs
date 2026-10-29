@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { WORLD, OBSTACLES, isWalkable, move, findPath, safeMemories } from '../engine.mjs';
 import { STORIES, PHOTOS } from '../stories.mjs';
 
@@ -46,7 +47,7 @@ test('damaged, duplicated, or obsolete discoveries cannot break the journal', ()
   assert.deepEqual(safeMemories(['hello','hello','missing',{},'photos'],ids),['hello','photos']);
 });
 
-test('all photographs, fonts, generated assets, map data are served locally', () => {
+test('all photographs, fonts, generated assets, map data and CV are served locally', () => {
   const art = [
     'room-v2','room-v3','room-v4','book','rug','shiba','shiba-closeup','shanghai','singapore','hong-kong',
     'sofa-nook','sofa-closed','sofa-phone-open','sofa-phone-closed',
@@ -59,7 +60,7 @@ test('all photographs, fonts, generated assets, map data are served locally', ()
   const fonts = ['dm-sans.ttf','fraunces.ttf','fraunces-italic.ttf','silkscreen.ttf','pixelify-sans.ttf'];
   const fontNotices = ['DM-Sans-OFL.txt','Fraunces-OFL.txt','Silkscreen-OFL.txt','Pixelify-Sans-OFL.txt'];
   const paths = [
-    'assets/art/visitors.png','assets/art/frames.json',
+    'assets/Shen-Ruililin-CV.pdf','assets/art/visitors.png','assets/art/frames.json',
     'assets/maps/world-pixels.json','assets/maps/provenance.json',
     'assets/art/arcade-blocks-prompt.json','assets/art/go-prompts.json','assets/art/room-v3-prompt.json','assets/art/room-v4-prompt.json',
     ...art.flatMap(name => ['png','webp'].map(extension => `assets/art/${name}.${extension}`)),
@@ -85,10 +86,7 @@ test('each story has a unique index, an in-room marker, and a valid next story',
   }
 });
 
-test('withdrawn CV is neither deployed nor linked by any room entry point', () => {
-  assert.equal(existsSync(new URL('../assets/Shen-Ruililin-CV.pdf', import.meta.url)), false);
-  for (const file of ['index.html', 'stories.mjs', 'objects.mjs', 'discoveries.mjs', 'personal.mjs']) {
-    const source = readFileSync(new URL('../' + file, import.meta.url), 'utf8');
-    assert.doesNotMatch(source, /Shen-Ruililin-CV\.pdf|href: CV|link: CV|\$\{CV\}/, file);
-  }
+test('published CV matches the exact file Bob approved on 29 October 2026', () => {
+  const bytes = readFileSync(new URL('../assets/Shen-Ruililin-CV.pdf', import.meta.url));
+  assert.equal(createHash('sha256').update(bytes).digest('hex'), 'b01252d9fd0f9fa08c32253f66d12d2ecfdfb0e0ad7da9a739bc21f5fe1b9944');
 });

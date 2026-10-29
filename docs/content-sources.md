@@ -10,7 +10,7 @@ The six photographs in `assets/photos/` and `assets/Shen-Ruililin-CV.pdf` were c
 
 ## Distinct subjects for each object
 
-The content revision of 7 October 2026 uses the published biography, the one-page CV (withdrawn from this site on 29 October 2026), and Bob’s direct personal replies to give each object a distinct subject. The room has twelve discoverable checkpoints, including the atlas and Go board now painted into the main illustration. This is a presentation change and adds no biographical claims. The sofa introduces Bob’s student life; it does not repeat the full list of research, writing, and hobbies. The twelve TV channels in `personal.mjs` combine six personal-interest channels with six public-CV subjects previously absent from the room.
+The content revision of 7 October 2026 uses the published biography, the one-page [public CV](../assets/Shen-Ruililin-CV.pdf), and Bob’s direct personal replies to give each object a distinct subject. The room has twelve discoverable checkpoints, including the atlas and Go board now painted into the main illustration. This is a presentation change and adds no biographical claims. The sofa introduces Bob’s student life; it does not repeat the full list of research, writing, and hobbies. The twelve TV channels in `personal.mjs` combine six personal-interest channels with six public-CV subjects previously absent from the room.
 
 | Place | Content responsibility | Source |
 | --- | --- | --- |
@@ -67,7 +67,7 @@ The TV’s gadget-detour channel is an editorial selection in response to Bob’
 - **What-If Phone Booth / もしもボックス:** a scenario spoken into its telephone changes the world accordingly. Verified against [TV Asahi’s episode description](https://www.tv-asahi.co.jp/doraemon//story/0075/), originally broadcast 12 January 2007 and consulted 7 October 2026.
 - **Afterward-Real Speaker / アトカラホントスピーカー:** a lie told with the device in the speaker’s mouth subsequently becomes true. Verified against [TV Asahi’s episode description](https://www.tv-asahi.co.jp/doraemon/story/0541/), originally broadcast 9 November 2018 and consulted 7 October 2026.
 
-The gadget channel links to the first official description. The six public-CV channels previously linked to the CV; those downloads were withdrawn on 29 October 2026 without changing channel content. The other five personal-interest channels have no source button because their facts come directly from Bob’s reply.
+The gadget channel links to the first official description. The six public-CV channels link to the CV. The other five personal-interest channels have no source button because their facts come directly from Bob’s reply.
 
 ## Travel map data
 
@@ -101,3 +101,7 @@ The repository’s MIT grant covers original software code. Natural Earth geogra
 For a new biography claim, use a public source or a direct instruction from Bob and update this record. For a replacement photo, illustration, or document, keep its provenance and applicable permission alongside the asset. Avoid importing unpublished project files, participant information, private datasets, or research findings into this public site.
 
 The site has no analytics or account system. Its local journal saves discovery IDs and visitor choice in the visitor’s browser. External contact links open the visitor’s email application or the linked public service; the room itself does not submit a contact form.
+
+## CV replacement — 29 October 2026
+
+At Bob’s explicit request, the downloadable CV was replaced byte-for-byte with his supplied `ShenRuililin_CV(2).pdf`. The room’s existing biography was not rewritten as part of this file replacement.

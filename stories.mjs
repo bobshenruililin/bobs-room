@@ -1,4 +1,5 @@
 export const EMAIL = 'bobshenruililin@gmail.com';
+export const CV = './assets/Shen-Ruililin-CV.pdf';
 export const PHOTOS = [
   { src: 'mountains', caption: 'A different kind of walk.', alt: 'Shen on a rocky outcrop, surrounded by mountain peaks beneath a cloudy sky' },
   { src: 'sea', caption: 'Room for a little wonder.', alt: 'Shen with arms outstretched on rocks beside sparkling water' },
@@ -26,7 +27,7 @@ export const STORIES = [
     ],
     tags: ['HKUMed', 'St. John’s College', '2025–2029'],
     image: 'mountains',
-    links: [{ label: 'Say hello', href: `mailto:${EMAIL}` }],
+    links: [{ label: 'Read my CV', href: CV }, { label: 'Say hello', href: `mailto:${EMAIL}` }],
   },
   {
     id: 'heat', number: '02', title: 'The research desk', name: 'Heat & health', icon: 'sun',
@@ -40,6 +41,7 @@ export const STORIES = [
     ],
     tags: ['Public health', 'Climate', 'Research in progress'],
     note: 'This is a description of ongoing research. Patient-level data and unpublished findings are not shared here.',
+    links: [{ label: 'More about my work', href: CV }],
   },
   {
     id: 'poetry', number: '03', title: 'The poetry shelf', name: 'Words, too', icon: 'book',
@@ -66,6 +68,7 @@ export const STORIES = [
       'I also presented an atmospheric-river identification method at the American Geophysical Union (AGU). This was another part of my work on finding useful patterns in the atmosphere.',
     ],
     tags: ['GraphCast', 'Atmospheric rivers', 'Computation'],
+    links: [{ label: 'See my research background', href: CV }],
   },
   {
     id: 'fieldwork', number: '05', title: 'The travel trunk', name: 'Field notes', icon: 'case',
@@ -78,6 +81,7 @@ export const STORIES = [
       'I co-led a study of village water scarcity, interviewing more than fifty residents and reaching nearly every household. The field notes here remember those conversations.',
     ],
     tags: ['May–June 2026', 'Rural health', 'Water scarcity'],
+    links: [{ label: 'More about my fieldwork', href: CV }],
   },
   {
     id: 'dialogue', number: '06', title: 'The home window', name: 'Three cities, home', icon: 'window',

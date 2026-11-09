@@ -17,7 +17,7 @@ The common identity, location, category and source link fields suit this dashboa
 | `fetchJobs` turns a missing/non-array `data.list` into `[]`, and defaults total to zero. | A zero-result CLI exit alone cannot prove no openings. Require independently validated response schema, scope and completed pagination. |
 | `all` paginates and deduplicates; `--max` can truncate results. It also stops on a short page. | Record the query, channel, cap, reported total and whether every page was read. A capped/partial scan is never complete coverage. |
 | Detail lookup scans up to 20 pages of 50 jobs; it is not a direct detail endpoint. | A failed detail lookup can be a scan limit, not vacancy closure. Repeated detail calls may waste requests. |
-| `jobUrl` constructs query-style URLs. | Keep the actual verified link where one exists. Validate generated URLs before publishing new candidates. |
+| `jobUrl` constructs query-style URLs. The generated internship URL for ID 22391 redirected to the recruitment homepage in a browser test on 9 November. | Keep the verified `/campus/intern/position/22391` detail link. Validate generated URLs before publishing new candidates; HTTP success can land on the wrong page. |
 
 ## Thin review bridge
 

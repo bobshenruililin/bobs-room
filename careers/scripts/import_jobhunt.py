@@ -22,8 +22,15 @@ def convert(run):
               'collection_status': 'fetch_failed', 'complete': False,
               'result_count': None, 'proposals': [], 'publish_automatically': False}
     if run['exit_code'] == 66:
-        report.update(collection_status='empty_unconfirmed',
-                      note='CLI EMPTY_RESULT alone does not prove valid schema, complete pagination or no openings.')
+        capture = run.get('capture', {})
+        confirmed = (capture.get('response_schema_valid') is True
+                     and capture.get('all_pages_read') is True
+                     and type(capture.get('reported_total')) is int
+                     and capture['reported_total'] == 0)
+        report.update(collection_status='empty' if confirmed else 'empty_unconfirmed',
+                      complete=confirmed, result_count=0 if confirmed else None,
+                      last_success_at=run['fetched_at'] if confirmed else None,
+                      note='No matching openings in the independently validated scope.' if confirmed else 'CLI EMPTY_RESULT alone does not prove valid schema, complete pagination or no openings.')
         return report
     if run['exit_code'] != 0:
         report['note'] = 'Fetch failed. Preserve all previously known jobs and review dates.'

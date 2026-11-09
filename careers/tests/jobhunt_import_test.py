@@ -29,6 +29,7 @@ class ImportTest(unittest.TestCase):
         self.assertEqual(mod.convert(run(exit_code=0, rows=[]))['collection_status'], 'empty_unconfirmed')
         capture = {'response_schema_valid': True, 'all_pages_read': True, 'reported_total': 0}
         self.assertEqual(mod.convert(run(exit_code=0, rows=[], capture=capture))['collection_status'], 'empty')
+        self.assertEqual(mod.convert(run(exit_code=66, capture=capture))['collection_status'], 'empty')
 
     def test_publish_time_never_becomes_a_modification_or_review_date(self):
         row = dict(id='22391', name='Example intern', nature_code='intern',

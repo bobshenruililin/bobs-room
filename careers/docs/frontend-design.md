@@ -14,4 +14,6 @@ Adaptations: light neutral workspace, a small red accent, native selects, strong
 
 ## Verification
 
-The JavaScript syntax check, eight filter/export tests and five dataset/checker tests passed during implementation. The dataset validator checks 28 active records and distinguishes graduation years from internship intake dates. Local HTTP serving is unavailable under the current environment permissions; visual and interaction validation will use the published GitHub Pages URL. Network execution of the maintenance checker is not verified here; deterministic queue behavior is tested.
+The JavaScript syntax check, eight filter/export tests and five dataset/checker tests passed during implementation. The dataset validator checks 28 active records and distinguishes graduation years from internship intake dates. Local HTTP serving is unavailable under the current environment permissions; Visual and interaction validation used the published GitHub Pages URL. Network execution of the maintenance checker is not verified here; deterministic queue behavior is tested.
+
+Live checks: desktop rendering, empty results, combined company/graduation filters, job detail drawer, shortlist persistence after reload, shortlist removal, company navigation, current 28/26 counts and source coverage labels were verified. At a 390 px viewport, cards rendered without horizontal page overflow. The lead/export browser test was interrupted by a browser connection failure; that interaction test is incomplete. CSV formatting and timestamp/failure rules have offline tests.

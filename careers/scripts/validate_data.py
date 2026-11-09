@@ -18,6 +18,14 @@ def validate(data):
     sources = {s.get('id'): s for s in data.get('sources', [])}
     if len(sources) != len(data.get('sources', [])):
         errors.append('Duplicate source IDs')
+    states = {'partial', 'ok', 'empty', 'empty_unconfirmed', 'fetch_failed', 'schema_changed', 'not_connected', 'not_checked'}
+    for source in sources.values():
+        if source.get('collection_status') not in states:
+            errors.append(f'{source.get("id")}: invalid collection state')
+        if source.get('collection_status') == 'empty' and not (source.get('collection_complete') is True and source.get('result_count') == 0 and source.get('last_success_at')):
+            errors.append(f'{source.get("id")}: empty needs complete successful scan evidence')
+        if source.get('collection_status') in ('fetch_failed', 'schema_changed') and source.get('result_count') == 0:
+            errors.append(f'{source.get("id")}: failure must not report zero openings')
     ids, postings = set(), set()
     for job in data.get('jobs', []):
         name = job.get('id', '<missing id>')

@@ -14,6 +14,8 @@ The initial collection contains 28 roles from 15 employers. Twenty-six employer-
 - `app.mjs`, `logic.mjs`, `style.css`, `index.html`: dependency-free interface.
 - `scripts/validate_data.py`: dataset checks, including evidence and graduation-year types.
 - `scripts/audit_sources.py`: link health and source-text change queue; never changes the dataset.
+- `scripts/import_jobhunt.py`: reviewed Xiaohongshu mapping, failure-aware run envelopes, and proposals only.
+- [JobHunt-CLI review](docs/JOBHUNT-REVIEW.md): findings, timestamp semantics and integration limits.
 - [Maintenance guide](docs/MAINTAIN.md): field semantics, review prompt and low-cost workflow.
 
 ## Development

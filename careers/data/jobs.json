@@ -16,7 +16,12 @@
       "url": "https://www.avanisai.com/careers",
       "note": "3 role(s) in this initial collection. Employer detail pages read; undated roles still need an availability check.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-2",
@@ -26,7 +31,12 @@
       "url": "https://www.bioworldventures.com/careers/venture-associate-ops-special-project",
       "note": "1 role(s) in this initial collection. Candidate listings only; review required before relying on eligibility or availability.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-3",
@@ -36,7 +46,12 @@
       "url": "https://career.bowtie.com.hk/jobs/7441344-actuarial-insurance-product-intern-2026-h2",
       "note": "2 role(s) in this initial collection. Employer detail pages read; undated roles still need an availability check.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-4",
@@ -46,7 +61,12 @@
       "url": "https://www.cmcc.vc/careers",
       "note": "1 role(s) in this initial collection. Employer detail pages read; undated roles still need an availability check.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-5",
@@ -56,7 +76,12 @@
       "url": "https://dptechnology.jobs.feishu.cn/index/position/7611105993640741170/detail",
       "note": "2 full employer descriptions read in-browser. Confirm availability and any unstated requirements.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-6",
@@ -66,7 +91,12 @@
       "url": "https://jobs.lever.co/ekimetrics/c7a0112a-4228-416f-8dd0-ff65fd0e87cc/apply?lever-source%5B%5D=WTTJ",
       "note": "1 role(s) in this initial collection. Candidate listings only; review required before relying on eligibility or availability.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-7",
@@ -76,7 +106,12 @@
       "url": "https://careers.hkpc.org/job/Analyst-(Intern),-AI-Development/1368558966/",
       "note": "3 role(s) in this initial collection. Employer detail pages read; undated roles still need an availability check.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-8",
@@ -86,7 +121,12 @@
       "url": "https://arashivision.jobs.feishu.cn/campus/position/7667837696232311059/detail",
       "note": "3 full employer descriptions read in-browser. Availability and unstated details still require confirmation.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-9",
@@ -96,7 +136,12 @@
       "url": "https://vrfi1sk8a0.jobs.feishu.cn/379481/position/7644861707151657266/detail",
       "note": "3 full employer descriptions read in-browser. Availability and unstated details still require confirmation.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-10",
@@ -106,7 +151,12 @@
       "url": "https://nio.jobs.feishu.cn/index/position/7599602351079917866/detail",
       "note": "1 full employer descriptions read in-browser. Confirm availability and any unstated requirements.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-11",
@@ -116,7 +166,12 @@
       "url": "https://www.sap-techs.com/job/data-engineer-data-scientist-internship-program/",
       "note": "1 role(s) in this initial collection. Employer detail pages read; undated roles still need an availability check.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-12",
@@ -126,7 +181,12 @@
       "url": "https://hr-jobs.sensetime.com/edu/position/7665992428080449798/detail",
       "note": "2 full employer descriptions read in-browser. Availability and unstated details still require confirmation.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-13",
@@ -136,7 +196,12 @@
       "url": "https://vibe-preneurs.com/careers",
       "note": "1 role(s) in this initial collection. Employer detail pages read; undated roles still need an availability check.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-14",
@@ -146,7 +211,12 @@
       "url": "https://job.xiaohongshu.com/campus/intern/position/22391?referer_code=Z8KHV5CZLCDI",
       "note": "Three full corporate careers descriptions read. These are Xiaohongshu’s own vacancies, separate from recruiting posts on the social platform.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "employer-15",
@@ -156,7 +226,12 @@
       "url": "https://iq.jobs.feishu.cn/intern/position/7620385100698863882/detail",
       "note": "1 full employer descriptions read in-browser. Confirm availability and any unstated requirements.",
       "checked_on": "2026-11-09",
-      "coverage": "Initial selection, not an exhaustive employer feed"
+      "coverage": "Initial selection, not an exhaustive employer feed",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     },
     {
       "id": "xhs-social",
@@ -166,7 +241,12 @@
       "url": "https://www.xiaohongshu.com/",
       "note": "Not connected. Paste a post link into Add a lead; verify the employer, requirements and application route before publication.",
       "checked_on": null,
-      "coverage": "Not connected"
+      "coverage": "Not connected",
+      "collection_status": "not_connected",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     }
   ],
   "jobs": [
@@ -195,7 +275,10 @@
       "intake_text": "Jan–Jun 2027",
       "verification": "page_read",
       "duration_text": "Jan–Jun 2027 · 6 months",
-      "source_id": "employer-7"
+      "source_id": "employer-7",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "hkpc-healthtech-tcm-11077",
@@ -222,7 +305,10 @@
       "intake_text": "Jan–Jun 2027",
       "verification": "page_read",
       "duration_text": "Jan–Jun 2027 · 6 months",
-      "source_id": "employer-7"
+      "source_id": "employer-7",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "hkpc-media-communications-11132",
@@ -249,7 +335,10 @@
       "intake_text": "Until 31 Mar 2027",
       "verification": "page_read",
       "duration_text": "Until 31 Mar 2027",
-      "source_id": "employer-7"
+      "source_id": "employer-7",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "bowtie-actuarial-product-2026-h2",
@@ -277,7 +366,10 @@
       "verification": "page_read",
       "duration_text": "6 months",
       "hours_text": "Full-time",
-      "source_id": "employer-3"
+      "source_id": "employer-3",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "bowtie-finance-intern-part-time",
@@ -303,7 +395,10 @@
       "evidence_note": "Official internship index links to this role. Detail page explicitly gives part-time, at least three days per week, degree eligibility and an application form.",
       "verification": "page_read",
       "hours_text": "At least 3 days / week",
-      "source_id": "employer-3"
+      "source_id": "employer-3",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "cmcc-investment-analytics-intern",
@@ -329,7 +424,10 @@
       "caveat": "Undated employer listing. Hong Kong or Toronto placement, start date, hours, duration and pay require confirmation; the page requests in-person teamwork.",
       "evidence_note": "Employer careers page explicitly lists Investment Analytics Intern in Hong Kong or Toronto, responsibilities, student eligibility and an Apply now contact.",
       "verification": "page_read",
-      "source_id": "employer-4"
+      "source_id": "employer-4",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "vibepreneurs-ai-growth-operations",
@@ -356,7 +454,10 @@
       "verification": "page_read",
       "duration_text": "8 weeks–12 months (flexible)",
       "duration_normalization": "8 weeks is approximately 2 months for filtering.",
-      "source_id": "employer-13"
+      "source_id": "employer-13",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "sapientia-data-engineer-scientist-intern",
@@ -381,7 +482,10 @@
       "caveat": "Undated role linked from the employer's Current Openings page. That page also contains older cohort-labelled jobs; confirm this vacancy's intake, start date and availability before applying.",
       "evidence_note": "Opened the employer's careers index and linked job detail. Detail explicitly states Hong Kong, Internship and entry level, lists requirements, and provides an application link.",
       "verification": "page_read",
-      "source_id": "employer-11"
+      "source_id": "employer-11",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "bioworld-venture-associate-ops-intern",
@@ -406,7 +510,10 @@
       "caveat": "Primarily an associate role with internships available only for selected candidates. Page shows Aug 8 without a year. Confirm internship availability, student eligibility, pay and schedule.",
       "evidence_note": "Official page explicitly allows internships for selected candidates and states Hong Kong. The main experience requirement and missing posting year prevent treating it as a confirmed student vacancy.",
       "verification": "page_read",
-      "source_id": "employer-2"
+      "source_id": "employer-2",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "ekimetrics-business-scientist-jan-2027",
@@ -439,7 +546,10 @@
         2027,
         2028
       ],
-      "source_id": "employer-6"
+      "source_id": "employer-6",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "insta360-ai-workflow-7667837696232311059",
@@ -464,7 +574,10 @@
       "caveat": "No explicit 2029 exclusion, but eligibility, schedule and winter availability must be confirmed. Do not count the two tracks as separate listings.",
       "evidence_note": "Full employer-hosted job description and requirements read in the browser on 9 Nov 2026. Application button visible; vacancy availability still requires employer confirmation.",
       "verification": "page_read",
-      "source_id": "employer-8"
+      "source_id": "employer-8",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "insta360-ai-development-7669741612285872434",
@@ -489,7 +602,10 @@
       "caveat": "Graduation year, minimum term and weekly attendance are not specified; confirm schedule and eligibility.",
       "evidence_note": "Full employer-hosted job description and requirements read in the browser on 9 Nov 2026. Application button visible; vacancy availability still requires employer confirmation.",
       "verification": "page_read",
-      "source_id": "employer-8"
+      "source_id": "employer-8",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "insta360-brand-pr-7667107621493573929",
@@ -516,7 +632,10 @@
       "verification": "page_read",
       "duration_text": ">3 months preferred",
       "hours_text": "5 days / week preferred",
-      "source_id": "employer-8"
+      "source_id": "employer-8",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "minimax-talkie-growth-7644861707151657266",
@@ -543,7 +662,10 @@
       "caveat": "2028 recruitment-track label; do not treat 2029 eligibility as confirmed. No start date, duration or weekly schedule stated.",
       "evidence_note": "Full employer-hosted job description and requirements read in the browser on 9 Nov 2026. Application button visible; vacancy availability still requires employer confirmation.",
       "verification": "page_read",
-      "source_id": "employer-9"
+      "source_id": "employer-9",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "minimax-resource-operations-7676444701512616234",
@@ -573,7 +695,10 @@
       "verification": "page_read",
       "duration_text": "3+ months preferred",
       "hours_text": "4+ days / week preferred",
-      "source_id": "employer-9"
+      "source_id": "employer-9",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "minimax-pr-7677596881565141257",
@@ -599,7 +724,10 @@
       "evidence_note": "Full employer-hosted job description and requirements read in the browser on 9 Nov 2026. Application button visible; vacancy availability still requires employer confirmation.",
       "cohort_min": 2028,
       "verification": "page_read",
-      "source_id": "employer-9"
+      "source_id": "employer-9",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "sensetime-agent-benchmark-7665992428080449798",
@@ -624,7 +752,10 @@
       "caveat": "Job ID A34497. No cohort, weekly schedule, duration or winter intake dates stated; 2029 eligibility needs confirmation.",
       "evidence_note": "Full employer-hosted job description and requirements read in the browser on 9 Nov 2026. Application button visible; vacancy availability still requires employer confirmation.",
       "verification": "page_read",
-      "source_id": "employer-12"
+      "source_id": "employer-12",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "sensetime-web-intern-7670828682361997594",
@@ -656,7 +787,10 @@
       "duration_text": "At least 6 months",
       "duration_min_exclusive": false,
       "hours_text": "At least 4 days / week",
-      "source_id": "employer-12"
+      "source_id": "employer-12",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "nio-ai-product-7599602351079917866",
@@ -682,7 +816,10 @@
       "evidence_note": "Full employer-hosted description and requirements read in-browser on 9 Nov 2026. Application button visible; current vacancy availability still needs employer confirmation.",
       "verification": "page_read",
       "hours_text": "4 on-site days / week preferred",
-      "source_id": "employer-10"
+      "source_id": "employer-10",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "dp-education-product-7611105993640741170",
@@ -707,7 +844,10 @@
       "caveat": "Four or more days per week for at least three months. The specified postgraduate and university requirements make this unsuitable for a typical current undergraduate.",
       "evidence_note": "Full employer-hosted description and requirements read in-browser on 9 Nov 2026. Application button visible; current vacancy availability still needs employer confirmation.",
       "verification": "page_read",
-      "source_id": "employer-5"
+      "source_id": "employer-5",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "dp-research-product-7514672281633786163",
@@ -733,7 +873,10 @@
       "evidence_note": "Full employer-hosted description and requirements read in-browser on 9 Nov 2026. Application button visible; current vacancy availability still needs employer confirmation.",
       "verification": "page_read",
       "hours_text": "3–5 days / week",
-      "source_id": "employer-5"
+      "source_id": "employer-5",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "iqiyi-creator-product-7620385100698863882",
@@ -759,7 +902,10 @@
       "evidence_note": "Full employer-hosted description and requirements read in-browser on 9 Nov 2026. Application button visible; current vacancy availability still needs employer confirmation.",
       "cohort_preferred_min": 2027,
       "verification": "page_read",
-      "source_id": "employer-15"
+      "source_id": "employer-15",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "avanis-ai-ml",
@@ -786,7 +932,10 @@
       "verification": "page_read",
       "caveat": "Flexible start; confirm terms directly.",
       "evidence_note": "Role and application instructions read on employer page.",
-      "source_id": "employer-1"
+      "source_id": "employer-1",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "avanis-creative-video",
@@ -813,7 +962,10 @@
       "verification": "page_read",
       "caveat": "Flexible start; confirm terms directly.",
       "evidence_note": "Role and application instructions read on employer page.",
-      "source_id": "employer-1"
+      "source_id": "employer-1",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "avanis-research",
@@ -840,7 +992,10 @@
       "verification": "page_read",
       "caveat": "Flexible start; confirm terms directly.",
       "evidence_note": "Role and application instructions read on employer page.",
-      "source_id": "employer-1"
+      "source_id": "employer-1",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "xiaohongshu-22391",
@@ -868,7 +1023,10 @@
       "caveat": "Four to five days each week, at least three months. The 2028 requirement excludes a standard 2029 graduation.",
       "evidence_note": "Full description and requirements read on the employer recruitment site in-browser on 9 Nov 2026; Apply CV button visible. This is an employer vacancy, not a social-platform post.",
       "hours_text": "4–5 days / week",
-      "source_id": "employer-14"
+      "source_id": "employer-14",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "xiaohongshu-22503",
@@ -897,7 +1055,10 @@
       "caveat": "Shenzhen preferred. At least three months full-time; a short winter break alone is insufficient.",
       "evidence_note": "Full description and requirements read on the employer recruitment site in-browser on 9 Nov 2026; Apply CV button visible. This is an employer vacancy, not a social-platform post.",
       "hours_text": "Full-time",
-      "source_id": "employer-14"
+      "source_id": "employer-14",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     },
     {
       "id": "xiaohongshu-22207",
@@ -926,7 +1087,10 @@
         2027,
         2028
       ],
-      "source_id": "employer-14"
+      "source_id": "employer-14",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
     }
   ]
 }

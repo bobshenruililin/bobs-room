@@ -39,6 +39,6 @@ export function csvCell(value) {
   return '"' + text.replaceAll('"','""') + '"';
 }
 export function exportCsv(jobs) {
-  const columns = ['company','title','locations','category','employment','work_mode','duration_text','duration_months','duration_min_exclusive','hours_text','days_per_week','cohort','cohort_min','cohort_preferred','salary_text','eligibility','caveat','checked_on','status','stored_status','verification','evidence_note','source_url'];
+  const columns = ['company','title','locations','category','employment','work_mode','duration_text','duration_months','duration_min_exclusive','hours_text','days_per_week','cohort','cohort_min','cohort_preferred','salary_text','eligibility','caveat','source_published_at','source_updated_at','last_fetched_at','checked_on','status','stored_status','verification','evidence_note','source_url'];
   return '\ufeff' + [columns.map(csvCell).join(','),...jobs.map(job=>{const j={...job,stored_status:job.status,status:evidenceStatus(job)};return columns.map(k=>csvCell(Array.isArray(j[k])?j[k].join('; '):j[k])).join(',');})].join('\r\n');
 }

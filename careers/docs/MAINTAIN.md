@@ -64,3 +64,7 @@ Use a stronger model or a person only for conflicting evidence, unusual eligibil
 ## Privacy and sharing
 
 The published job collection is shared. Shortlists and the lead inbox use local browser storage and are not synced or published. Exported CSV/JSON is an explicit local download. Filter URLs are shareable, but a shortlist link does not transfer another person's saved jobs. No private profile, messages, credentials or CVs belong in the public data.
+
+## JobHunt-CLI
+
+See [the code review and import bridge](JOBHUNT-REVIEW.md). Source collection state is separate from job evidence state: partial, complete, validated empty, unconfirmed empty, fetch failure, schema change, not checked or not connected. Failed runs retain known jobs and source-review dates. Imported publication, modification, fetch and review timestamps are separate fields; unknown values stay null. The import bridge produces proposals only and has not been live-connected.

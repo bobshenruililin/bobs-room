@@ -6,7 +6,7 @@ A small internship dashboard built around evidence and visible requirements.
 
 Search and filter by company, location, function, graduation year, minimum term and evidence quality. Save a local shortlist, export CSV, or capture Xiaohongshu/job links in a local lead inbox. No account, server, paid API, analytics or frontend dependency is required.
 
-The initial collection contains 29 roles from 15 employers. Eleven employer-page descriptions were read; eighteen candidates need further review. This is a starting collection, not exhaustive market coverage. Xiaohongshu's corporate careers listings are distinct from its social posts; the social platform is not connected.
+The initial collection contains 28 roles from 15 employers. Twenty-six employer-page descriptions were read; two candidates need further review. One explicitly offline role was removed and archived. This is a starting collection, not exhaustive market coverage. Xiaohongshu's corporate careers listings are distinct from its social posts; the social platform is not connected.
 
 ## Files
 

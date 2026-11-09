@@ -28,7 +28,7 @@ export function sortJobs(jobs, sort = 'fresh') {
     if (sort === 'company') return a.company.localeCompare(b.company) || a.title.localeCompare(b.title);
     if (sort === 'title') return a.title.localeCompare(b.title);
     if (sort === 'duration') return (a.duration_months ?? Infinity) - (b.duration_months ?? Infinity) || a.company.localeCompare(b.company);
-    const priority = (a.status === 'listed' ? 0 : 1) - (b.status === 'listed' ? 0 : 1);
+    const priority = (evidenceStatus(a) === 'listed' ? 0 : 1) - (evidenceStatus(b) === 'listed' ? 0 : 1);
     return priority || (b.checked_on || '').localeCompare(a.checked_on || '') || a.company.localeCompare(b.company);
   });
 }

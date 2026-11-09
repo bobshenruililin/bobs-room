@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {matches,evidenceStatus,sortJobs,safeUrl,exportCsv} from '../logic.mjs';
+const now=new Date('2026-11-09T12:00:00Z');
+const base={id:'test',title:'AI product intern',company:'Example',locations:['Hong Kong'],category:'Product',summary:'Build tools',eligibility:'Undergraduate',cohort:[],duration_months:null,status:'listed',checked_on:'2026-11-09'};
+test('unknown duration cannot pass short-term filter',()=>{assert.equal(matches(base,{duration:'2'},now),false);assert.equal(matches({...base,duration_months:1},{duration:'2'},now),true);});
+test('cohort requirement excludes incompatible graduation year',()=>{assert.equal(matches({...base,cohort:[2028]},{cohort:'2029'},now),false);assert.equal(matches(base,{cohort:'2029'},now),true);assert.equal(matches({...base,cohort_min:2028},{cohort:'2027'},now),false);assert.equal(matches({...base,cohort_min:2028},{cohort:'2029'},now),true);});
+test('old evidence becomes needs review without rewriting source date',()=>{assert.equal(evidenceStatus({...base,checked_on:'2026-10-01'},now),'needs_review');assert.equal(evidenceStatus(base,now),'listed');assert.equal(evidenceStatus({...base,status:'needs_review'},now),'needs_review');});
+test('filters intersect and bilingual search works',()=>{assert.equal(matches({...base,title:'AI产品实习生'},{search:'AI产品',location:'Hong Kong'},now),true);assert.equal(matches(base,{search:'AI product',location:'Shanghai'},now),false);});
+test('duration sort leaves unknown requirements at the end',()=>{assert.deepEqual(sortJobs([base,{...base,id:'short',duration_months:2}],'duration').map(j=>j.id),['short','test']);});
+test('links cannot execute script',()=>{assert.equal(safeUrl('javascript:alert(1)'),'');assert.equal(safeUrl('https://example.com/jobs'),'https://example.com/jobs');});
+test('CSV escapes formula injection, commas and quotes',()=>{const csv=exportCsv([{...base,title:'=SUM(1,2)',company:'A "company"'}]);assert.ok(csv.includes('"\'=SUM(1,2)"'));assert.ok(csv.includes('"A ""company"""'));});

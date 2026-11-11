@@ -1,6 +1,6 @@
 # Content sources and reuse
 
-Source record: 7 October 2026.
+Initial room source record: 7 October 2026. Editorial homepage and project-image record added 11 November 2026.
 
 ## Biography and personal material
 
@@ -8,20 +8,48 @@ The principal public source is [Shen Ruililin’s original published page](https
 
 The six photographs in `assets/photos/` and `assets/Shen-Ruililin-CV.pdf` were copied from that user-published source. Descriptive captions and alternative text live in `stories.mjs`. Do not infer extra locations, dates, people, awards, or research results from a photograph. Full poems are not supplied; the poetry book identifies the works and invites a conversation.
 
+The homepage reuses the existing `mountains`, `sea`, and `doorway` photographs; `home.mjs` holds its shorter captions and alternative text. No new event or travel-date claim is inferred from those images. The room’s current St. John’s wording was corrected on 11 November to the historical Martin Scholarship for 2025–26, rather than implying present college membership. This textual correction does not replace or edit the downloadable CV.
+
+## Editorial homepage — 11 November 2026
+
+The homepage introduces Bob through four selected projects and links to the project owners’ published pages or source. The short questions and “a question becomes…” descriptions are editorial framing. They do not establish project outcomes, research findings, or exclusive authorship.
+
+| Project | Public reference | Credit and qualification preserved in the homepage |
+| --- | --- | --- |
+| Asterwind | [Project site](https://bobshenruililin.github.io/asterwind/); [published playable page used to locate its illustration](https://bobshenruililin.github.io/asterwind/docs/demos/unfolded/?v=2) | Collaborative HKU student leadership project. Bob is helping turn the group’s ideas into an interactive paper world; the playable experience is evolving. No sole-author or completed-evaluation claim is made. |
+| Crossing Lives — When lives span a border | [Public research presentation](https://bobshenruililin.github.io/jamie-crossing-lives-site/); [public photo metadata](https://bobshenruililin.github.io/jamie-crossing-lives-site/feature/cast.js) | Research and presentation: Jamie Ko. Visualization: Bob. Exploratory work concerning everyday cross-border life in Hong Kong–Shenzhen, also informing questions for Singapore–Johor. It remains in progress. |
+| Heat & health | [Laidlaw Heat Project source and overview](https://github.com/bobshenruililin/Laidlaw-Heat-Project), together with the existing biography/CV research record | Undergraduate research under Professor David Bishai. The homepage and room describe thermal extremes and cardiovascular hospitalisations using monthly Hong Kong aggregates for 2013–2023 and label the work as ongoing. The notebook graphic is a descriptive composition, not a plot, statistical result, or claim of causal effect. |
+| Career Atlas | [Local dashboard](../careers/), [project notes](../careers/README.md), and its [source dataset](../careers/data/jobs.json) | A working internship dashboard with original-source links, practical requirements, visible source/review status, and a browser-local shortlist. The homepage identifies it as a small starting collection; social feeds and automatic applications are not connected. The typographic panel is not a live dashboard screenshot. |
+
+The room arcade retains an earlier description, now explicitly titled “Crossing Lives · pixel experiment,” with the limited text “An ongoing pixel-world experiment. Ask me about it.” The new homepage credit refers specifically to the public Jamie Ko research presentation above. The shared name alone does not establish that these are the same project; do not expand the legacy note with private project material.
+
+On 11 November, the room’s drawer, heat-story record, and index summary were reconciled with the current public Laidlaw overview. They identify monthly cardiovascular hospitalisation aggregates for Hong Kong, 2013–2023, under Professor David Bishai, and retain the work-in-progress qualification. The earlier older-adult and surveillance descriptions are not carried into the revised copy; no specific age cohort, patient-level analysis, or causal finding is asserted.
+
+### Published project images
+
+The authoritative per-file record is [`assets/projects/provenance.json`](../assets/projects/provenance.json). Both assets were retrieved on **11 November 2026** and retained without transformation. Public availability and reuse here do not create a new licensing grant.
+
+| Local file | Exact published source | Attribution and limits |
+| --- | --- | --- |
+| `assets/projects/asterwind-studio.webp` | [studio-opening.webp](https://bobshenruililin.github.io/asterwind/hub/assets/studio-opening.webp), discovered directly in the public runtime HTML | Asterwind team; original published illustrative artwork with fictional characters. This is a scene from the public playable project, not a photograph of Bob or his teammates. |
+| `assets/projects/crossing-lives-maps.jpg` | [sz-transit-maps.jpg](https://bobshenruililin.github.io/jamie-crossing-lives-site/feature/assets/sz-transit-maps.jpg), published photo entry `transit-maps` in `feature/cast.js` | Field photographs supplied by Bob and Jamie. Research and presentation: Jamie Ko. Visualization: Bob. The individual photographer is not identified in the public metadata. The image shows Shenzhen rail and Hong Kong MTR maps at an information point; it does not establish the operator, help received, or a participant’s identity. |
+
+The Asterwind source is **1672 × 941**, **282,400 bytes**, SHA-256 `b79e98f8de46582ceef15287004792db263edc18b478d4e2de31bbdb996ab0a1`. The Crossing Lives source is **2048 × 1536**, **474,272 bytes**, SHA-256 `602c37b6b0c95a3cab42906f9ec3ec4b82e0f45ab7f58f84dfdba1561035b4ab`. These values are copied from the provenance record and identify the retained source bytes; CSS presentation may crop the displayed frame.
+
 ## Distinct subjects for each object
 
 The content revision of 7 October 2026 uses the published biography, the one-page [public CV](../assets/Shen-Ruililin-CV.pdf), and Bob’s direct personal replies to give each object a distinct subject. The room has twelve discoverable checkpoints, including the atlas and Go board now painted into the main illustration. This is a presentation change and adds no biographical claims. The sofa introduces Bob’s student life; it does not repeat the full list of research, writing, and hobbies. The twelve TV channels in `personal.mjs` combine six personal-interest channels with six public-CV subjects previously absent from the room.
 
 | Place | Content responsibility | Source |
 | --- | --- | --- |
-| Sofa | Global Health and Development at HKUMed, BASc 2025–2029; St. John’s College and Martin Scholar 2025–26; one of four Tung and Ngai Foundation Scholarship recipients at HKU; Tam Wun Tsun HKU Horizons Student Enrichment Award 2025–26 | CV: Education; Honours and Awards |
-| Research desk | Laidlaw heat-health research, Hospital Authority data, Professor David Bishai, hot/cold seasons, preparedness and surveillance | Published biography; CV: Research Experience |
+| Sofa | Global Health and Development at HKUMed, BASc 2025–2029; historical Martin Scholarship at St. John’s College for 2025–26; one of four Tung and Ngai Foundation Scholarship recipients at HKU; Tam Wun Tsun HKU Horizons Student Enrichment Award 2025–26 | CV: Education; Honours and Awards; later direct context for historical college wording |
+| Research desk | Thermal extremes and monthly cardiovascular hospitalisation aggregates in Hong Kong, 2013–2023; Professor David Bishai; preparedness as a research interest; work in progress | Current public Laidlaw Heat Project overview; published biography and CV for the research/supervision context |
 | Globe | HKO/PolyU research internship, February–July 2024; Junior Researcher Mentoring Programme; GraphCast integration and atmospheric-river method presented at AGU | Published biography; CV: Research Experience |
 | Travel trunk | Wu Zhi Qiao in Macha, May–June 2026; one of three coordinators, logistics and project selection, water-scarcity interviews with over fifty residents | Published biography; CV: Leadership |
 | Home window and its postcard | Three home cities; separately, nine-day NEWDAY dialogue at Nansen Academy, Lillehammer, July–August 2026 | Home cities: direct instruction; NEWDAY: published biography and CV: Leadership |
 | Poetry book | Two poem titles and the exact listed awards, plus a contact route | Published biography; CV: Honours and Awards |
 | Photo album | Six real photographs and accurate descriptions of their visible contents | Published biography and its local photo assets |
-| Arcade notes | Qiskit/SpinQ work, July 2023–March 2024; MEDocGPT Youth Fellowship, July–September 2023; only the approved public description of Crossing Lives | Published biography; CV: Research Experience; direct instruction for Crossing Lives |
+| Arcade notes | Qiskit/SpinQ work, July 2023–March 2024; MEDocGPT Youth Fellowship, July–September 2023; only the limited description titled “Crossing Lives · pixel experiment” | Published biography; CV: Research Experience; direct instruction for the pixel experiment |
 | Lantern fern | A short discovery and a view of the existing sea photograph | Fictional interaction; public photograph |
 | Duoji | His identity/name, overconfidence around bigger dogs and the ear-bite incident, and his treatment of dog plushies | Direct instruction |
 | Go floor board | Bob’s enjoyment of Go; a local two-player practice board | Direct instruction; fictional game presentation |
@@ -56,7 +84,7 @@ The following facts and creative preferences were supplied directly by Bob for t
 - He has lived for years in Shanghai, Singapore, and Hong Kong, and calls all three home.
 - He loves Go and requested a floor-board discovery; this does not establish a rank, competition history, or playing strength. He requested a falling-block game for the arcade; the implementation is titled Moonlight Blocks.
 - He is fascinated by maps and supplied these visited places: Singapore, Malaysia, Thailand, Cambodia, China, Hong Kong, Taiwan, Japan, Russia, Finland, Sweden, Norway, Germany, France, Switzerland, Spain, UK, and Turkey. He later added brief visits to the US, Canada, Australia, South Korea, Indonesia, Kenya, Egypt, South Africa, Namibia, Argentina, and Peru, followed by childhood visits to Vietnam, Austria, and Italy, bringing the list to thirty-two places. This does not establish travel dates, routes, precise duration, or residence.
-- **Crossing Lives** may be named as an ongoing pixel-world experiment. No further private project material is approved for this site.
+- The original room instruction permits **Crossing Lives** to be named as an ongoing pixel-world experiment. No further private project material is approved for this site. The homepage’s separately sourced public research presentation is documented above.
 
 The apartment, animal visitors, ambient dialogue, hidden discoveries, and arcade are fictional presentation elements. They should not be read as evidence of a real apartment, event, or research finding. Generated city scenes are illustrations, not documentary photographs.
 
@@ -81,7 +109,7 @@ The Go board is a local practice interaction with alternating colours, captures,
 
 The active `room-v4` integrates the folded atlas and Go board into the same illustrated floor instead of displaying separate overlay props. Its edited scene and original prompt are retained alongside the previous room.
 
-The room, visitors, and object illustrations in `assets/art/` were created using OpenAI image generation for this project. See [art direction and provenance](art-direction.md) for the asset map and representative reproduction notes. Semantic HTML supplies the readable content and interactive controls. Generation provenance does not establish a blanket copyright or reuse license; the code license below does not grant rights to the artwork.
+The room, visitors, and object illustrations in `assets/art/` were created using OpenAI image generation for this project. See [art direction and provenance](art-direction.md) for the asset map and representative reproduction notes. Semantic HTML supplies the readable content and interactive controls. The two published project images in `assets/projects/` have the separate provenance described above; do not attribute them to this room’s image-generation run. Generation provenance does not establish a blanket copyright or reuse license; the code license below does not grant rights to the artwork.
 
 Fonts are self-hosted from the Google Fonts collection and retain their SIL Open Font License notices:
 
@@ -100,7 +128,7 @@ The repository’s MIT grant covers original software code. Natural Earth geogra
 
 For a new biography claim, use a public source or a direct instruction from Bob and update this record. For a replacement photo, illustration, or document, keep its provenance and applicable permission alongside the asset. Avoid importing unpublished project files, participant information, private datasets, or research findings into this public site.
 
-The site has no analytics or account system. Its local journal saves discovery IDs and visitor choice in the visitor’s browser. External contact links open the visitor’s email application or the linked public service; the room itself does not submit a contact form.
+The site has no analytics or account system. Its room journal saves discovery IDs and visitor choice in the visitor’s browser; the homepage’s project selection and photo cycling do not call a remote AI service. External contact links open the visitor’s email application or the linked public service; the site itself does not submit a contact form.
 
 ## CV replacement — 29 October 2026
 

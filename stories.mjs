@@ -22,10 +22,10 @@ export const STORIES = [
     intro: 'I’m Shen Ruililin. You can call me Bob.',
     paragraphs: [
       'I study Global Health and Development at HKU’s medical faculty. My BASc degree runs from 2025 to 2029.',
-      'I’m a member of St. John’s College, and a Martin Scholar there for 2025–26.',
+      'I was a Martin Scholar at St. John’s College for 2025–26.',
       'I’m one of four Tung and Ngai Foundation Scholarship recipients at HKU. I also received the Tam Wun Tsun HKU Horizons Student Enrichment Award for 2025–26.',
     ],
-    tags: ['HKUMed', 'St. John’s College', '2025–2029'],
+    tags: ['HKUMed', 'Martin Scholar 2025–26', '2025–2029'],
     image: 'mountains',
     links: [{ label: 'Read my CV', href: CV }, { label: 'Say hello', href: `mailto:${EMAIL}` }],
   },
@@ -164,3 +164,9 @@ export const STORIES = [
 ];
 
 export const byId = id => STORIES.find(s => s.id === id);
+
+export const storyIdFromHash = hash => {
+  if (typeof hash !== 'string' || !hash.startsWith('#story-')) return null;
+  const id = hash.slice('#story-'.length);
+  return byId(id) ? id : null;
+};

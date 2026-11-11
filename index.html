@@ -3,123 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#172b2b">
+  <meta name="theme-color" content="#f4efe3">
   <title>Bob’s Room · Shen Ruililin</title>
-  <meta name="description" content="Step into a magical pixel room and explore Shen Ruililin’s life in health, climate, computation, poetry, and places in between.">
+  <meta name="description" content="I’m Bob, a Global Health and Development student at HKU. A little room for research, things I’m making, and a few small wonders. Come in.">
   <link rel="canonical" href="https://bobshenruililin.github.io/bobs-room/">
   <meta property="og:title" content="Bob’s Room · A little room. A curious life.">
-  <meta property="og:description" content="A walkable pixel world for Shen Ruililin. Come in, wander a little, and follow your curiosity.">
+  <meta property="og:description" content="Meet Shen Ruililin. Explore a few questions that became research, stories, games and useful tools—or wander through my little pixel room.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bobshenruililin.github.io/bobs-room/">
   <meta property="og:image" content="https://bobshenruililin.github.io/bobs-room/assets/art/room-v4.png">
+  <meta property="og:image:alt" content="Bob’s imaginary lantern-lit room overlooking a harbour, full of books, small discoveries and stories.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="./assets/art/bob-emblem.png" type="image/png">
-  <link rel="preload" href="./assets/art/room-v4.webp" as="image" type="image/webp">
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/fonts/fraunces.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="preload" href="./assets/fonts/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./discoveries.css">
-  <link rel="stylesheet" href="./sofa.css">
-  <link rel="stylesheet" href="./drawer.css">
-  <link rel="stylesheet" href="./tour.css">
-  <link rel="stylesheet" href="./arcade.css">
-  <link rel="stylesheet" href="./go.css">
-  <link rel="stylesheet" href="./personal.css?v=2f51a64">
+  <link rel="stylesheet" href="./home.css">
+  <script type="module" src="./home.mjs"></script>
 </head>
-<body class="immersive">
-  <noscript><style>body.immersive{overflow:auto}body.immersive .site-header{position:static;background:#172b2b;width:100%;padding:18px}body.immersive .game-frame{display:none}body.immersive main.shell{width:calc(100% - 32px)}body.immersive .introduction,body.immersive .room-index,body.immersive .site-footer{display:block}body.immersive .index-list button,#index-toggle,#about-room,#return-room{display:none}body.immersive .introduction{padding-top:25px}</style></noscript>
-  <a class="skip-link" href="#room-index">Skip the game and read about Bob</a>
-  <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <symbol id="i-window" viewBox="0 0 24 24"><path d="M4 21V10a8 8 0 0 1 16 0v11M4 13h16M12 2v19M2 21h20"/></symbol>
-    <symbol id="i-tea" viewBox="0 0 24 24"><path d="M4 9h12v7a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5ZM16 10h2a3 3 0 0 1 0 6h-2M8 3v2m4-3v3M2 21h18"/></symbol>
-    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></symbol>
-    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 4h6l3 2 3-2h6v16h-6l-3 2-3-2H3ZM12 6v16M6 8h3m6 0h3M6 12h3m6 0h3"/></symbol>
-    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="10" r="7"/><path d="M5 10h14M12 3c-5 3-5 11 0 14 5-3 5-11 0-14M3 12a10 10 0 0 0 19-4M12 20v2M8 22h8"/></symbol>
-    <symbol id="i-case" viewBox="0 0 24 24"><path d="M3 7h18v14H3ZM8 7V3h8v4M7 7v14m10-14v14M3 12h18"/></symbol>
-    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 7h4l2-3h6l2 3h4v14H3ZM5 10h2"/><circle cx="12" cy="14" r="4"/></symbol>
-    <symbol id="i-game" viewBox="0 0 24 24"><path d="M6 3h12l2 11-3 7H7l-3-7ZM7 6h10v6H7ZM7 16h4m-2-2v4m6-2h2"/></symbol>
-    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M20 3C5 3 1 8 5 16s16 2 15-13ZM4 21 16 8M8 17v-6m0 6h6"/></symbol>
-    <symbol id="i-sound" viewBox="0 0 24 24"><path d="M3 9h4l5-5v16l-5-5H3ZM16 8a6 6 0 0 1 0 8m3-12a11 11 0 0 1 0 16"/></symbol>
-    <symbol id="i-map" viewBox="0 0 24 24"><path d="m3 5 6-2 6 2 6-2v16l-6 2-6-2-6 2ZM9 3v16M15 5v16"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 7 7 3-7 3-3 7-3-7-7-3 7-3Z"/></symbol>
-  </svg>
-
-  <header class="site-header shell">
-    <a class="brand" href="./" aria-label="Bob’s Room, Shen Ruililin, home"><img class="brand-emblem" src="./assets/art/bob-emblem.webp" alt="" width="56" height="42"><span>Shen Ruililin<small>YOU CAN CALL ME BOB</small></span></a>
-    <nav aria-label="Main navigation">
-      <button class="nav-button" id="index-toggle">Read about Bob <span>↗</span></button>
-      <a class="cv-link" href="./assets/Shen-Ruililin-CV.pdf" target="_blank" rel="noopener">My CV <span>↗</span></a>
-      <a class="hello-link" href="mailto:bobshenruililin@gmail.com">Say hello <span>↗</span></a>
-    </nav>
+<body>
+  <a class="skip-link" href="#work">Skip to selected work</a>
+  <header class="site-head wrap">
+    <a class="wordmark" href="./" aria-label="Bob’s Room — Shen Ruililin, home">
+      <svg class="door-mark" viewBox="0 0 30 42" aria-hidden="true"><path d="M3 40V15a12 12 0 0 1 24 0v25M1 40h28M9 40V17a6 6 0 0 1 12 0v23M18 25v3"/></svg>
+      <span><span class="wordmark-name">Bob’s room.</span><small>Shen Ruililin</small></span>
+    </a>
+    <nav aria-label="Main navigation"><a href="#work">The work</a><a class="nav-about" href="#about">The person</a><a class="nav-hello" href="mailto:bobshenruililin@gmail.com">Say hello ↗</a></nav>
   </header>
-
-  <main class="shell">
-    <section class="introduction" aria-labelledby="page-title">
-      <div><p class="eyebrow"><span class="tiny-star">✦</span> WELCOME TO BOB’S ROOM</p><h1 id="page-title">A little room. <em>A curious life.</em></h1></div>
-      <p class="intro-copy">Health, climate, code, and the scenic route.<br>Come in, wander a little, and follow your curiosity.</p>
+  <main>
+    <section class="arrival wrap" aria-labelledby="page-title">
+      <div class="arrival-copy">
+        <p class="small-label hello-line">You can call me Bob</p>
+        <h1 id="page-title">A little room.<em>A curious life.</em></h1>
+        <p class="arrival-intro">I study <strong>Global Health and Development at HKU.</strong> And I tend to follow a question wherever it takes me.</p>
+        <p class="arrival-detail">Sometimes that becomes research. Sometimes a tool, a story, or a world you can wander through. This is a place to share a few of them.</p>
+        <a class="text-link" href="#work">See what I’m working on <span aria-hidden="true">↓</span></a>
+        <p class="arrival-footnote"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 1.5"/></svg>Hong Kong <span aria-hidden="true">·</span> <time id="hk-time">a place I call home</time></p>
+      </div>
+      <figure class="room-preview">
+        <span class="room-note" aria-hidden="true">The door’s open.</span>
+        <a class="room-door" href="./room.html" aria-label="Step inside Bob’s interactive pixel room"><img src="./assets/art/room-v4.webp" width="1536" height="1024" alt="An imaginary lantern-lit room overlooking a harbour, full of books, a research desk, a sofa and an arcade." fetchpriority="high"><span class="door-invite"><span>Step inside</span><span aria-hidden="true">↗</span></span></a>
+        <figcaption><span>Explore the interactive room</span><span>An imaginary room. Real stories.</span></figcaption>
+      </figure>
     </section>
-
-    <section class="game-frame" aria-label="Bob’s imaginary room, an interactive pixel world">
-      <div class="frame-top"><span><i class="status-dot"></i> SOMEWHERE AFTER SUNSET</span><span class="frame-note">HONG KONG & A LITTLE IMAGINATION</span><button id="help-button" aria-label="How to explore the room">? <span>How to play</span></button></div>
-      <div class="world-viewport" id="world-viewport">
-        <div class="room-map" id="room-map">
-          <img class="room-art" id="room-art" src="./assets/art/room-v4.webp" width="1536" height="1024" alt="An intimate lantern-lit pixel apartment overlooking a magical harbour: piles of books, a research desk, travel trunk, three arched windows, a photo wall, sofa, arcade, a folded travel atlas, a Go board, and a green rug. Each object opens a story from Bob’s life." fetchpriority="high" draggable="false">
-          <canvas id="world" tabindex="0" aria-label="Walk through the room with arrow keys or W A S D. Press E near a glowing object to read its story. You can also use the room index." aria-describedby="game-instructions"></canvas>
-          <div class="hotspots" id="hotspots" aria-label="Objects in the room"></div>
-          <button class="builder-invitation" id="builder-invitation"><span class="floor-star">✦</span><strong>LET’S BUILD SOMETHING</strong><small>I’m always up for it. Bring an idea. ↗</small></button>
-          <div class="visitor-bubble" id="visitor-bubble" aria-hidden="true">Oh, hello! Make yourself at home.</div>
-          <div class="destination" id="destination" aria-hidden="true"></div>
-        </div>
-        <div class="room-welcome" id="room-welcome" hidden><span class="welcome-number">01 / A PLACE TO BEGIN</span><p>Every object<br>has <em>a story.</em></p><span>Tap a glow, or take a little walk.</span><button id="enter-room">Let’s explore <span>→</span></button></div>
-        <div class="scene-actions">
-          <button id="overview-button" class="scene-tool mobile-only" aria-pressed="false"><svg><use href="#i-map"/></svg><span>Whole room</span></button>
-          <button id="labels-button" class="scene-tool" aria-pressed="false" title="Show the name of every object"><svg><use href="#i-map"/></svg><span>Labels</span></button>
-          <button id="motion-button" class="scene-tool" aria-pressed="false" title="Pause the fireflies and ambient animation"><svg><use href="#i-star"/></svg><span>Stillness</span></button>
-          <button id="sound-button" class="scene-tool" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Sound off</span></button>
-        </div>
-        <button id="tour-start" class="tour-start" aria-label="Wander with me, start a guided tour of the whole room" title="A gentle guided wander — pause or take over anytime"><span aria-hidden="true">✦</span><span>Wander with me</span></button>
-        <button class="nearby-prompt" id="nearby-prompt" hidden><kbd>E</kbd><span></span><i>↗</i></button>
-        <div class="loading-note" id="loading-note" role="status">Lighting the lanterns…</div>
-        <div class="art-error" id="art-error" hidden><p>The room couldn’t load this time.</p><button id="retry-art">Try again</button><button data-index>Read the room index</button></div>
+    <div class="page-divider wrap" aria-hidden="true"><span>A few things on my desk</span><svg viewBox="0 0 20 20"><rect x="4" y="4" width="12" height="12"/><path d="M10 4v12M4 10h12"/></svg><span>Always a work in progress</span></div>
+    <section class="work-section wrap" id="work" aria-labelledby="work-heading">
+      <div class="work-intro">
+        <p class="small-label">Selected work · 2026</p>
+        <h2 id="work-heading">Questions that<br> became something.</h2>
+        <p class="section-intro">A few different ways of trying to understand the world—and make something useful from it.</p>
+        <nav class="project-nav" aria-label="Choose a project">
+          <a class="project-switch" data-project="asterwind" href="#project-asterwind"><span class="project-number">01</span><span class="project-label"><span class="project-title">Asterwind</span><small>Interactive storytelling</small></span><span class="project-arrow" aria-hidden="true">→</span></a>
+          <a class="project-switch" data-project="crossing" href="#project-crossing"><span class="project-number">02</span><span class="project-label"><span class="project-title">Crossing Lives</span><small>Research visualization</small></span><span class="project-arrow" aria-hidden="true">→</span></a>
+          <a class="project-switch" data-project="heat" href="#project-heat"><span class="project-number">03</span><span class="project-label"><span class="project-title">Heat & health</span><small>Public-health research</small></span><span class="project-arrow" aria-hidden="true">→</span></a>
+          <a class="project-switch" data-project="careers" href="#project-careers"><span class="project-number">04</span><span class="project-label"><span class="project-title">Career Atlas</span><small>An internship tool</small></span><span class="project-arrow" aria-hidden="true">→</span></a>
+        </nav>
+        <p class="work-aside">For the longer version, <a href="./assets/Shen-Ruililin-CV.pdf" target="_blank" rel="noopener">here’s my CV ↗</a></p>
       </div>
-      <div class="game-toolbar">
-        <div class="visitor-picker" role="group" aria-label="Choose your visitor"><span class="toolbar-label">YOUR VISITOR</span><button class="visitor-choice selected" data-visitor="fox" aria-pressed="true" title="Explore as a fox"><span class="avatar-thumb fox" aria-hidden="true"></span><span>Fox</span></button><button class="visitor-choice" data-visitor="rabbit" aria-pressed="false" title="Explore as a rabbit"><span class="avatar-thumb rabbit" aria-hidden="true"></span><span>Rabbit</span></button></div>
-        <p class="instructions" id="game-instructions"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> or <kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> walk</span><span><kbd>E</kbd> explore · click to wander</span></p>
-        <button class="memory-count" id="memory-button" aria-label="Open memory journal"><svg><use href="#i-book"/></svg><span><b id="memory-count">0</b><span class="memory-total"> / 12</span><small>little discoveries</small></span></button>
+      <div class="project-content">
+        <article class="work-panel" id="project-asterwind">
+          <figure class="project-visual"><img src="./assets/projects/asterwind-studio.webp" width="1672" height="941" alt="Two fictional paper characters at a lamp-lit table, studying a folded architectural model in Asterwind." loading="lazy"><span class="project-folio">Asterwind · Interactive paper theatre</span></figure>
+          <p class="project-meta"><span>Leadership, unfolded</span><span>Group project · HKU</span></p>
+          <h3>What if you could step inside a difficult choice?</h3>
+          <p class="project-description">A leadership project that became a living paper world. I’m helping design and build an interactive experience from our group’s ideas: scenes you can enter, choices you can make, and moments to reflect.</p>
+          <p class="project-credit">A collaborative student project. The playable experience is still evolving; it invites reflection rather than scoring the player.</p>
+          <div class="project-bottom"><a class="text-link" href="https://bobshenruililin.github.io/asterwind/" target="_blank" rel="noopener">Explore Asterwind <span aria-hidden="true">↗</span></a><span class="project-format">A question becomes a world.</span></div>
+        </article>
+        <article class="work-panel" id="project-crossing">
+          <figure class="project-visual"><img src="./assets/projects/crossing-lives-maps.jpg" width="2048" height="1536" alt="Shenzhen rail and Hong Kong MTR maps displayed side by side at an information point." loading="lazy"><span class="project-folio">Crossing Lives · A working study</span></figure>
+          <p class="project-meta"><span>Research into a visual story</span><span>Hong Kong · Shenzhen</span></p>
+          <h3>Where do you belong when your life crosses a border?</h3>
+          <p class="project-description">Helping Jamie Ko’s research become a visual story about everyday life across Hong Kong and Shenzhen: the routines, relationships and places that make a life possible.</p>
+          <p class="project-credit">Research and presentation: Jamie Ko. Visualization: Bob. An exploratory study in progress, also informing questions for Singapore–Johor.</p>
+          <div class="project-bottom"><a class="text-link" href="https://bobshenruililin.github.io/jamie-crossing-lives-site/" target="_blank" rel="noopener">Follow the story <span aria-hidden="true">↗</span></a><span class="project-format">A question becomes a story.</span></div>
+        </article>
+        <article class="work-panel" id="project-heat">
+          <div class="project-visual heat-visual" role="img" aria-label="Research notebook: thermal extremes and cardiovascular health. Monthly observations in Hong Kong, 2013 to 2023. A study in progress.">
+            <div class="research-paper" aria-hidden="true"><p class="paper-label">From the research desk / HKU</p><p class="paper-title">Thermal extremes.<br>Cardiovascular<br>health.</p><p class="paper-note">Hong Kong · 2013–2023<br>Monthly observations<br>A study in progress</p></div>
+            <div class="heat-symbols" aria-hidden="true"><svg viewBox="0 0 80 80"><circle cx="40" cy="40" r="15"/><path d="M40 4v12M40 64v12M4 40h12M64 40h12M14 14l9 9M57 57l9 9M14 66l9-9M57 23l9-9"/></svg><span class="symbol-line"></span><svg viewBox="0 0 80 80"><path d="M40 8v64M12 24l56 32M12 56l56-32M30 14l10 10 10-10M30 66l10-10 10 10M13 36l15-4-4-15M56 63l-4-15 15-4M13 44l15 4-4 15M56 17l-4 15 15 4"/></svg><small>Climate & health</small></div>
+          </div>
+          <p class="project-meta"><span>Laidlaw research</span><span>HKU School of Public Health</span></p>
+          <h3>How do thermal extremes relate to a city’s health?</h3>
+          <p class="project-description">My undergraduate research examines thermal extremes and cardiovascular hospitalisations in Hong Kong, under Professor David Bishai. I’m interested in what the evidence can tell us about preparedness.</p>
+          <p class="project-credit">Research in progress, using monthly hospitalisation aggregates from 2013–2023. Findings are still being developed.</p>
+          <div class="project-bottom"><a class="text-link" href="https://github.com/bobshenruililin/Laidlaw-Heat-Project" target="_blank" rel="noopener">Read the research overview <span aria-hidden="true">↗</span></a><span class="project-format">A question becomes a study.</span></div>
+        </article>
+        <article class="work-panel" id="project-careers">
+          <div class="project-visual atlas-visual" role="img" aria-label="Career Atlas. Find the original source, read the requirements, and keep a personal shortlist."><div class="atlas-mark" aria-hidden="true">Career Atlas <span>A small tool for finding your way.</span></div><p class="atlas-headline" aria-hidden="true">Good opportunities.<br><em>A clearer way in.</em></p><div class="atlas-steps" aria-hidden="true"><div class="atlas-step"><span>01 / TRACE</span>Original<br>sources</div><div class="atlas-step"><span>02 / UNDERSTAND</span>Practical<br>requirements</div><div class="atlas-step"><span>03 / KEEP</span>A personal<br>shortlist</div></div></div>
+          <p class="project-meta"><span>A working internship dashboard</span><span>Made to be useful</span></p>
+          <h3>Could finding worthwhile work feel less scattered?</h3>
+          <p class="project-description">I wanted a clearer way to find internships and share them with other students. Career Atlas brings original sources, practical requirements and a browser-local shortlist into one place.</p>
+          <p class="project-credit">A small starting collection. Each opportunity links to its original source and shows its review status.</p>
+          <div class="project-bottom"><a class="text-link" href="./careers/">Open Career Atlas <span aria-hidden="true">↗</span></a><span class="project-format">A question becomes a tool.</span></div>
+        </article>
       </div>
-      <div class="touch-controls" id="touch-controls" aria-label="Touch walking controls"><div class="dpad"><button data-direction="up" aria-label="Walk up">↑</button><button data-direction="left" aria-label="Walk left">←</button><span aria-hidden="true">✦</span><button data-direction="right" aria-label="Walk right">→</button><button data-direction="down" aria-label="Walk down">↓</button></div><div><p id="touch-status">Tap an object to explore.</p><button class="touch-explore" id="touch-explore">Explore <span>↗</span></button></div></div>
-      <p class="sr-only" id="walk-status" aria-live="polite"></p>
     </section>
-
-    <div class="below-room"><p><span>✦</span> An imaginary room. Real stories. No particular order.</p><button id="guided-tour">Take the scenic route <span>→</span></button></div>
-
-    <details class="room-index" id="room-index" open>
-      <summary><span class="eyebrow">THE ROOM INDEX</span><span>Everything in here, at a glance.</span><b aria-hidden="true">+</b></summary>
-      <button class="return-room" id="return-room">Step back into the room →</button>
-      <p class="index-intro">I’m Shen Ruililin, a Global Health and Development student at HKU, a Tung Ngai Foundation Scholar and a Laidlaw Scholar. Here are a few of the paths I’m following.</p>
-      <div class="index-list">
-        <article><span>01 / THE SOFA</span><h2>A cup of tea</h2><p>Global Health and Development at HKU. St. John’s College. Curious, across disciplines.</p><button data-story="hello">Meet Bob ↗</button></article>
-        <article><span>02 / THE RESEARCH DESK</span><h2>Heat & health</h2><p>Studying extreme heat and cardiovascular admissions among older adults in Hong Kong as a Laidlaw Scholar.</p><button data-story="heat">Open research note ↗</button></article>
-        <article><span>03 / THE BOOKSHELF</span><h2>Words, too</h2><p><em>Temple of Cement</em> — 2026 City Literary Awards. <em>Threads of The Earth’s Song</em> — 2024 Hong Kong Young Writers Awards.</p><button data-story="poetry">Visit the poetry shelf ↗</button></article>
-        <article><span>04 / THE GLOBE</span><h2>Weather & models</h2><p>GraphCast integration at HKO and PolyU. Atmospheric-river identification presented at AGU.</p><button data-story="weather">Open weather note ↗</button></article>
-        <article><span>05 / THE TRAVEL TRUNK</span><h2>Field notes</h2><p>Wu Zhi Qiao rural health and infrastructure service in Macha, Gansu; a water-scarcity study with more than fifty residents.</p><button data-story="fieldwork">Open the trunk ↗</button></article>
-        <article><span>06 / THE WINDOW</span><h2>Three cities, home</h2><p>Shanghai, Singapore, and Hong Kong — I’ve lived for years in each. A Nordic postcard sits on the sill, too.</p><button data-story="dialogue">Open the window ↗</button></article>
-        <article><span>07 / THE PHOTO WALL</span><h2>The scenic route</h2><p>Mountains, the sea, and a few moments from Suomenlinna. Real photographs from the wider world.</p><button data-story="photos">See the photographs ↗</button></article>
-        <article><span>08 / THE ARCADE</span><h2>The workshop</h2><p>Quantum circuits, MEDocGPT, and a new pixel experiment called Crossing Lives.</p><button data-story="workshop">Visit the workshop ↗</button></article>
-        <article><span>09 / THE LANTERN FERN</span><h2>A little wonder</h2><p>A pause along the way. There’s no clock to beat and no right route through the room.</p><button data-story="wonder">Take a small pause ↗</button></article>
-        <article><span>10 / DUOJI’S NOOK</span><h2>Small dog, much power</h2><p>Duoji, my mini black Shiba Inu. The name is inspired by Boji from <em>Ranking of Kings</em> — a small body can hold a lot of power.</p><button data-story="duoji">Meet Duoji ↗</button></article>
-        <article><span>11 / THE FOLDED ATLAS</span><h2>Places I’ve been</h2><p>I’m fascinated by maps and globes. A pixel atlas remembers the places I’ve visited.</p><button data-story="travel">Unfold the atlas ↗</button></article>
-        <article><span>12 / THE GO BOARD</span><h2>A quiet game of Go</h2><p>One of my favourite games. Share a small practice board and take it one stone at a time.</p><button data-story="go">Play a little Go ↗</button></article>
-      </div>
-      <noscript><p>The walking game needs JavaScript. All the summaries above, <a href="./assets/Shen-Ruililin-CV.pdf">my CV</a>, and <a href="mailto:bobshenruililin@gmail.com">my email</a> are available here.</p></noscript>
-    </details>
-
-    <footer class="site-footer"><div><a href="mailto:bobshenruililin@gmail.com">Let’s keep the conversation going. <span>↗</span></a><p>Hong Kong, and a few places in between.</p></div><div class="footer-links"><a href="https://www.linkedin.com/in/shenruililin" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/bobshenruililin" target="_blank" rel="noopener">GitHub ↗</a><button id="about-room">About this room</button><span>© 2026 BOB</span></div></footer>
+    <section class="personal-section wrap" id="about" aria-labelledby="about-heading">
+      <div class="photo-stack"><figure class="photo-paper"><img id="personal-photo" src="./assets/photos/mountains.webp" width="960" height="1280" alt="Bob on a rocky outcrop, surrounded by mountain peaks beneath a cloudy sky." loading="lazy"><figcaption><span id="photo-caption" aria-live="polite">A different kind of walk.</span><button class="photo-next" id="next-photo" aria-label="Show the next personal photograph" hidden><span aria-hidden="true">↻</span></button></figcaption></figure><span class="photo-counter" id="photo-count" aria-hidden="true">01 / 03</span></div>
+      <div class="personal-copy"><p class="small-label">Away from the desk</p><h2 id="about-heading">There’s always<br>the scenic route.</h2><p>I’ve lived in Shanghai, Singapore and Hong Kong. I call all three home. Moving between places is one reason I’m curious about how people live—and how we understand one another.</p><p class="quiet-copy">There are poems on the shelf, photographs from a few detours, and usually another thing I want to try making. I like Go, LEGO, Doraemon, and a small Shiba Inu with a considerable personality.</p><div class="personal-links"><a class="text-link" href="./room.html#story-poetry">Visit the poetry shelf <span aria-hidden="true">↗</span></a><a class="text-link" href="./room.html#story-duoji">Meet Duoji <span aria-hidden="true">↗</span></a></div></div>
+    </section>
+    <noscript><p class="wrap">All four projects are shown above. You can also <a href="./room.html#room-index">read every story in the room</a>, or <a href="./assets/Shen-Ruililin-CV.pdf">open my CV</a>.</p></noscript>
+    <span class="legacy-link" id="room-index"><a href="./room.html#room-index">Read the room index</a></span>
   </main>
-
-  <dialog class="story-dialog" id="story-dialog" aria-labelledby="story-heading"><button class="dialog-close" id="story-close" aria-label="Close story and return to the room">×</button><div id="story-content"></div><div class="story-bottom"><span id="story-stamp"></span><button id="next-story">Follow another curiosity <span>→</span></button></div></dialog>
-  <dialog class="utility-dialog" id="utility-dialog" aria-labelledby="utility-heading"><button class="dialog-close" id="utility-close" aria-label="Close">×</button><div id="utility-content"></div></dialog>
-  <dialog class="photo-dialog" id="photo-dialog" aria-labelledby="photo-caption"><button class="dialog-close" id="photo-close" aria-label="Close photograph">×</button><img id="full-photo" alt=""><p id="photo-caption"></p><div><button id="photo-prev" aria-label="Previous photograph">←</button><span id="photo-number"></span><button id="photo-next" aria-label="Next photograph">→</button></div></dialog>
-  <div class="toast" id="toast" role="status" hidden></div>
-  <script type="module" src="./app.mjs"></script>
+  <footer class="contact-section" id="hello"><div class="wrap"><div class="contact-main"><h2>Bring a question.<br><em>Let’s make something.</em></h2><div class="contact-note"><p>A collaboration, an idea that won’t leave you alone, or just a good conversation. I’d like to hear it.</p><a class="text-link" href="mailto:bobshenruililin@gmail.com">Say hello, Bob <span aria-hidden="true">↗</span></a></div></div><div class="footer-line"><div class="footer-name"><span>Shen Ruililin · Bob</span><span>Hong Kong, & places in between.</span></div><nav class="footer-links" aria-label="More about Bob"><a href="./assets/Shen-Ruililin-CV.pdf" target="_blank" rel="noopener">CV ↗</a><a href="https://github.com/bobshenruililin" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/shenruililin" target="_blank" rel="noopener">LinkedIn ↗</a><a href="./room.html">The room ↗</a></nav></div></div></footer>
 </body>
 </html>

@@ -22,10 +22,10 @@ export const STORIES = [
     intro: 'I’m Shen Ruililin. You can call me Bob.',
     paragraphs: [
       'I study Global Health and Development at HKU’s medical faculty. My BASc degree runs from 2025 to 2029.',
-      'I’m a member of St. John’s College, and a Martin Scholar there for 2025–26.',
+      'I was a Martin Scholar at St. John’s College for 2025–26.',
       'I’m one of four Tung and Ngai Foundation Scholarship recipients at HKU. I also received the Tam Wun Tsun HKU Horizons Student Enrichment Award for 2025–26.',
     ],
-    tags: ['HKUMed', 'St. John’s College', '2025–2029'],
+    tags: ['HKUMed', 'Martin Scholar 2025–26', '2025–2029'],
     image: 'mountains',
     links: [{ label: 'Read my CV', href: CV }, { label: 'Say hello', href: `mailto:${EMAIL}` }],
   },
@@ -33,15 +33,15 @@ export const STORIES = [
     id: 'heat', number: '02', title: 'The research desk', name: 'Heat & health', icon: 'sun',
     marker: { x: 262, y: 304 }, approach: { x: 424, y: 570 },
     eyebrow: 'HKU · LAIDLAW SCHOLAR · 2026—',
-    heading: 'Heat, hospitals, and preparedness.',
-    intro: 'What happens to health when a city gets hotter?',
+    heading: 'Thermal extremes & health.',
+    intro: 'How do thermal extremes relate to a city’s health?',
     paragraphs: [
-      'As a Laidlaw undergraduate research scholar, I’m studying extreme heat and cardiovascular admissions among older adults in Hong Kong, using Hospital Authority data.',
-      'I work under Professor David Bishai at HKU’s School of Public Health. The analysis covers hot and cold seasons, with hospital preparedness and cross-boundary heat-health surveillance in view.',
+      'As a Laidlaw undergraduate research scholar, I’m examining thermal extremes and cardiovascular hospitalisations in Hong Kong using monthly aggregates from 2013–2023.',
+      'I work under Professor David Bishai at HKU’s School of Public Health. The study is in progress; I’m interested in what these patterns can tell us about preparedness.',
     ],
     tags: ['Public health', 'Climate', 'Research in progress'],
-    note: 'This is a description of ongoing research. Patient-level data and unpublished findings are not shared here.',
-    links: [{ label: 'More about my work', href: CV }],
+    note: 'This is a description of ongoing work using monthly aggregates, not a claim of a causal effect.',
+    links: [{ label: 'Read the research overview', href: 'https://github.com/bobshenruililin/Laidlaw-Heat-Project' }],
   },
   {
     id: 'poetry', number: '03', title: 'The poetry shelf', name: 'Words, too', icon: 'book',
@@ -116,7 +116,7 @@ export const STORIES = [
     entries: [
       { label: 'HKUST IAS · JUL 2023–MAR 2024', title: 'Quantum circuits & calibration', text: 'At the IAS Center for Quantum Technologies, I built Qiskit circuit models and an auto-calibration routine for SpinQ desktop machines, and presented work on entanglement and measurement at physics department seminars.' },
       { label: 'MIT Hong Kong Innovation Node · JUL–SEP 2023', title: 'MEDocGPT', text: 'As a Youth Fellow, I prototyped a healthcare chatbot and mobile app using large language models for early health intervention. An early prototype, not a clinical service.' },
-      { label: 'A NEW PIXEL EXPERIMENT', title: 'Crossing Lives', text: 'An ongoing pixel-world experiment. Ask me about it.' },
+      { label: 'A NEW PIXEL EXPERIMENT', title: 'Crossing Lives · pixel experiment', text: 'An ongoing pixel-world experiment. Ask me about it.' },
     ],
     tags: ['Making', 'Code', 'Pixel worlds'],
     links: [{ label: 'Explore my public projects', href: 'https://github.com/bobshenruililin' }],
@@ -164,3 +164,9 @@ export const STORIES = [
 ];
 
 export const byId = id => STORIES.find(s => s.id === id);
+
+export const storyIdFromHash = hash => {
+  if (typeof hash !== 'string' || !hash.startsWith('#story-')) return null;
+  const id = hash.slice('#story-'.length);
+  return byId(id) ? id : null;
+};

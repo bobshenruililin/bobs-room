@@ -4,18 +4,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#172b2b">
-  <title>Bob’s Room · Shen Ruililin</title>
-  <meta name="description" content="Step into a magical pixel room and explore Shen Ruililin’s life in health, climate, computation, poetry, and places in between.">
+  <title>Shen Ruililin (Bob) · A room full of questions</title>
+  <meta name="description" content="Some questions become research. Others become poems. Shen Ruililin (Bob) studies what a hotter city does to people’s health at HKU. Take the one-minute story, or wander his pixel room.">
   <link rel="canonical" href="https://bobshenruililin.github.io/bobs-room/">
-  <meta property="og:title" content="Bob’s Room · A little room. A curious life.">
-  <meta property="og:description" content="A walkable pixel world for Shen Ruililin. Come in, wander a little, and follow your curiosity.">
+  <meta property="og:title" content="Shen Ruililin (Bob) · Some questions become research. Others become poems.">
+  <meta property="og:description" content="Global health at HKU, heat and hospitals, weather models, village fieldwork, poetry. A one-minute story inside a walkable pixel room.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://bobshenruililin.github.io/bobs-room/">
-  <meta property="og:image" content="https://bobshenruililin.github.io/bobs-room/assets/art/room-v4.png">
+  <meta property="og:image" content="https://bobshenruililin.github.io/bobs-room/assets/share-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A lantern-lit pixel room with the words: Some questions become research. Others become poems.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" href="./assets/art/bob-emblem.png" type="image/png">
+  <link rel="icon" href="./assets/art/bob-favicon.png" type="image/png">
   <link rel="preload" href="./assets/art/room-v4.webp" as="image" type="image/webp">
-  <link rel="preload" href="./assets/fonts/dm-sans.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./assets/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="./discoveries.css">
   <link rel="stylesheet" href="./sofa.css">
@@ -24,8 +28,9 @@
   <link rel="stylesheet" href="./arcade.css">
   <link rel="stylesheet" href="./go.css">
   <link rel="stylesheet" href="./personal.css?v=2f51a64">
+  <link rel="stylesheet" href="./threshold.css">
 </head>
-<body class="immersive">
+<body class="immersive threshold">
   <noscript><style>body.immersive{overflow:auto}body.immersive .site-header{position:static;background:#172b2b;width:100%;padding:18px}body.immersive .game-frame{display:none}body.immersive main.shell{width:calc(100% - 32px)}body.immersive .introduction,body.immersive .room-index,body.immersive .site-footer{display:block}body.immersive .index-list button,#index-toggle,#about-room,#return-room{display:none}body.immersive .introduction{padding-top:25px}</style></noscript>
   <a class="skip-link" href="#room-index">Skip the game and read about Bob</a>
   <svg class="icon-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +49,7 @@
   </svg>
 
   <header class="site-header shell">
-    <a class="brand" href="./" aria-label="Bob’s Room, Shen Ruililin, home"><img class="brand-emblem" src="./assets/art/bob-emblem.webp" alt="" width="56" height="42"><span>Shen Ruililin<small>YOU CAN CALL ME BOB</small></span></a>
+    <a class="brand" href="./" aria-label="Bob’s Room, Shen Ruililin, home"><img class="brand-emblem" src="./assets/art/bob-emblem-small.webp" alt="" width="56" height="42"><span>Shen Ruililin<small>YOU CAN CALL ME BOB</small></span></a>
     <nav aria-label="Main navigation">
       <button class="nav-button" id="index-toggle">Read about Bob <span>↗</span></button>
       <a class="cv-link" href="./assets/Shen-Ruililin-CV.pdf" target="_blank" rel="noopener">My CV <span>↗</span></a>
@@ -54,8 +59,8 @@
 
   <main class="shell">
     <section class="introduction" aria-labelledby="page-title">
-      <div><p class="eyebrow"><span class="tiny-star">✦</span> WELCOME TO BOB’S ROOM</p><h1 id="page-title">A little room. <em>A curious life.</em></h1></div>
-      <p class="intro-copy">Health, climate, code, and the scenic route.<br>Come in, wander a little, and follow your curiosity.</p>
+      <div><p class="eyebrow"><span class="tiny-star">✦</span> SHEN RUILILIN · CALL ME BOB</p><h1 id="page-title">Some questions become research. <em>Others become poems.</em></h1></div>
+      <p class="intro-copy">I study global health at HKU’s medical faculty, where I’m asking what a hotter city does to the people who live in it. This is the plain version of my room: twelve objects, and the questions behind them.</p>
     </section>
 
     <section class="game-frame" aria-label="Bob’s imaginary room, an interactive pixel world">
@@ -69,7 +74,17 @@
           <div class="visitor-bubble" id="visitor-bubble" aria-hidden="true">Oh, hello! Make yourself at home.</div>
           <div class="destination" id="destination" aria-hidden="true"></div>
         </div>
-        <div class="room-welcome" id="room-welcome" hidden><span class="welcome-number">01 / A PLACE TO BEGIN</span><p>Every object<br>has <em>a story.</em></p><span>Tap a glow, or take a little walk.</span><button id="enter-room">Let’s explore <span>→</span></button></div>
+        <div class="threshold-shade" aria-hidden="true"></div>
+        <section class="letter" id="letter" aria-labelledby="letter-title">
+          <p class="letter-eyebrow">SHEN RUILILIN · CALL ME BOB</p>
+          <h2 id="letter-title"><span>Some questions become research.</span> <em>Others become poems.</em></h2>
+          <p class="letter-body">I study global health at HKU’s medical faculty, where I’m asking what a hotter city does to the people who live in it. This room keeps the questions I couldn’t leave alone.</p>
+          <div class="letter-actions">
+            <button class="letter-primary" id="story-start">The one-minute story <span aria-hidden="true">→</span></button>
+            <button class="letter-secondary" id="enter-room">Wander the room</button>
+          </div>
+          <p class="letter-foot"><button data-index>Read it plainly</button><a href="./assets/Shen-Ruililin-CV.pdf" target="_blank" rel="noopener">CV</a><a href="mailto:bobshenruililin@gmail.com">Say hello</a></p>
+        </section>
         <div class="scene-actions">
           <button id="overview-button" class="scene-tool mobile-only" aria-pressed="false"><svg><use href="#i-map"/></svg><span>Whole room</span></button>
           <button id="labels-button" class="scene-tool" aria-pressed="false" title="Show the name of every object"><svg><use href="#i-map"/></svg><span>Labels</span></button>
@@ -77,6 +92,7 @@
           <button id="sound-button" class="scene-tool" aria-pressed="false"><svg><use href="#i-sound"/></svg><span>Sound off</span></button>
         </div>
         <button id="tour-start" class="tour-start" aria-label="Wander with me, start a guided tour of the whole room" title="A gentle guided wander — pause or take over anytime"><span aria-hidden="true">✦</span><span>Wander with me</span></button>
+        <button id="story-replay" class="story-replay" title="Seven questions, about a minute">▶ One-minute story</button>
         <button class="nearby-prompt" id="nearby-prompt" hidden><kbd>E</kbd><span></span><i>↗</i></button>
         <div class="loading-note" id="loading-note" role="status">Lighting the lanterns…</div>
         <div class="art-error" id="art-error" hidden><p>The room couldn’t load this time.</p><button id="retry-art">Try again</button><button data-index>Read the room index</button></div>
@@ -95,16 +111,16 @@
     <details class="room-index" id="room-index" open>
       <summary><span class="eyebrow">THE ROOM INDEX</span><span>Everything in here, at a glance.</span><b aria-hidden="true">+</b></summary>
       <button class="return-room" id="return-room">Step back into the room →</button>
-      <p class="index-intro">I’m Shen Ruililin, a Global Health and Development student at HKU, a Tung Ngai Foundation Scholar and a Laidlaw Scholar. Here are a few of the paths I’m following.</p>
+      <p class="index-intro">I’m a Global Health and Development student at HKU, a Tung and Ngai Foundation Scholar and a Laidlaw Scholar. Each object in the room holds one thing I keep returning to. Open any of them, or step back into the room and walk.</p>
       <div class="index-list">
         <article><span>01 / THE SOFA</span><h2>A cup of tea</h2><p>Global Health and Development at HKU. St. John’s College. Curious, across disciplines.</p><button data-story="hello">Meet Bob ↗</button></article>
-        <article><span>02 / THE RESEARCH DESK</span><h2>Heat & health</h2><p>Studying extreme heat and cardiovascular admissions among older adults in Hong Kong as a Laidlaw Scholar.</p><button data-story="heat">Open research note ↗</button></article>
-        <article><span>03 / THE BOOKSHELF</span><h2>Words, too</h2><p><em>Temple of Cement</em> — 2026 City Literary Awards. <em>Threads of The Earth’s Song</em> — 2024 Hong Kong Young Writers Awards.</p><button data-story="poetry">Visit the poetry shelf ↗</button></article>
-        <article><span>04 / THE GLOBE</span><h2>Weather & models</h2><p>GraphCast integration at HKO and PolyU. Atmospheric-river identification presented at AGU.</p><button data-story="weather">Open weather note ↗</button></article>
-        <article><span>05 / THE TRAVEL TRUNK</span><h2>Field notes</h2><p>Wu Zhi Qiao rural health and infrastructure service in Macha, Gansu; a water-scarcity study with more than fifty residents.</p><button data-story="fieldwork">Open the trunk ↗</button></article>
+        <article><span>02 / THE RESEARCH DESK</span><h2>Heat & health</h2><p class="index-question">What happens to health when a city gets hotter?</p><p>Studying extreme heat and cardiovascular admissions among older adults in Hong Kong as a Laidlaw Scholar.</p><button data-story="heat">Open research note ↗</button></article>
+        <article><span>03 / THE BOOKSHELF</span><h2>Words, too</h2><p class="index-question">And the questions data can’t hold?</p><p><em>Temple of Cement</em> — 2026 City Literary Awards. <em>Threads of The Earth’s Song</em> — 2024 Hong Kong Young Writers Awards.</p><button data-story="poetry">Visit the poetry shelf ↗</button></article>
+        <article><span>04 / THE GLOBE</span><h2>Weather & models</h2><p class="index-question">Can a model learn to read the sky?</p><p>GraphCast integration at HKO and PolyU. Atmospheric-river identification presented at AGU.</p><button data-story="weather">Open weather note ↗</button></article>
+        <article><span>05 / THE TRAVEL TRUNK</span><h2>Field notes</h2><p class="index-question">What do you learn by asking almost everyone?</p><p>Wu Zhi Qiao rural health and infrastructure service in Macha, Gansu; a water-scarcity study with more than fifty residents.</p><button data-story="fieldwork">Open the trunk ↗</button></article>
         <article><span>06 / THE WINDOW</span><h2>Three cities, home</h2><p>Shanghai, Singapore, and Hong Kong — I’ve lived for years in each. A Nordic postcard sits on the sill, too.</p><button data-story="dialogue">Open the window ↗</button></article>
         <article><span>07 / THE PHOTO WALL</span><h2>The scenic route</h2><p>Mountains, the sea, and a few moments from Suomenlinna. Real photographs from the wider world.</p><button data-story="photos">See the photographs ↗</button></article>
-        <article><span>08 / THE ARCADE</span><h2>The workshop</h2><p>Quantum circuits, MEDocGPT, and a new pixel experiment called Crossing Lives.</p><button data-story="workshop">Visit the workshop ↗</button></article>
+        <article><span>08 / THE ARCADE</span><h2>The workshop</h2><p class="index-question">What if I just build it?</p><p>Quantum circuits, MEDocGPT, and a new pixel experiment called Crossing Lives.</p><button data-story="workshop">Visit the workshop ↗</button></article>
         <article><span>09 / THE LANTERN FERN</span><h2>A little wonder</h2><p>A pause along the way. There’s no clock to beat and no right route through the room.</p><button data-story="wonder">Take a small pause ↗</button></article>
         <article><span>10 / DUOJI’S NOOK</span><h2>Small dog, much power</h2><p>Duoji, my mini black Shiba Inu. The name is inspired by Boji from <em>Ranking of Kings</em> — a small body can hold a lot of power.</p><button data-story="duoji">Meet Duoji ↗</button></article>
         <article><span>11 / THE FOLDED ATLAS</span><h2>Places I’ve been</h2><p>I’m fascinated by maps and globes. A pixel atlas remembers the places I’ve visited.</p><button data-story="travel">Unfold the atlas ↗</button></article>

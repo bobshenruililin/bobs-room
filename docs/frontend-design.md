@@ -102,3 +102,16 @@ Automated tests cover all story approaches from the entrance and from one anothe
 - [ ] Enable reduced motion and Stillness, then check interaction feedback. Turn sound on/off and verify it starts only after user input.
 - [ ] Reload with saved discoveries, clear site storage, and try unavailable storage. Verify the room still opens.
 - [ ] Inspect missing-art recovery, browser console errors, and failed asset/module requests. Test the final published `/bobs-room/` URL separately from localhost.
+
+
+## Opening letter and one-minute story — 13 November 2026
+
+**Why.** The room was the strongest thing on the site, but a first-time visitor saw a game with no statement of who Bob is; the meaning sat two or three interactions deep. The revision keeps the room and adds a front door.
+
+- **Letter.** `#letter` greets every load over the live room with the thesis, one sentence of context, and three routes (story, wander, plain reading). While `body.threshold` is set the room’s controls stay hidden; any interaction with the room dismisses it through `enterRoom()`.
+- **One-minute story.** `threshold.mjs` holds seven `BEATS` (question, answer, world-coordinate `focus`). `app.mjs` exposes `setFocus()`; `updateCamera()` eases translate *and* scale toward the focused object (`transform-origin:0 0` on `.room-map`). Beat length is `beatDuration()`; a unit test keeps the total between 45 and 70 seconds and each answer under 175 characters. If furniture moves, update `focus` with the markers.
+- **Type system.** Pixel type belongs to the room and its controls. Fraunces (`--voice`) is Bob speaking; DM Sans (`--plain`) is for reading. The reading view (`.index-view`) now uses these instead of the pixel face.
+- **No AI chat or synthetic voice.** Considered and declined: the site is static, every claim is sourced, and a generated voice or chatbot answering as Bob to people he has written to would be neither. A recorded greeting in Bob’s own voice is the intended next step.
+- **Weight.** First load fell from about 2.39 MB to about 1.33 MB (WOFF2 fonts, WebP visitor sprites, cropped dog sprite, small emblem and favicon).
+
+Browser validation (Chromium via Playwright, emulated viewports, not physical devices): 1440×900 and 390×844 full flows — letter, wander, replay, auto-advance, pause, tap/arrow navigation, “Step inside” opening the object, finale links, Escape, hotspots, reading view without horizontal overflow, no console errors; reduced-motion run confirming the story waits; fit checks at 360×640, 844×390, 820×1180 and 1920×1080.

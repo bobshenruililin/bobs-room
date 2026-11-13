@@ -1,3 +1,4 @@
+import { mountThreshold } from './threshold.mjs';
 import { WORLD, isWalkable, move, findPath, safeMemories } from './engine.mjs';
 import { STORIES, PHOTOS, EMAIL, byId } from './stories.mjs';
 import { mountObject, contactContent } from './objects.mjs';
@@ -22,9 +23,11 @@ let still = reduced.matches;
 let overview = false, entered = false, near = null, activeStory = null, photoIndex = 0;
 let player = { x: 660, y: 803, direction: 0 };
 let destination = null, route = [], onArrival = null, moving = false;
-let atlas, shiba, shibaFrame, frames = [], raf, lastTime = 0, camera = { x: 0, y: 0 }, cameraReady = false;
+let atlas, shiba, shibaFrame, frames = [], raf, lastTime = 0, camera = { x: 0, y: 0, z: 1 }, cameraReady = false;
 let cleanObject = () => {}, cleanUtility = () => {}, indexView = false;
-let tour;
+let tour, film, focus = null;
+const filmActive = () => document.body.classList.contains('story-mode');
+function setFocus(next) { focus = next; }
 let audioContext, audioGain, sound = false, audioTimer;
 let toastTimer, bubbleTimer, footsteps = [], lastFootstep = 0, lastDOMUpdate = 0;
 const keys = new Set();
@@ -50,9 +53,10 @@ function bubble(message, duration = 5000) {
 }
 function enterRoom(focus = true) {
   if (!entered) {
-    entered = true; $('#room-welcome').classList.add('departed');
-    setTimeout(() => { $('#room-welcome').hidden = true; }, still ? 0 : 450);
-    bubble('Follow your curiosity. There’s no right route.');
+    entered = true; document.body.classList.remove('threshold'); $('#letter').classList.add('departed');
+    if (!filmActive()) setFocus(null);
+    setTimeout(() => { $('#letter').hidden = true; }, still ? 0 : 450);
+    if (!filmActive()) bubble('Follow your curiosity. There’s no right route.');
   }
   if (focus) canvas.focus({ preventScroll: true });
 }
@@ -178,7 +182,7 @@ function openAboutRoom() {
 }
 
 function setView(reading, focus = true) {
-  if (reading) tour?.end();
+  if (reading) { tour?.end(); film?.end(); }
   stopWalking(); indexView = reading;
   for (const d of [storyDialog, utilityDialog, photoDialog]) if (d.open) d.close();
   document.body.classList.toggle('immersive', !reading); document.body.classList.toggle('index-view', reading);
@@ -283,7 +287,7 @@ function pointFromEvent(event) {
   return { x: (event.clientX - box.left) / box.width * WORLD.width, y: (event.clientY - box.top) / box.height * WORLD.height };
 }
 map.addEventListener('pointerdown', e => {
-  if (anyDialog()) return;
+  if (anyDialog() || filmActive()) return;
   if (e.target.closest('button, a')) return;
   const point = pointFromEvent(e); enterRoom();
   if (Math.hypot(point.x - companion.x, point.y - (companion.y - 80)) < 68) {
@@ -305,7 +309,7 @@ window.addEventListener('keydown', e => {
     if (photoDialog.open && (e.key === 'ArrowLeft' || e.key === 'ArrowRight')) { e.preventDefault(); openPhoto(photoIndex + (e.key === 'ArrowRight' ? 1 : -1)); }
     return;
   }
-  if (indexView) return;
+  if (indexView || filmActive()) return;
   if (!$('.game-frame').contains(document.activeElement)) return;
   const direction = movementKeys[e.key] || movementKeys[e.key.toLowerCase()];
   if (direction) { e.preventDefault(); enterRoom(false); route = []; onArrival = null; destination = null; keys.add(direction); $('#destination').classList.remove('active'); }
@@ -357,9 +361,17 @@ function updateCamera(immediate = false) {
     x = Math.min(0, Math.max(viewport.clientWidth - width, viewport.clientWidth * .5 - player.x * scale));
     y = Math.min(0, Math.max(viewport.clientHeight - height, viewport.clientHeight * .65 - player.y * scale));
   } else if (mobile && overview) { x=0; y=(viewport.clientHeight-height)/2; }
-  const factor = immediate || !cameraReady || still ? 1 : .11;
-  camera.x += (x - camera.x) * factor; camera.y += (y - camera.y) * factor; cameraReady = true;
-  map.style.transform = `translate(${camera.x.toFixed(2)}px,${camera.y.toFixed(2)}px)`;
+  let z = 1;
+  if (focus && !overview) {
+    // A story beat or the opening letter asks the camera to rest on one object.
+    const k = width / WORLD.width, vw = viewport.clientWidth, vh = viewport.clientHeight;
+    z = mobile ? focus.zm ?? 1.2 : focus.z ?? 1.5;
+    x = Math.min(0, Math.max(vw - width * z, vw * (focus.ax ?? .5) - focus.x * k * z));
+    y = Math.min(0, Math.max(vh - height * z, vh * (focus.ay ?? .4) - focus.y * k * z));
+  }
+  const factor = immediate || !cameraReady || still ? 1 : focus ? .06 : .11;
+  camera.x += (x - camera.x) * factor; camera.y += (y - camera.y) * factor; camera.z += (z - camera.z) * factor; cameraReady = true;
+  map.style.transform = `translate(${camera.x.toFixed(2)}px,${camera.y.toFixed(2)}px) scale(${camera.z.toFixed(4)})`;
 }
 new ResizeObserver(resize).observe(viewport);
 
@@ -462,8 +474,8 @@ $('#sound-button').addEventListener('click', async () => {
 
 async function loadVisitors() {
   const [image, dogImage, response] = await Promise.all([
-    new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = reject; img.src = './assets/art/visitors.png'; }),
-    new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = reject; img.src = './assets/art/shiba.webp'; }),
+    new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = reject; img.src = './assets/art/visitors.webp'; }),
+    new Promise((resolve, reject) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = reject; img.src = './assets/art/shiba-sprite.webp'; }),
     fetch('./assets/art/frames.json'),
   ]);
   if (!response.ok) throw new Error('Sprite metadata unavailable');
@@ -486,6 +498,17 @@ tour = mountTour({
   },
   closeDialogs: () => { for (const dialog of [photoDialog, utilityDialog, storyDialog]) if (dialog.open) dialog.close(); },
   stopWalking, openStory, goToStory, openTV,
+});
+
+film = mountThreshold({
+  setFocus, enterRoom, goToStory, openContact, stopWalking, bubble,
+  isStill: () => still, isEntered: () => entered,
+  prepare: () => {
+    tour?.end();
+    for (const dialog of [photoDialog, utilityDialog, storyDialog]) if (dialog.open) dialog.close();
+    if (overview) $('#overview-button').click();
+    stopWalking();
+  },
 });
 
 selectVisitor(visitor, false); setStill(still); updateMemories(); resize();

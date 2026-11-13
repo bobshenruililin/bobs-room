@@ -105,3 +105,9 @@ The site has no analytics or account system. Its local journal saves discovery I
 ## CV replacement — 29 October 2026
 
 At Bob’s explicit request, the downloadable CV was replaced byte-for-byte with his supplied `ShenRuililin_CV(2).pdf`. The room’s existing biography was not rewritten as part of this file replacement.
+
+## Opening letter and one-minute story — 13 November 2026
+
+The opening letter, the seven story beats in `threshold.mjs`, and the reading-view introduction add **no new biographical facts**. Each answer restates material already recorded above (research desk, globe, trunk, poetry book, arcade notes, Duoji, home cities, and the “always up for building something” direct instruction). The headline “Some questions become research. Others become poems.” is adapted from the poetry shelf’s existing introduction. The seven questions are an editorial frame written for this revision and are **pending Bob’s approval as his own voice**; “what a hotter city does to the people who live in it” paraphrases the heat-health project and should not be read as a finding.
+
+`assets/share-card.jpg` is a composed link-preview image: the `room-v4` illustration with the headline set in the bundled fonts. Fonts are now served as WOFF2 conversions of the same licensed files; the OFL notices are unchanged. `visitors.webp` and `shiba-sprite.webp` are recompressed copies of the existing sprites.

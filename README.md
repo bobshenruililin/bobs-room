@@ -1,8 +1,8 @@
 # Bob’s Room
 
-A walkable pixel room for Shen Ruililin: real stories about health, climate, computation, poetry, photography, and the places he calls home. Explore as a fox or rabbit, meet Duoji, open objects, and follow small discoveries at your own pace.
+A walkable pixel room for Shen Ruililin, built around one idea: *some questions become research; others become poems.* A short letter greets every visitor with who Bob is and what he cares about, then offers three routes: a one-minute story told by the camera moving through the room, the room itself to wander as a fox or rabbit, or a plain reading view.
 
-The room uses static HTML, CSS, native Canvas, and JavaScript modules. It has no runtime package dependencies, accounts, or analytics. Fonts, illustrations, photographs, and the CV are served locally. A browser-local journal remembers the twelve room checkpoints and the selected visitor.
+The site uses static HTML, CSS, native Canvas, and JavaScript modules. It has no runtime package dependencies, accounts, or analytics. Fonts, illustrations, photographs, and the CV are served locally. A browser-local journal remembers the twelve room checkpoints and the selected visitor.
 
 ## Run locally
 
@@ -16,6 +16,7 @@ Open [localhost:4175](http://127.0.0.1:4175). Run `npm run check` for the config
 
 ## Explore
 
+- **The one-minute story** (from the opening letter, or the ▶ button in the room) asks seven questions, one per object, in about a minute. It advances by itself; tap the room or press **→** to move on, **←** to go back, **Escape** to leave, or **Step inside** to open the object being discussed. With reduced motion it waits for the visitor instead of advancing.
 - Move with **WASD** or **arrow keys**, or click the floor to walk. Press **E** near an object to explore it. Touch controls are available on smaller screens.
 - Select a glowing object, turn book pages, open research folders, browse photographs, change the window view, or play the arcade. A hidden TV has twelve channels of personal interests and unexpected detours.
 - Play **Moonlight Blocks** in the arcade: move, rotate, and drop pieces to complete rows. The floor Go board offers a quiet local two-player 9×9 practice game.
@@ -38,6 +39,7 @@ Open [localhost:4175](http://127.0.0.1:4175). Run `npm run check` for the config
 | `arcade.mjs` / `arcade.css` | Moonlight Blocks: falling pieces, row clears, scoring, next-piece preview, pause/restart, and cabinet presentation |
 | `go.mjs` / `go.css` | Local 9×9 Go practice, legal moves/captures, simple ko, undo/pass, and the generated tabletop |
 | `travel.mjs` / `scripts/build-map.mjs` | Editable travel list, Canvas map rendering, and deterministic geographic raster generation |
+| `threshold.mjs` / `threshold.css` | Opening letter, the one-minute story (`BEATS`), its camera focus, and the serif reading view |
 | `tour.mjs` | Guided stops, object actions, reading time, pause/resume, and visitor takeover |
 | `style.css` / `discoveries.css` / `drawer.css` / `sofa.css` / `tour.css` / `personal.css` | Room, object, tour, travel atlas, and contact-note presentation |
 | `assets/` | Local art, fonts and their licenses, photographs, and CV |

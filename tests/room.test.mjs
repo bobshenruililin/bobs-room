@@ -57,10 +57,10 @@ test('all photographs, fonts, generated assets, map data and CV are served local
     'tv-set','tv-phone','tv-hobbies','tv-detours','bob-emblem',
     'arcade-blocks','go-floor','go-table',
   ];
-  const fonts = ['dm-sans.ttf','fraunces.ttf','fraunces-italic.ttf','silkscreen.ttf','pixelify-sans.ttf'];
+  const fonts = ['dm-sans.woff2','fraunces.woff2','fraunces-italic.woff2','silkscreen.woff2','pixelify-sans.woff2'];
   const fontNotices = ['DM-Sans-OFL.txt','Fraunces-OFL.txt','Silkscreen-OFL.txt','Pixelify-Sans-OFL.txt'];
   const paths = [
-    'assets/Shen-Ruililin-CV.pdf','assets/art/visitors.png','assets/art/frames.json',
+    'assets/Shen-Ruililin-CV.pdf','assets/art/visitors.webp','assets/art/frames.json',
     'assets/maps/world-pixels.json','assets/maps/provenance.json',
     'assets/art/arcade-blocks-prompt.json','assets/art/go-prompts.json','assets/art/room-v3-prompt.json','assets/art/room-v4-prompt.json',
     ...art.flatMap(name => ['png','webp'].map(extension => `assets/art/${name}.${extension}`)),
@@ -89,4 +89,18 @@ test('each story has a unique index, an in-room marker, and a valid next story',
 test('published CV matches the exact file Bob approved on 29 October 2026', () => {
   const bytes = readFileSync(new URL('../assets/Shen-Ruililin-CV.pdf', import.meta.url));
   assert.equal(createHash('sha256').update(bytes).digest('hex'), 'b01252d9fd0f9fa08c32253f66d12d2ecfdfb0e0ad7da9a739bc21f5fe1b9944');
+});
+
+test('the one-minute story stays close to a minute and points at real objects', async () => {
+  const { BEATS, beatDuration } = await import('../threshold.mjs');
+  const ids = STORIES.map(story => story.id);
+  for (const beat of BEATS.filter(beat => !beat.final)) assert.ok(ids.includes(beat.id), beat.id);
+  assert.equal(BEATS.filter(beat => beat.final).length, 1);
+  assert.ok(BEATS.at(-1).final);
+  for (const beat of BEATS) {
+    assert.ok(beat.answer.length <= 175, `${beat.id} answer is too long for its beat`);
+    assert.ok(beat.focus.x > 0 && beat.focus.x < 1536 && beat.focus.y > 0 && beat.focus.y < 1024);
+  }
+  const seconds = BEATS.filter(beat => !beat.final).reduce((total, beat) => total + beatDuration(beat), 0) / 1000;
+  assert.ok(seconds > 45 && seconds < 70, `story runs ${seconds.toFixed(1)}s`);
 });

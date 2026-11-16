@@ -1,0 +1,41 @@
+{
+  "assets": [
+    {
+      "file": "asterwind-studio.webp",
+      "project": "Asterwind",
+      "title": "Studio opening",
+      "source_url": "https://bobshenruililin.github.io/asterwind/hub/assets/studio-opening.webp",
+      "published_page": "https://bobshenruililin.github.io/asterwind/docs/demos/unfolded/?v=2",
+      "source_discovery": "Image URL read directly from the public runtime HTML.",
+      "attribution": "Asterwind team; original published illustrative artwork. Fictional characters.",
+      "type": "illustration",
+      "width": 1672,
+      "height": 941,
+      "alt": "Two illustrated paper characters working at a lamp-lit table with a folded architectural model.",
+      "limitations": "Illustrative scene from the public playable project; not a photograph of Bob or his teammates. No new licensing claim is made.",
+      "size_bytes": 282400,
+      "sha256": "b79e98f8de46582ceef15287004792db263edc18b478d4e2de31bbdb996ab0a1",
+      "retrieved_on": "2026-11-11",
+      "transformation": "None; original published bytes retained."
+    },
+    {
+      "file": "crossing-lives-maps.jpg",
+      "project": "Crossing Lives — When lives span a border",
+      "title": "Two rail maps at an information point",
+      "source_url": "https://bobshenruililin.github.io/jamie-crossing-lives-site/feature/assets/sz-transit-maps.jpg",
+      "published_page": "https://bobshenruililin.github.io/jamie-crossing-lives-site/",
+      "source_discovery": "Published photo entry transit-maps in feature/cast.js.",
+      "metadata_source": "https://bobshenruililin.github.io/jamie-crossing-lives-site/feature/cast.js",
+      "attribution": "Field photographs supplied by Bob and Jamie. Research and presentation: Jamie Ko. Visualization: Bob. Individual photographer is not identified in the public metadata.",
+      "type": "field photograph",
+      "width": 2048,
+      "height": 1536,
+      "alt": "Printed Shenzhen rail and Hong Kong MTR maps displayed side by side above information brochures.",
+      "limitations": "Information on display; does not establish the point’s operator or the help received. No person is identified as a participant. Project remains work in progress. No new licensing claim is made.",
+      "size_bytes": 474272,
+      "sha256": "602c37b6b0c95a3cab42906f9ec3ec4b82e0f45ab7f58f84dfdba1561035b4ab",
+      "retrieved_on": "2026-11-11",
+      "transformation": "None; original published bytes retained."
+    }
+  ]
+}

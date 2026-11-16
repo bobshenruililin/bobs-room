@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { existsSync, readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { WORLD, OBSTACLES, isWalkable, move, findPath, safeMemories } from '../engine.mjs';
-import { STORIES, PHOTOS } from '../stories.mjs';
+import { STORIES, PHOTOS, storyIdFromHash } from '../stories.mjs';
 
 test('every story is reachable from the entrance and every other story', () => {
   const starts = [{ x:660, y:803 }, ...STORIES.map(s => s.approach)];
@@ -68,14 +68,14 @@ test('all photographs, fonts, generated assets, map data and CV are served local
     ...PHOTOS.map(photo => `assets/photos/${photo.src}.webp`),
   ];
   for (const file of paths) assert.ok(existsSync(new URL('../'+file,import.meta.url)),file);
-  const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
+  const html = readFileSync(new URL('../room.html',import.meta.url),'utf8');
   assert.ok(!/src="https?:\/\//.test(html),'no externally hosted scripts or essential media');
   assert.ok(html.includes('id="room-index" open'),'the biography remains accessible without JavaScript');
 });
 
 test('each story has a unique index, an in-room marker, and a valid next story', () => {
   assert.equal(new Set(STORIES.map(s=>s.id)).size,STORIES.length);
-  const html = readFileSync(new URL('../index.html',import.meta.url),'utf8');
+  const html = readFileSync(new URL('../room.html',import.meta.url),'utf8');
   const index = html.match(/<div class="index-list">([\s\S]*?)<\/div>/)?.[1] || '';
   const indexedIds = [...index.matchAll(/data-story="([^"]+)"/g)].map(match=>match[1]);
   assert.deepEqual(indexedIds.sort(),STORIES.map(s=>s.id).sort(),'the static room index includes each story exactly once');
@@ -89,4 +89,11 @@ test('each story has a unique index, an in-room marker, and a valid next story',
 test('published CV matches the exact file Bob approved on 29 October 2026', () => {
   const bytes = readFileSync(new URL('../assets/Shen-Ruililin-CV.pdf', import.meta.url));
   assert.equal(createHash('sha256').update(bytes).digest('hex'), 'b01252d9fd0f9fa08c32253f66d12d2ecfdfb0e0ad7da9a739bc21f5fe1b9944');
+});
+
+test('direct story links resolve only complete, known story IDs', () => {
+  for (const story of STORIES) assert.equal(storyIdFromHash(`#story-${story.id}`), story.id);
+  for (const hash of [null, undefined, 42, '', '#room-index', '#heat', '#story-', '#story-unknown', '#story-heat/extra', '#story-%68eat', '#story-Heat']) {
+    assert.equal(storyIdFromHash(hash), null);
+  }
 });

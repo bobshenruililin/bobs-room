@@ -1,5 +1,5 @@
 import { WORLD, isWalkable, move, findPath, safeMemories } from './engine.mjs';
-import { STORIES, PHOTOS, EMAIL, byId } from './stories.mjs';
+import { STORIES, PHOTOS, EMAIL, byId, storyIdFromHash } from './stories.mjs';
 import { mountObject, contactContent } from './objects.mjs';
 import { mountTV } from './discoveries.mjs';
 import { mountTour } from './tour.mjs';
@@ -111,6 +111,8 @@ function photoButton(photo, index, className = '') {
 
 function openStory(id) {
   const s = byId(id); if (!s) return;
+  const linkedStory = storyIdFromHash(location.hash);
+  if (linkedStory && linkedStory !== id) clearStoryHash();
   if (utilityDialog.open) utilityDialog.close();
   if (photoDialog.open) photoDialog.close();
   cleanObject(); cleanObject = () => {};
@@ -194,8 +196,21 @@ function openIndex() {
 function returnToRoom() {
   history.pushState(null, '', location.pathname + location.search); setView(false); enterRoom();
 }
-window.addEventListener('popstate', () => setView(location.hash === '#room-index'));
-window.addEventListener('hashchange', () => setView(location.hash === '#room-index'));
+function clearStoryHash() {
+  if (storyIdFromHash(location.hash)) history.replaceState(history.state, '', location.pathname + location.search);
+}
+
+function applyRoomRoute(focus = true) {
+  const story = storyIdFromHash(location.hash);
+  if (story) {
+    if (storyDialog.open && activeStory === story && !indexView) return;
+    setView(false, false);
+    enterRoom(false);
+    openStory(story);
+  } else {
+    setView(location.hash === '#room-index', focus);
+  }
+}
 
 function openPhoto(index) {
   photoIndex = (Number(index) + PHOTOS.length) % PHOTOS.length;
@@ -259,7 +274,7 @@ for (const dialog of [storyDialog, utilityDialog, photoDialog]) {
   });
   dialog.addEventListener('close', () => { keys.clear(); });
 }
-storyDialog.addEventListener('close', () => { if (!storyDialog.open) { cleanObject(); cleanObject = () => {}; } });
+storyDialog.addEventListener('close', () => { if (!storyDialog.open) { cleanObject(); cleanObject = () => {}; clearStoryHash(); } });
 utilityDialog.addEventListener('close', () => { if (!utilityDialog.open) { cleanUtility(); cleanUtility = () => {}; } });
 
 $('#labels-button').addEventListener('click', () => {
@@ -489,7 +504,9 @@ tour = mountTour({
 });
 
 selectVisitor(visitor, false); setStill(still); updateMemories(); resize();
-setView(location.hash === '#room-index', false);
+applyRoomRoute(false);
+window.addEventListener('popstate', () => applyRoomRoute());
+window.addEventListener('hashchange', () => applyRoomRoute());
 bubble('Oh, hello! Make yourself at home.', 10000);
 raf = requestAnimationFrame(render);
 window.addEventListener('pagehide', () => { cancelAnimationFrame(raf); clearInterval(audioTimer); audioContext?.suspend(); });

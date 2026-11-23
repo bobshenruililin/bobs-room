@@ -262,9 +262,56 @@
       "last_attempt_at": null,
       "last_success_at": null,
       "result_count": null
+    },
+    {
+      "id": "employer-point72",
+      "name": "Point72",
+      "company": "Point72",
+      "type": "Employer",
+      "url": "https://job-boards.greenhouse.io/point72/jobs/8899753002",
+      "note": "One specific employer-hosted posting reviewed; location text conflicts with the location selector.",
+      "checked_on": "2026-11-23",
+      "coverage": "Single selected role; employer board not exhaustively scanned",
+      "collection_status": "partial",
+      "collection_complete": false,
+      "last_attempt_at": null,
+      "last_success_at": null,
+      "result_count": null
     }
   ],
   "jobs": [
+    {
+      "id": "point72-mi-data-research-ai-2027",
+      "company": "Point72",
+      "title": "2027 MI Data Research & AI Intern - APAC",
+      "locations": [
+        "Singapore",
+        "Hong Kong",
+        "Japan"
+      ],
+      "category": "Research",
+      "employment": "Internship",
+      "work_mode": "Not specified",
+      "duration_months": null,
+      "days_per_week": null,
+      "cohort": [],
+      "eligibility": "Currently pursuing a bachelor's degree; Excel and/or data processing and programming proficiency, and data analysis experience in fundamental research, required. Work authorization varies by location.",
+      "salary_text": "Not disclosed.",
+      "summary": "Support research workflows, AI product evaluation, data analysis and sector research for the Market Intelligence team.",
+      "source_url": "https://job-boards.greenhouse.io/point72/jobs/8899753002",
+      "source_type": "Employer",
+      "checked_on": "2026-11-23",
+      "status": "listed",
+      "caveat": "Location conflict: the header lists Hong Kong, Singapore and Japan, but the role description says the programme is based in Singapore. Confirm location and work authorization. Weekly hours and pay are unspecified.",
+      "evidence_note": "Employer application page includes the full role, Apply form, ten-week dates and location conflict. No independently confirmed unfilled vacancy.",
+      "intake_text": "Summer 2027",
+      "verification": "page_read",
+      "duration_text": "10 weeks · 7 Jun–13 Aug 2027",
+      "source_id": "employer-point72",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
+    },
     {
       "id": "hkpc-summer-innotalent-2027",
       "company": "Hong Kong Productivity Council",

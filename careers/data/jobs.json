@@ -281,6 +281,36 @@
   ],
   "jobs": [
     {
+      "id": "hkpc-tech-healthtech-tcm-11137",
+      "company": "Hong Kong Productivity Council",
+      "title": "Intern, (Tech) HealthTech and TCM",
+      "locations": [
+        "Hong Kong"
+      ],
+      "category": "Engineering",
+      "employment": "Internship",
+      "work_mode": "Not specified",
+      "duration_months": 6,
+      "days_per_week": null,
+      "cohort": [],
+      "eligibility": "Currently pursuing a STEM bachelor's degree; solid Python skills, experience building prototypes with AI coding assistants and ability to validate generated code; basic AI/ML and biomedical, HealthTech and Chinese medicine knowledge.",
+      "salary_text": "Competitive package; amount not published.",
+      "summary": "Support coding, testing and data preparation for AI-enabled healthcare and manufacturing projects.",
+      "source_url": "https://careers.hkpc.org/job/Intern,-(Tech)-HealthTech-and-TCM/1370822966/",
+      "source_type": "Employer",
+      "checked_on": "2026-11-26",
+      "status": "listed",
+      "caveat": "Six months, January–June 2027. Weekly hours and work mode not stated. Employer invites applications within one week of posting, then recruits until filled; posting date not confirmed.",
+      "evidence_note": "Employer detail SMD/11137 gives required skills, six-month term and Apply now link; a visible listing does not guarantee an unfilled vacancy.",
+      "intake_text": "Jan–Jun 2027",
+      "verification": "page_read",
+      "duration_text": "Jan–Jun 2027 · 6 months",
+      "source_id": "employer-7",
+      "source_published_at": null,
+      "source_updated_at": null,
+      "last_fetched_at": null
+    },
+    {
       "id": "point72-mi-data-research-ai-2027",
       "company": "Point72",
       "title": "2027 MI Data Research & AI Intern - APAC",

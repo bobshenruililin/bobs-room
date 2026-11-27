@@ -6,11 +6,11 @@ The site uses static HTML, CSS, native Canvas, and JavaScript modules, with no r
 
 ## Where it goes next
 
-**The storyboard plan, 27 November:** planning only, for Bob to react to. Carry’s commission is the front door, resting as a pencil rough. Colour floods into the Duoji you point at, and each of the six Duojis is one door: Carryistic, Crossing Lives, Research, Quiet things, Bob and Say hello. Every project gets the same six-beat case film, and Higgsfield makes the cuts between real frames. [Storyboard plan](direction/storyboard-plan.md) · [Boards](direction/storyboard)
+**Six changes, 27 November:** planning only, for Bob to react to. Carry’s commission is the front door, in full colour. Click a Duoji: he does his thing in her painting, then, on the beat, changes into the medium of the work he leads to (Carry’s rays, Jamie’s isometric map, a thermal camera, a real photograph, a 3D model, crochet) and lands in it. Higgsfield makes the changes, the frames, the stickers and a 3D Duoji from his real photos. [Six changes](direction/six-changes.md) · [Boards](direction/storyboard)
 
-![Board 04: the front door, shot by shot](direction/storyboard/board-04-front-door-desktop.jpg)
+![Board 09: six changes](direction/storyboard/board-09-six-changes.jpg)
 
-Earlier explorations stay for the record: [first drawing board](direction/drawing-board.md), and [the gate](direction/where-next.md) with its [prototype](lab/doorway/).
+Earlier passes stay for the record: [storyboard plan](direction/storyboard-plan.md), [first drawing board](direction/drawing-board.md), and [the gate](direction/where-next.md) with its [prototype](lab/doorway/).
 
 ## Run locally
 

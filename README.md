@@ -6,11 +6,11 @@ The site uses static HTML, CSS, native Canvas, and JavaScript modules, with no r
 
 ## Where it goes next
 
-**Back to the drawing board, 27 November:** *the six Duojis, as a storyboard*. Carry’s commission for Bob is the cover and the map: each Duoji leads into one chapter of his work, every project sits in the same storyboard panel, and Higgsfield makes the cuts between real frames. This is planning only, with questions for Bob. [Drawing board](direction/drawing-board.md) · [Board 00](direction/board/board-00.jpg)
+**The storyboard plan, 27 November:** planning only, for Bob to react to. Carry’s commission is the front door, resting as a pencil rough. Colour floods into the Duoji you point at, and each of the six Duojis is one door: Carryistic, Crossing Lives, Research, Quiet things, Bob and Say hello. Every project gets the same six-beat case film, and Higgsfield makes the cuts between real frames. [Storyboard plan](direction/storyboard-plan.md) · [Boards](direction/storyboard)
 
-The earlier *gate* direction and its prototype stay as an exploration: [direction](direction/where-next.md) · [prototype](lab/doorway/) · [Higgsfield handoff](direction/higgsfield-requests.md)
+![Board 04: the front door, shot by shot](direction/storyboard/board-04-front-door-desktop.jpg)
 
-![Board 00: the six Duojis as a storyboard](direction/board/board-00.jpg)
+Earlier explorations stay for the record: [first drawing board](direction/drawing-board.md), and [the gate](direction/where-next.md) with its [prototype](lab/doorway/).
 
 ## Run locally
 

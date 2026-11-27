@@ -6,9 +6,11 @@ The site uses static HTML, CSS, native Canvas, and JavaScript modules, with no r
 
 ## Where it goes next
 
-**A direction for Bob to choose, 27 November:** *the gate*. Bob’s own photograph in a stone gateway on Suomenlinna is the front door. Behind him, the view opens onto each of his works, and Higgsfield supplies the motion between real frames. A working prototype sits at [`lab/doorway/`](lab/doorway/) and does not change the live site. [Direction](direction/where-next.md) · [Higgsfield handoff for Astra](direction/higgsfield-requests.md) · Walkthroughs: [desktop](direction/paths/doorway-desktop.mp4), [phone](direction/paths/doorway-phone.mp4)
+**Back to the drawing board, 27 November:** *the six Duojis, as a storyboard*. Carry’s commission for Bob is the cover and the map: each Duoji leads into one chapter of his work, every project sits in the same storyboard panel, and Higgsfield makes the cuts between real frames. This is planning only, with questions for Bob. [Drawing board](direction/drawing-board.md) · [Board 00](direction/board/board-00.jpg)
 
-![The gate: Bob in the stone gateway with each of his works behind him](direction/paths/gate-views.jpg)
+The earlier *gate* direction and its prototype stay as an exploration: [direction](direction/where-next.md) · [prototype](lab/doorway/) · [Higgsfield handoff](direction/higgsfield-requests.md)
+
+![Board 00: the six Duojis as a storyboard](direction/board/board-00.jpg)
 
 ## Run locally
 

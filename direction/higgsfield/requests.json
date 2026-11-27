@@ -1,0 +1,476 @@
+{
+ "contract": {
+  "resolution": "4k",
+  "generate_audio": false,
+  "takes": 3,
+  "judge_in": "/lab/doorway/ via npm run dev, desktop and phone",
+  "crop_L_G": "crop=iw*0.35417:ih*0.25781:iw*0.328125:ih*0.3984375 (the photograph's sea rectangle), scale 1360 wide",
+  "encode": "libx264 -preset slow -crf 19 -pix_fmt yuv420p -movflags +faststart, no audio",
+  "switch_on": "lab/doorway/media/motion.json ready:true, npm test, row in direction/higgsfield/ledger.csv"
+ },
+ "L": [
+  {
+   "id": "L1",
+   "slot": "L.gate",
+   "model": "seedance_2_5",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 8,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. The sea surface moves gently and its glitter shifts; thin clouds over the far shore drift. The sailing ship and the small boat hold their positions. Seamless loop.",
+   "must_survive": "Both boats keep place and size; level horizon",
+   "discard_if": "A boat moves or appears, a bird or person appears, the horizon tilts",
+   "output": "lab/doorway/media/motion/L1-gate.mp4"
+  }
+ ],
+ "G": [
+  {
+   "id": "G1",
+   "slot": "G.carryistic",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 5,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/G1-carryistic-end.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. The low sun brightens on the horizon and splits into fifteen flat coloured rays that sweep from right to left; Carry’s profile rises into place inside them.",
+   "must_survive": "Ray colours, order and hard edges; Carry’s profile",
+   "discard_if": "Rays glow, blur or bend; a lens flare or sun remains; her face changes",
+   "output": "lab/doorway/media/motion/G1-carryistic.mp4"
+  },
+  {
+   "id": "G2",
+   "slot": "G.asterwind",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 5,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/G2-asterwind-end.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. Dusk falls; the sea folds up like a paper stage set and becomes the lamp-lit studio wall with the After Hours machine.",
+   "must_survive": "AFTER HOURS lettering, bottles, buttons, the door at left",
+   "discard_if": "Letters warp in the last second; a person appears",
+   "output": "lab/doorway/media/motion/G2-asterwind.mp4"
+  },
+  {
+   "id": "G3",
+   "slot": "G.crossing",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 5,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/G3-crossing-end.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. The far shore slides toward the gate and becomes the station display, Shenzhen and Hong Kong transit maps side by side.",
+   "must_survive": "Both map boards and headings as photographed",
+   "discard_if": "Map lines redrawn or garbled in the last second; anyone appears",
+   "output": "lab/doorway/media/motion/G3-crossing.mp4"
+  },
+  {
+   "id": "G4",
+   "slot": "G.heat",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 5,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/G4-heat-end.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. The glitter on the water slows and hardens into vertical stripes of flat colour, one per day, the summers turning red.",
+   "must_survive": "Exact stripe layout of the end frame (HKO data)",
+   "discard_if": "Stripes curve or colours outside the seven-colour scale appear",
+   "output": "lab/doorway/media/motion/G4-heat.mp4"
+  },
+  {
+   "id": "G5",
+   "slot": "G.careers",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 5,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/G5-careers-end.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. The horizon becomes a ruled line, the sky turns to white paper, and the dashboard rows print in from the top like a departure board.",
+   "must_survive": "End frame layout",
+   "discard_if": "Readable invented text (a company, a salary) appears mid-shot",
+   "output": "lab/doorway/media/motion/G5-careers.mp4"
+  },
+  {
+   "id": "G6",
+   "slot": "G.room",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 5,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/L1-gate.jpg",
+   "end_image": "direction/higgsfield/frames/G6-room-end.jpg",
+   "prompt": "Locked-off camera. Photograph of a stone gateway on Suomenlinna with a man in silhouette, arms raised, facing the sea. Only the view beyond the gate changes; the stone, the chains and the man do not move. Night falls over the water, lights come on across the harbour, and the lantern-lit pixel room fades up in their place.",
+   "must_survive": "Room illustration as drawn",
+   "discard_if": "The pixel art smears into painting at the end",
+   "output": "lab/doorway/media/motion/G6-room.mp4"
+  }
+ ],
+ "E": [
+  {
+   "id": "E1-21x9",
+   "slot": "E.carryistic.wide",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "21:9",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E1-carryistic-start-21x9.jpg",
+   "end_image": "direction/higgsfield/frames/E1-carryistic-end-21x9.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E1-carryistic-21x9.mp4",
+   "encode_width": 2520
+  },
+  {
+   "id": "E1-3x4",
+   "slot": "E.carryistic.tall",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E1-carryistic-start-3x4.jpg",
+   "end_image": "direction/higgsfield/frames/E1-carryistic-end-3x4.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E1-carryistic-3x4.mp4",
+   "encode_width": 1440
+  },
+  {
+   "id": "E2-21x9",
+   "slot": "E.asterwind.wide",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "21:9",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E2-asterwind-start-21x9.jpg",
+   "end_image": "direction/higgsfield/frames/E2-asterwind-end-21x9.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E2-asterwind-21x9.mp4",
+   "encode_width": 2520
+  },
+  {
+   "id": "E2-3x4",
+   "slot": "E.asterwind.tall",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E2-asterwind-start-3x4.jpg",
+   "end_image": "direction/higgsfield/frames/E2-asterwind-end-3x4.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E2-asterwind-3x4.mp4",
+   "encode_width": 1440
+  },
+  {
+   "id": "E3-21x9",
+   "slot": "E.crossing.wide",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "21:9",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E3-crossing-start-21x9.jpg",
+   "end_image": "direction/higgsfield/frames/E3-crossing-end-21x9.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E3-crossing-21x9.mp4",
+   "encode_width": 2520
+  },
+  {
+   "id": "E3-3x4",
+   "slot": "E.crossing.tall",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E3-crossing-start-3x4.jpg",
+   "end_image": "direction/higgsfield/frames/E3-crossing-end-3x4.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E3-crossing-3x4.mp4",
+   "encode_width": 1440
+  },
+  {
+   "id": "E4-21x9",
+   "slot": "E.heat.wide",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "21:9",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E4-heat-start-21x9.jpg",
+   "end_image": "direction/higgsfield/frames/E4-heat-end-21x9.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E4-heat-21x9.mp4",
+   "encode_width": 2520
+  },
+  {
+   "id": "E4-3x4",
+   "slot": "E.heat.tall",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E4-heat-start-3x4.jpg",
+   "end_image": "direction/higgsfield/frames/E4-heat-end-3x4.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E4-heat-3x4.mp4",
+   "encode_width": 1440
+  },
+  {
+   "id": "E5-21x9",
+   "slot": "E.careers.wide",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "21:9",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E5-careers-start-21x9.jpg",
+   "end_image": "direction/higgsfield/frames/E5-careers-end-21x9.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E5-careers-21x9.mp4",
+   "encode_width": 2520
+  },
+  {
+   "id": "E5-3x4",
+   "slot": "E.careers.tall",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E5-careers-start-3x4.jpg",
+   "end_image": "direction/higgsfield/frames/E5-careers-end-3x4.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E5-careers-3x4.mp4",
+   "encode_width": 1440
+  },
+  {
+   "id": "E6-21x9",
+   "slot": "E.room.wide",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "21:9",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E6-room-start-21x9.jpg",
+   "end_image": "direction/higgsfield/frames/E6-room-end-21x9.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E6-room-21x9.mp4",
+   "encode_width": 2520
+  },
+  {
+   "id": "E6-3x4",
+   "slot": "E.room.tall",
+   "model": "seedance_2_5",
+   "fallback_model": "kling4_0 image-to-video 4k",
+   "settings": {
+    "mode": "omni_reference",
+    "resolution": "4k",
+    "aspect_ratio": "3:4",
+    "duration": 4,
+    "generate_audio": false,
+    "bitrate_mode": "high"
+   },
+   "start_image": "direction/higgsfield/frames/E6-room-start-3x4.jpg",
+   "end_image": "direction/higgsfield/frames/E6-room-end-3x4.jpg",
+   "prompt": "One steady dolly forward through a stone gateway, passing just above the raised right hand of a man standing in silhouette with both arms up. The stone slides out past the frame edges, the hanging chains pass on either side, and the image beyond the gate fills the frame and settles. No cut, no tilt, no speed ramp. The man never turns and stays a silhouette.",
+   "must_survive": "Bob a back-lit silhouette, both arms raised, no face; stones keep their shape; end frame is the real work",
+   "discard_if": "Bob moves, turns or gains a face; arms bend; stones swim or multiply; text warps in the last second; a cut",
+   "output": "lab/doorway/media/motion/E6-room-3x4.mp4",
+   "encode_width": 1440
+  }
+ ],
+ "W": [
+  {
+   "id": "W1",
+   "model": "kling4_0",
+   "fallback_model": "flux_3_video (4k, 20 s)",
+   "settings": {
+    "mode": "image-to-video",
+    "resolution": "4k",
+    "duration": 30,
+    "aspect_ratio": [
+     "16:9",
+     "9:16"
+    ]
+   },
+   "start_image": "archive/source/walk-1884.webp",
+   "image_references_in_order": [
+    "archive/source/walk-1921.webp",
+    "archive/source/walk-2260.webp",
+    "archive/source/walk-2028.webp",
+    "archive/source/walk-2341.webp",
+    "archive/source/walk-2278.webp",
+    "archive/source/walk-2094.webp"
+   ],
+   "end_image": "archive/source/doorway-1920.webp",
+   "prompt": "A walking camera at eye height following a path across a sea-fortress island on a late-summer afternoon, passing through each keyframe in order: daisies in the grass, the church tower, a man sitting on rocks above the houses, the man at the water through trees, the rocky coast, a sailboat seen through bare branches, the man with arms wide on the rocks, and finally the stone gateway where he stands with arms raised. Natural light, no cuts.",
+   "must_survive": "Every keyframe as photographed; church tower, rampart and gate architecture; Bob’s clothes in each keyframe",
+   "discard_if": "Bob’s face invented or turned to camera where the photo doesn’t; clothes change between keyframes; new building, person or animal; a cut",
+   "blocked_on": "Bob: were the seven photographs one afternoon?",
+   "output": "lab/doorway/media/motion/W1-walk-16x9.mp4, W1-walk-9x16.mp4"
+  }
+ ],
+ "R": [
+  {
+   "id": "R1",
+   "work": "carryistic",
+   "generated": false,
+   "capture": "4K screen recording of the live site, 8–12 s, real clicks",
+   "what": "Landing sweep, hover a ray, open it, two taps through a work"
+  },
+  {
+   "id": "R2",
+   "work": "asterwind",
+   "generated": false,
+   "capture": "4K screen recording of the live site, 8–12 s, real clicks",
+   "what": "Begin, then into the After Hours studio"
+  },
+  {
+   "id": "R3",
+   "work": "crossing",
+   "generated": false,
+   "capture": "4K screen recording of the live site, 8–12 s, real clicks",
+   "what": "Close the notice, scroll from the title to Home moves north"
+  },
+  {
+   "id": "R4",
+   "work": "careers",
+   "generated": false,
+   "capture": "4K screen recording of the live site, 8–12 s, real clicks",
+   "what": "Filter to Hong Kong, open a role, add it to the shortlist"
+  },
+  {
+   "id": "R5",
+   "work": "room",
+   "generated": false,
+   "capture": "4K screen recording of the live site, 8–12 s, real clicks",
+   "what": "The fox walks to the sofa, opens it, then the arcade"
+  }
+ ]
+}

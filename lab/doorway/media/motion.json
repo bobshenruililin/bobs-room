@@ -1,0 +1,20 @@
+{
+  "note": "Higgsfield slots. Set ready to true once a take is encoded at src; the page falls back to the photograph and the code-built moves otherwise. See direction/higgsfield-requests.md.",
+  "L": { "gate": { "ready": false, "src": "./media/motion/L1-gate.mp4" } },
+  "G": {
+    "carryistic": { "ready": false, "src": "./media/motion/G1-carryistic.mp4" },
+    "asterwind": { "ready": false, "src": "./media/motion/G2-asterwind.mp4" },
+    "crossing": { "ready": false, "src": "./media/motion/G3-crossing.mp4" },
+    "heat": { "ready": false, "src": "./media/motion/G4-heat.mp4" },
+    "careers": { "ready": false, "src": "./media/motion/G5-careers.mp4" },
+    "room": { "ready": false, "src": "./media/motion/G6-room.mp4" }
+  },
+  "E": {
+    "carryistic": { "ready": false, "wide": "./media/motion/E1-carryistic-21x9.mp4", "tall": "./media/motion/E1-carryistic-3x4.mp4" },
+    "asterwind": { "ready": false, "wide": "./media/motion/E2-asterwind-21x9.mp4", "tall": "./media/motion/E2-asterwind-3x4.mp4" },
+    "crossing": { "ready": false, "wide": "./media/motion/E3-crossing-21x9.mp4", "tall": "./media/motion/E3-crossing-3x4.mp4" },
+    "heat": { "ready": false, "wide": "./media/motion/E4-heat-21x9.mp4", "tall": "./media/motion/E4-heat-3x4.mp4" },
+    "careers": { "ready": false, "wide": "./media/motion/E5-careers-21x9.mp4", "tall": "./media/motion/E5-careers-3x4.mp4" },
+    "room": { "ready": false, "wide": "./media/motion/E6-room-21x9.mp4", "tall": "./media/motion/E6-room-3x4.mp4" }
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d10">
+  <title>Bob · Shen Ruililin</title>
+  <meta name="description" content="Prototype: Bob in a stone gateway on Suomenlinna. Each of his works opens behind the gate.">
+  <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../../assets/fonts/schibsted-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="./media/doorway-fg.webp" as="image">
+  <link rel="stylesheet" href="./doorway.css">
+  <script type="module" src="./doorway.mjs"></script>
+</head>
+<body>
+  <div class="stage" id="stage" aria-hidden="true">
+    <div class="view" id="view"></div>
+    <img class="photo" id="photo" src="./media/doorway-fg.webp" width="1920" height="2560" alt="">
+  </div>
+
+  <header class="bar bar-top" id="bar-top">
+    <a class="mark" href="./">Shen Ruililin</a>
+    <nav class="top-nav" aria-label="Main">
+      <button type="button" class="chip" id="open-index">All work</button>
+      <button type="button" class="chip chip-solid" id="play-reel"><span aria-hidden="true">▶</span> Play the reel</button>
+    </nav>
+  </header>
+
+  <main class="bar bar-bottom" id="bar-bottom">
+    <div class="hello">
+      <h1>Hi, I’m Bob.</h1>
+      <p class="line">I study global health at HKU, and I build ways into things: research, stories, tools and other people’s work.</p>
+    </div>
+    <div class="doors">
+      <p class="now" id="now" aria-live="polite"><span class="swatch" id="now-swatch"></span><span id="now-title">Suomenlinna, Helsinki</span><span class="now-kind" id="now-kind">the view as I photographed it</span></p>
+      <ol class="door-list" id="door-list" aria-label="Works"></ol>
+      <p class="hint" id="hint">Hover a work to open it behind the gate. Click to step through.</p>
+    </div>
+  </main>
+
+  <section class="reel" id="reel" hidden aria-roledescription="reel" aria-label="Work">
+    <div class="reel-ground" id="reel-ground"></div>
+    <div class="reel-frames" id="reel-frames"></div>
+    <div class="reel-top">
+      <div class="progress" id="progress"></div>
+      <div class="reel-head">
+        <button type="button" class="chip ghost" id="reel-back" aria-label="Back to the gate">← The gate</button>
+        <span class="reel-count" id="reel-count"></span>
+      </div>
+    </div>
+    <div class="reel-text" id="reel-text">
+      <p class="reel-num" id="reel-num"></p>
+      <h2 id="reel-title"></h2>
+      <p class="reel-line" id="reel-line"></p>
+      <p class="reel-credit" id="reel-credit"></p>
+      <a class="chip chip-solid" id="reel-open" target="_blank" rel="noopener">Open the work ↗</a>
+    </div>
+    <p class="reel-keys" aria-hidden="true">Tap for the next picture · hold to pause · swipe for another work · swipe down for the gate</p>
+  </section>
+
+  <section class="index" id="index" hidden aria-label="All work">
+    <div class="index-inner">
+      <div class="index-head"><h2>All work</h2><button type="button" class="chip" id="close-index">Close</button></div>
+      <ol class="index-list" id="index-list"></ol>
+      <div class="about">
+        <h3>About</h3>
+        <p>Shen Ruililin, called Bob. Global Health and Development at HKU, 2025–2029. I’ve lived in Shanghai, Singapore and Hong Kong. Research on heat and health with Professor David Bishai; earlier, weather and computation at the Hong Kong Observatory and PolyU.</p>
+        <p class="about-links"><a href="mailto:bobshenruililin@gmail.com">Say hello ↗</a><a href="../../assets/Shen-Ruililin-CV.pdf" target="_blank" rel="noopener">CV ↗</a><a href="https://www.linkedin.com/in/shenruililin" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/bobshenruililin" target="_blank" rel="noopener">GitHub ↗</a></p>
+      </div>
+    </div>
+  </section>
+  <p class="proto-note">Prototype · path A · photograph untouched, works shown as captured</p>
+</body>
+</html>

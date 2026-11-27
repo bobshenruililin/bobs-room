@@ -133,3 +133,15 @@ The site has no analytics or account system. Its room journal saves discovery ID
 ## CV replacement — 29 October 2026
 
 At Bob’s explicit request, the downloadable CV was replaced byte-for-byte with his supplied `ShenRuililin_CV(2).pdf`. The room’s existing biography was not rewritten as part of this file replacement.
+
+## The gate prototype — 27 November 2026
+
+| Material | Source | Limits |
+| --- | --- | --- |
+| `archive/source/doorway-1920.webp` and the seven `walk-*.webp` photographs | The 1920-pixel copies on [Bob’s published Suomenlinna walk](https://shen-ruililin.bobshenruililin.chatgpt.site/), which names the place | Personal travel photographs. Do not infer dates or further locations. `refrigerator-1920.webp` is kept for reference and is not used. |
+| `lab/doorway/media/doorway-fg.webp`, `view-sea.webp` | Made from the doorway photograph by `scripts/prepare-doorway.py` | The photograph’s pixels are unchanged; only the view beyond the gate is made transparent. |
+| `lab/doorway/media/*-1/2/3.webp`, `*-p.webp` | Captures of the live Carryistic, Asterwind, Crossing Lives, Career Atlas and Bob’s Room pages, 27 November 2026 | They show each work as published, with its own credits. Asterwind’s and the room’s illustrations are those projects’ own artwork. Carry should approve her picture appearing on Bob’s site before publication. |
+| `lab/doorway/media/hko-maxtemp-2013-2023.json` | [Hong Kong Observatory daily maximum temperature, HKO station](https://data.weather.gov.hk/weatherAPI/opendata/opendata.php?dataType=CLMMAXT&rformat=csv&station=HKO), retrieved 27 November 2026 | Public observations, drawn as context for the heat research. They are not findings from Bob’s study. |
+| `assets/fonts/schibsted-grotesk*.woff2` | `@fontsource-variable/schibsted-grotesk` | SIL Open Font License; notice in `assets/fonts/schibsted-grotesk-OFL.txt`. |
+
+All prototype copy in `lab/doorway/works.mjs` is a draft awaiting Bob’s approval.

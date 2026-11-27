@@ -4,6 +4,12 @@ Shen Ruililin’s personal website: an introduction to Bob, a few questions that
 
 The site uses static HTML, CSS, native Canvas, and JavaScript modules, with no runtime package dependencies, accounts, or analytics. Fonts, illustrations, photographs, and the CV are served locally. The homepage has its own small enhancement script and does not initialize the game. Inside the room, a browser-local journal remembers the twelve checkpoints and the selected visitor.
 
+## Where it goes next
+
+**A direction for Bob to choose, 27 November:** *the gate*. Bob’s own photograph in a stone gateway on Suomenlinna is the front door. Behind him, the view opens onto each of his works, and Higgsfield supplies the motion between real frames. A working prototype sits at [`lab/doorway/`](lab/doorway/) and does not change the live site. [Direction](direction/where-next.md) · [Higgsfield handoff for Astra](direction/higgsfield-requests.md) · Walkthroughs: [desktop](direction/paths/doorway-desktop.mp4), [phone](direction/paths/doorway-phone.mp4)
+
+![The gate: Bob in the stone gateway with each of his works behind him](direction/paths/gate-views.jpg)
+
 ## Run locally
 
 Use Node.js 20 or newer. No package installation or build step is required.
